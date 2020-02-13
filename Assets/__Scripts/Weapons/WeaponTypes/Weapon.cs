@@ -55,7 +55,7 @@ public class Weapon : MonoBehaviour
         }
 
         // reload
-        if (Input.GetKeyDown(KeyCode.R) && hasAmmo) { // R to reload
+        if (Input.GetKeyDown(KeyCode.R) && _hasAmmo) { // R to reload
 
             StartCoroutine(Reload()); // reloads weapon
         }
@@ -64,11 +64,11 @@ public class Weapon : MonoBehaviour
     // function to fire a weapon
     void Fire() {
 
-        if (hasAmmo) { // if the weapon has ammo
+        if (_hasAmmo) { // if the weapon has ammo
 
-            if (Time.time > nextFireTime) { // if the weapon has waited long enough to fire
+            if (Time.time > _nextFireTime) { // if the weapon has waited long enough to fire
 
-                nextFireTime = Time.time + fireRate; //once firing, update the time to the next time gun is allowed to fire
+                _nextFireTime = Time.time + fireRate; //once firing, update the time to the next time gun is allowed to fire
             
                 if (_currentMagSize > 0) {
 
@@ -135,7 +135,7 @@ public class Weapon : MonoBehaviour
     // ienum to reload weapon
     IEnumerator Reload() {
 
-        hasAmmo = false; // prevents gun from being fired mid reload
+        _hasAmmo = false; // prevents gun from being fired mid reload
 
         //source.clip = reloadAudio; // sets reload audio
         // source.Play(); // plays reload audio
@@ -151,7 +151,7 @@ public class Weapon : MonoBehaviour
             _currentMagSize = magSize;
         } 
 
-        hasAmmo = true; // allows gun to fire again post reload
+        _hasAmmo = true; // allows gun to fire again post reload
     }
 
 
@@ -159,7 +159,7 @@ public class Weapon : MonoBehaviour
     public void ActivateWeapon(bool activate) {
 
         StopAllCoroutines(); // cancels reload to switch weapons
-        hasAmmo = true; // lets weapons fire, as new weapon amy have ammo
+        _hasAmmo = true; // lets weapons fire, as new weapon amy have ammo
         gameObject.SetActive(activate); // activates the weapon
     }
 
