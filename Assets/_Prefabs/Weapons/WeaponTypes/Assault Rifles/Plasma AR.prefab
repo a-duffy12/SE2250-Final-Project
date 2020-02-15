@@ -152,6 +152,11 @@ MonoBehaviour:
   reloadTime: 3
   damage: 30
   range: 40
+  bulletAudio: {fileID: 8300000, guid: 563bb50fbce0918409b974624e139955, type: 3}
+  plasmaAudio: {fileID: 8300000, guid: e79dee70c531e934583e0de7fd102dfe, type: 3}
+  railAudio: {fileID: 8300000, guid: 63520879d242cd542a624a1954f6c930, type: 3}
+  empAudio: {fileID: 8300000, guid: 162b4986b2503514a9d2a8b419a99c2e, type: 3}
+  reloadAudio: {fileID: 8300000, guid: 3b03531bb175fc6489e497cd0dca4e15, type: 3}
   manager: {fileID: 0}
 --- !u!1 &8540605637626155691
 GameObject:

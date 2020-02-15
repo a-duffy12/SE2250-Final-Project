@@ -47,7 +47,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7329772012510867947
 Transform:
   m_ObjectHideFlags: 0
@@ -182,6 +182,11 @@ MonoBehaviour:
   reloadTime: 4.1
   damage: 190
   range: 100
+  bulletAudio: {fileID: 8300000, guid: 563bb50fbce0918409b974624e139955, type: 3}
+  plasmaAudio: {fileID: 8300000, guid: e79dee70c531e934583e0de7fd102dfe, type: 3}
+  railAudio: {fileID: 8300000, guid: 63520879d242cd542a624a1954f6c930, type: 3}
+  empAudio: {fileID: 8300000, guid: 162b4986b2503514a9d2a8b419a99c2e, type: 3}
+  reloadAudio: {fileID: 8300000, guid: c7a994542118331458b4aa728e36d9c0, type: 3}
   manager: {fileID: 0}
 --- !u!1001 &7390147489180924410
 PrefabInstance:

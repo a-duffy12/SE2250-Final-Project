@@ -45,7 +45,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -152,6 +152,11 @@ MonoBehaviour:
   reloadTime: 2
   damage: 15
   range: 20
+  bulletAudio: {fileID: 8300000, guid: 563bb50fbce0918409b974624e139955, type: 3}
+  plasmaAudio: {fileID: 8300000, guid: e79dee70c531e934583e0de7fd102dfe, type: 3}
+  railAudio: {fileID: 8300000, guid: 63520879d242cd542a624a1954f6c930, type: 3}
+  empAudio: {fileID: 8300000, guid: 162b4986b2503514a9d2a8b419a99c2e, type: 3}
+  reloadAudio: {fileID: 8300000, guid: 1fa0dcf9dd7ace443851d3c034c16fff, type: 3}
   manager: {fileID: 0}
 --- !u!1 &2358654780892205719
 GameObject:

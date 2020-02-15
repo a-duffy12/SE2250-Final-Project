@@ -16,11 +16,11 @@ public class Weapon : MonoBehaviour
     public float reloadTime; // how long to reload
     public float damage; // how much damage per bullet
     public int range; // how far can the gun shoot
-    //public AudioClip bulletAudio; // audio for bullet fires
-    //public AudioClip plasmaAudio; // audio for plasma fires
-    //public AudioClip railAudio; // audio for rail fires
-    //public AudioClip empAudio; // audio for emp fires
-    //public AudioClip reloadAudio; // aduio for reload
+    public AudioClip bulletAudio; // audio for bullet fires
+    public AudioClip plasmaAudio; // audio for plasma fires
+    public AudioClip railAudio; // audio for rail fires
+    public AudioClip empAudio; // audio for emp fires
+    public AudioClip reloadAudio; // aduio for reload
 
     [HideInInspector]
     public Inventory manager; // instantiate a weapon manager
@@ -28,15 +28,15 @@ public class Weapon : MonoBehaviour
     private float _nextFireTime = 0; // how long until the next bullet is fired
     private bool _hasAmmo = true; // whether or not the mag has ammo left
     private int _currentMagSize = 0; 
-    //AudioSource _source;
+    AudioSource _source;
 
     // Start is called before the first frame update
     void Start() {
     
         _currentMagSize = magSize; // sets base magazine size to the magazine size
-        //_source = GetComponent<AudioSource>(); // gets the audio
-        //_source.playOnAwake = false; // does not play on startup
-        //_source.spatialBlend = 1f; // makes the sound 3D
+        _source = GetComponent<AudioSource>(); // gets the audio
+        _source.playOnAwake = false; // does not play on startup
+        _source.spatialBlend = 1f; // makes the sound 3D
     }
 
     // Update is called once per frame
@@ -91,8 +91,8 @@ public class Weapon : MonoBehaviour
                         Bullet bullet = bulletObject.GetComponent<Bullet>(); // gets an instance of the bullet object
                         bullet.SetDamage(damage); // sets the damage based of the weapon
                         _currentMagSize--; // removes a bullet from the magazine
-                        //_source.clip = bulletAudio; // sets firing audio
-                        //_source.Play(); // plays firing audio
+                        _source.clip = bulletAudio; // sets firing audio
+                        _source.Play(); // plays firing audio
 
                     } else if (ammoType == 1) {
 
@@ -100,8 +100,8 @@ public class Weapon : MonoBehaviour
                         Plasma plasmaBullet = bulletObject.GetComponent<Plasma>(); // gets an instance of the bullet object
                         plasmaBullet.SetDamage(damage); // sets the damage based of the weapon
                         _currentMagSize--; // removes a bullet from the magazine
-                        //_source.clip = plasmaAudio; // sets firing audio
-                        //_source.Play(); // plays firing audio
+                        _source.clip = plasmaAudio; // sets firing audio
+                        _source.Play(); // plays firing audio
 
                     } else if (ammoType == 2) {
 
@@ -109,8 +109,8 @@ public class Weapon : MonoBehaviour
                         Rail railBullet = bulletObject.GetComponent<Rail>(); // gets an instance of the bullet object
                         railBullet.SetDamage(damage); // sets the damage based of the weapon
                         _currentMagSize--; // removes a bullet from the magazine
-                        //_source.clip = railAudio; // sets firing audio
-                        //_source.Play(); // plays firing audio
+                        _source.clip = railAudio; // sets firing audio
+                        _source.Play(); // plays firing audio
 
                     } else if (ammoType == 3) {
 
@@ -118,15 +118,15 @@ public class Weapon : MonoBehaviour
                         Emp empBullet = bulletObject.GetComponent<Emp>(); // gets an instance of the bullet object
                         empBullet.SetDamage(damage); // sets the damage based of the weapon
                         _currentMagSize--; // removes a bullet from the magazine
-                        //_source.clip = empAudio; // sets firing audio
-                        //_source.Play(); // plays firing audio
+                        _source.clip = empAudio; // sets firing audio
+                        _source.Play(); // plays firing audio
                     }
                     
                 } else { // no bullets left
 
                     // could have it reload, instead play a message saying to reload
                     // automatic reloads are waste
-                    //prevents weapon from firing   
+                    //bprevents weapon from firing   
                 }          
             }
         }
@@ -137,8 +137,8 @@ public class Weapon : MonoBehaviour
 
         _hasAmmo = false; // prevents gun from being fired mid reload
 
-        //source.clip = reloadAudio; // sets reload audio
-        // source.Play(); // plays reload audio
+        _source.clip = reloadAudio; // sets reload audio
+        _source.Play(); // plays reload audio
 
         yield return new WaitForSeconds(reloadTime); // how long to wait for reload
 

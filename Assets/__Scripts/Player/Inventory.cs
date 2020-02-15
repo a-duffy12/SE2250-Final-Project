@@ -9,6 +9,7 @@ public class Inventory : MonoBehaviour
     public Weapon defaultPistol; // default weapon the player always has
     public Weapon firstWeapon; // first weapon slot
     public Weapon secondWeapon; // second weapon slot
+    public Weapon bonusWeapon; 
 
     [HideInInspector]
     public Weapon currentWeapon; // weapon the player is currently holding
@@ -21,11 +22,15 @@ public class Inventory : MonoBehaviour
         firstWeapon.ActivateWeapon(false); // 1st slot disabled
         secondWeapon.ActivateWeapon(false); // 2nd slot disabled
         currentWeapon = defaultPistol; // player has pistol in hand by default
+
+        bonusWeapon.ActivateWeapon(false);
         
         // setting this file to the manager for all the weapon slots
         defaultPistol.manager = this; 
         firstWeapon.manager = this;
         secondWeapon.manager = this;
+
+        bonusWeapon.manager = this;
     }
 
     // Update is called once per frame
@@ -38,6 +43,8 @@ public class Inventory : MonoBehaviour
             firstWeapon.ActivateWeapon(false); // 1st slot disabled
             secondWeapon.ActivateWeapon(false); // 2nd slot disabled
             currentWeapon = defaultPistol; // player now has pistol in hand
+
+            bonusWeapon.ActivateWeapon(false);
         }
         
         // brings up first weapon when pressing 2
@@ -47,6 +54,8 @@ public class Inventory : MonoBehaviour
             firstWeapon.ActivateWeapon(true); // switch to 1st slot
             secondWeapon.ActivateWeapon(false); // 2nd slot disabled
             currentWeapon = firstWeapon; // player now has weapon 1 in hand
+
+            bonusWeapon.ActivateWeapon(false);
         }
 
         // brings up second weapon when pressing 3
@@ -56,6 +65,19 @@ public class Inventory : MonoBehaviour
             firstWeapon.ActivateWeapon(false); // 1st slot disabled
             secondWeapon.ActivateWeapon(true); // switch to 2nd slot
             currentWeapon = secondWeapon; // player now has weapon 2 in hand
+
+            bonusWeapon.ActivateWeapon(false);
         } 
+
+        // brings up second weapon when pressing 3
+        if (Input.GetKeyDown(KeyCode.Alpha4)) {
+
+            defaultPistol.ActivateWeapon(false); // pistol disabled
+            firstWeapon.ActivateWeapon(false); // 1st slot disabled
+            secondWeapon.ActivateWeapon(false); // switch to 2nd slot
+            currentWeapon = bonusWeapon; // player now has weapon 2 in hand
+
+            bonusWeapon.ActivateWeapon(true);
+        }
     }
 }
