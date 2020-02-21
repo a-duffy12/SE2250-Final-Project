@@ -11,7 +11,7 @@ public class Weapon : MonoBehaviour
     public Transform firePoint; // where the bullets come from
     public int ammoType; // 0 is pistol, 1 is plasma, 2 is rail, 3 is emp
     public bool singleFire; // is the weapon automatic or semi-automatic
-    public float fireRate; // how long in between each bullet is fired
+    public float fireRate; // rate of fire in rpm
     public int magSize; // how many bullets per magazine
     public float reloadTime; // how long to reload
     public float damage; // how much damage per bullet
@@ -68,7 +68,7 @@ public class Weapon : MonoBehaviour
 
             if (Time.time > _nextFireTime) { // if the weapon has waited long enough to fire
 
-                _nextFireTime = Time.time + fireRate; //once firing, update the time to the next time gun is allowed to fire
+                _nextFireTime = Time.time + 60/fireRate; //once firing, update the time to the next time gun is allowed to fire
             
                 if (_currentMagSize > 0) {
 

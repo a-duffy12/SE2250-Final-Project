@@ -147,7 +147,7 @@ MonoBehaviour:
   firePoint: {fileID: 8450638812346750177}
   ammoType: 3
   singleFire: 0
-  fireRate: 0.0833
+  fireRate: 730
   magSize: 35
   reloadTime: 3.11
   damage: 26
