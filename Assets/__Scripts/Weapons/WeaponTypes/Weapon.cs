@@ -163,4 +163,10 @@ public class Weapon : MonoBehaviour
         gameObject.SetActive(activate); // activates the weapon
     }
 
+    // function to get current ammo count value
+    public int GetAmmo() {
+
+        return _currentMagSize; // returns current ammo count
+    }
+
 }

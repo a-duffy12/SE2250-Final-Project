@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
@@ -9,7 +10,9 @@ public class Inventory : MonoBehaviour
     public Weapon defaultPistol; // default weapon the player always has
     public Weapon firstWeapon; // first weapon slot
     public Weapon secondWeapon; // second weapon slot
-    public Weapon bonusWeapon; 
+    public Weapon bonusWeapon; // bonus weapon to show differences in all ammo types //TODO
+    public Text ammoCount; // ammo remaining display value
+    public Text reloadWarning; // warns player to reload their gun
 
     [HideInInspector]
     public Weapon currentWeapon; // weapon the player is currently holding
@@ -78,6 +81,19 @@ public class Inventory : MonoBehaviour
             currentWeapon = bonusWeapon; // player now has weapon 2 in hand
 
             bonusWeapon.ActivateWeapon(true);
+        }
+
+        // display the current ammo and the reserve ammo
+        ammoCount.text = currentWeapon.GetAmmo().ToString() + " / " + currentWeapon.magSize.ToString();
+
+        // display reload warning when current ammo is 20% or less than mag size
+        if (((float)currentWeapon.GetAmmo()/(float)currentWeapon.magSize) <= 0.2) { // if they have minimal ammo remaining
+
+            reloadWarning.text = "Reload!"; // tells player to reload
+
+        } else { // if they have significant ammo remaining
+
+            reloadWarning.text = ""; // does not tell player to reload
         }
     }
 }
