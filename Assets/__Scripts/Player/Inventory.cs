@@ -12,7 +12,7 @@ public class Inventory : MonoBehaviour
     public Weapon secondWeapon; // second weapon slot
     public Weapon bonusWeapon; // bonus weapon to show differences in all ammo types //TODO
     public Text ammoCount; // ammo remaining display value
-    public Text reloadWarning; // warns player to reload their gun
+    public Text warningText; // warns player to reload their gun
 
     [HideInInspector]
     public Weapon currentWeapon; // weapon the player is currently holding
@@ -89,11 +89,11 @@ public class Inventory : MonoBehaviour
         // display reload warning when current ammo is 20% or less than mag size
         if (((float)currentWeapon.GetAmmo()/(float)currentWeapon.magSize) <= 0.2) { // if they have minimal ammo remaining
 
-            reloadWarning.text = "Reload!"; // tells player to reload
+            warningText.text = "[R] Reload"; // tells player to reload
 
         } else { // if they have significant ammo remaining
 
-            reloadWarning.text = ""; // does not tell player to reload
+            warningText.text = ""; // does not tell player to reload
         }
     }
 }

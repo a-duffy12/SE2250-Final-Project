@@ -28,7 +28,7 @@ public class Weapon : MonoBehaviour
     private float _nextFireTime = 0; // how long until the next bullet is fired
     private bool _hasAmmo = true; // whether or not the mag has ammo left
     private int _currentMagSize = 0; 
-    AudioSource _source;
+    private AudioSource _source;
 
     // Start is called before the first frame update
     void Start() {

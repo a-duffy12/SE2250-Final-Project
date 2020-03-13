@@ -149,7 +149,7 @@ MonoBehaviour:
   singleFire: 0
   fireRate: 570
   magSize: 20
-  reloadTime: 3.11
+  reloadTime: 2.5
   damage: 37
   range: 40
   bulletAudio: {fileID: 8300000, guid: 563bb50fbce0918409b974624e139955, type: 3}
