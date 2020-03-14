@@ -20,7 +20,7 @@ public class Weapon : MonoBehaviour
     public AudioClip plasmaAudio; // audio for plasma fires
     public AudioClip railAudio; // audio for rail fires
     public AudioClip empAudio; // audio for emp fires
-    public AudioClip reloadAudio; // aduio for reload
+    public AudioClip reloadAudio; // audio for reload
 
     [HideInInspector]
     public Inventory manager; // instantiate a weapon manager
@@ -57,7 +57,10 @@ public class Weapon : MonoBehaviour
         // reload
         if (Input.GetKeyDown(KeyCode.R) && _hasAmmo) { // R to reload
 
-            StartCoroutine(Reload()); // reloads weapon
+            if (_currentMagSize < magSize+1) { // only reloads if there are bullets to reload
+
+                StartCoroutine(Reload()); // reloads weapon
+            }
         }
     }
 

@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
     public float throwSpeed; // speed of thrown projectiles
     public float grenadeCooldown; // time between grenade throws
 
-    public Text warningText; // text for any warnings
+    public Text playerWarning; // text for any warnings
     public Text grenadeCount; // text for count of grenades
 
     public AudioClip jumpAudio; // sound for jumping
@@ -41,7 +41,8 @@ public class PlayerMovement : MonoBehaviour
         _source = GetComponent<AudioSource>(); // gets the audio
         _source.playOnAwake = false; // does not play on startup
         _source.spatialBlend = 1f; // makes the sound 3D
-        
+        playerWarning.text = ""; // set default player warning
+        grenadeCount.text = "[G] 1/1"; // set default grenade count
     }
 
     // Update is called once per frame
@@ -87,7 +88,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (Time.time > _nextGrenadeTime) {
 
-            _nextGrenadeTime = Time.time + grenadeCooldown; // set time for next grenade to be available  
+            _nextGrenadeTime = Time.time + grenadeCooldown; // set time for next grenade to be available
+            StartCoroutine(GrenadeCooldown()); // update grenade count  
 
             // throws grenade
             GameObject grenade = Instantiate(grenadePrefab, throwPoint.position, throwPoint.rotation); // instantiate a grenade object
@@ -98,17 +100,23 @@ public class PlayerMovement : MonoBehaviour
         
         } else {
 
-            ShowWarning("No grenades remaining", 5); // display warning for 1s
+            StartCoroutine(ShowWarning("No grenades remaining", 1.0f)); // display warning for 1s
         }
         
     }
 
     // function to show a warning on screen for a certain amount of time
-    IEnumerator ShowWarning (string msg, float delay) {
+    IEnumerator ShowWarning(string msg, float delay) {
         
-        warningText.text = msg; // set the message
-        warningText.enabled = true; // display message
+        playerWarning.text = msg; // set the message
         yield return new WaitForSeconds(delay); // run for the delay
-        warningText.enabled = false; // disable message
- }
+        playerWarning.text= ""; // remove the message
+    }
+
+    IEnumerator GrenadeCooldown() {
+
+        grenadeCount.text = "[G] 0/1"; // no grenades left
+        yield return new WaitForSeconds(grenadeCooldown-0.1f);
+        grenadeCount.text = "[G] 1/1"; // one grenade left
+    }
 }

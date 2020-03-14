@@ -49,7 +49,7 @@ AudioSource:
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
-  Mute: 1
+  Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -149,7 +149,7 @@ MonoBehaviour:
   singleFire: 1
   fireRate: 500
   magSize: 16
-  reloadTime: 1.006
+  reloadTime: 0.7
   damage: 15
   range: 20
   bulletAudio: {fileID: 8300000, guid: 563bb50fbce0918409b974624e139955, type: 3}

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(AudioSource))]
+
 public class Inventory : MonoBehaviour
 {
 
@@ -12,10 +14,13 @@ public class Inventory : MonoBehaviour
     public Weapon secondWeapon; // second weapon slot
     public Weapon bonusWeapon; // bonus weapon to show differences in all ammo types //TODO
     public Text ammoCount; // ammo remaining display value
-    public Text warningText; // warns player to reload their gun
+    public Text reloadWarning; // warns player to reload their gun
+    public AudioClip swapAudio; // sound of switching weapons
 
     [HideInInspector]
     public Weapon currentWeapon; // weapon the player is currently holding
+
+    private AudioSource _source; // source for audio
 
     // Start is called before the first frame update
     void Start() {
@@ -34,6 +39,10 @@ public class Inventory : MonoBehaviour
         secondWeapon.manager = this;
 
         bonusWeapon.manager = this;
+
+        _source = GetComponent<AudioSource>(); // gets the audio
+        _source.playOnAwake = false; // does not play on startup
+        _source.spatialBlend = 1f; // makes the sound 3D
     }
 
     // Update is called once per frame
@@ -48,6 +57,9 @@ public class Inventory : MonoBehaviour
             currentWeapon = defaultPistol; // player now has pistol in hand
 
             bonusWeapon.ActivateWeapon(false);
+
+            _source.clip = swapAudio; // sets swap audio
+            _source.Play(); // plays swap audio
         }
         
         // brings up first weapon when pressing 2
@@ -59,6 +71,9 @@ public class Inventory : MonoBehaviour
             currentWeapon = firstWeapon; // player now has weapon 1 in hand
 
             bonusWeapon.ActivateWeapon(false);
+            
+            _source.clip = swapAudio; // sets swap audio
+            _source.Play(); // plays swap audio
         }
 
         // brings up second weapon when pressing 3
@@ -70,6 +85,9 @@ public class Inventory : MonoBehaviour
             currentWeapon = secondWeapon; // player now has weapon 2 in hand
 
             bonusWeapon.ActivateWeapon(false);
+            
+            _source.clip = swapAudio; // sets swap audio
+            _source.Play(); // plays swap audio
         } 
 
         // brings up second weapon when pressing 3
@@ -81,6 +99,9 @@ public class Inventory : MonoBehaviour
             currentWeapon = bonusWeapon; // player now has weapon 2 in hand
 
             bonusWeapon.ActivateWeapon(true);
+            
+            _source.clip = swapAudio; // sets swap audio
+            _source.Play(); // plays swap audio
         }
 
         // display the current ammo and the reserve ammo
@@ -89,11 +110,11 @@ public class Inventory : MonoBehaviour
         // display reload warning when current ammo is 20% or less than mag size
         if (((float)currentWeapon.GetAmmo()/(float)currentWeapon.magSize) <= 0.2) { // if they have minimal ammo remaining
 
-            warningText.text = "[R] Reload"; // tells player to reload
+            reloadWarning.text = "[R] Reload"; // tells player to reload
 
         } else { // if they have significant ammo remaining
 
-            warningText.text = ""; // does not tell player to reload
+            reloadWarning.text = ""; // does not tell player to reload
         }
     }
 }
