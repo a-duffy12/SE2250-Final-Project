@@ -1391,7 +1391,7 @@ MonoBehaviour:
     type: 3}
   throwPoint: {fileID: 1019312753}
   throwSpeed: 1200
-  grenadeCooldown: 10
+  grenadeCooldown: 0.5
   playerWarning: {fileID: 215022532}
   grenadeCount: {fileID: 740119554}
   jumpAudio: {fileID: 8300000, guid: b5878730fa3f67342a88d766ac068b16, type: 3}

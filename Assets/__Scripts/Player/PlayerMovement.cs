@@ -32,15 +32,15 @@ public class PlayerMovement : MonoBehaviour
     public AudioClip walkAudio; // sound for walking
     public AudioClip throwAudio; // sound for throwing grenades
 
-    private AudioSource _source; // source for audio
+    private AudioSource _source; // source for player audio
     private float _nextGrenadeTime = 0; // tracks time when the next grenade becomes available
 
     // Start is called before the first frame update
     void Start() {
     
-        _source = GetComponent<AudioSource>(); // gets the audio
+        _source = GetComponent<AudioSource>(); // gets audio source
         _source.playOnAwake = false; // does not play on startup
-        _source.spatialBlend = 1f; // makes the sound 3D
+        _source.spatialBlend = 1f; // makes the sound 3D]
         playerWarning.text = ""; // set default player warning
         grenadeCount.text = "[G] 1/1"; // set default grenade count
     }
@@ -53,12 +53,7 @@ public class PlayerMovement : MonoBehaviour
             vel.y = -10f; // brings the player down faster
         }
 
-        float x = Input.GetAxis("Horizontal"); // creates variables for axis inputs
-        float z = Input.GetAxis("Vertical");
-
-        Vector3 move = transform.right * x + transform.forward * z; // moves player based on direction they are facing 
-
-        control.Move(move * speed * Time.deltaTime); // uses character controller to move player
+        Walk(); // walks
 
         if (Input.GetButtonDown("Jump") && isGrounded) { // if player in on the ground and jump key is pressed
             
@@ -72,7 +67,25 @@ public class PlayerMovement : MonoBehaviour
 
         vel.y += grav * Time.deltaTime; // gravity pulls player down
 
-        control.Move(vel * Time.deltaTime); // moves player controller        
+        control.Move(vel * Time.deltaTime); // moves player controller down in accordance with gravity       
+    }
+
+    // function to move player
+    void Walk() {
+
+        // creates variables for axis inputs
+        float x = Input.GetAxis("Horizontal"); 
+        float z = Input.GetAxis("Vertical");
+
+        Vector3 move = transform.right * x + transform.forward * z; // moves player based on direction they are facing 
+
+        control.Move(move * speed * Time.deltaTime); // uses character controller to move player
+
+        if ((x != 0 || z != 0) && isGrounded && !_source.isPlaying) { // checks for walking motion, player on the ground, and walk sound not already in use
+
+            _source.clip = walkAudio; // sets walk audio
+            _source.Play(); // plays walk audio 
+        }
     }
 
     // function to jump player
@@ -101,8 +114,7 @@ public class PlayerMovement : MonoBehaviour
         } else {
 
             StartCoroutine(ShowWarning("No grenades remaining", 1.0f)); // display warning for 1s
-        }
-        
+        } 
     }
 
     // function to show a warning on screen for a certain amount of time
@@ -113,6 +125,7 @@ public class PlayerMovement : MonoBehaviour
         playerWarning.text= ""; // remove the message
     }
 
+    // function to display text of grenade count and cooldown
     IEnumerator GrenadeCooldown() {
 
         grenadeCount.text = "[G] 0/1"; // no grenades left
