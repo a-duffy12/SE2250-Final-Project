@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 3315315185721692325}
   - component: {fileID: 3315315185721692326}
   - component: {fileID: 3315315185721692327}
-  - component: {fileID: 1652686793513071279}
+  - component: {fileID: 6644910573887863409}
   m_Layer: 0
   m_Name: Flesh Enemy
   m_TagString: FleshEnemy
@@ -165,7 +165,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
---- !u!114 &1652686793513071279
+--- !u!114 &6644910573887863409
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -174,20 +174,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 3315315185721692324}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57b8d78fb29cc6c4bbce17589be75ed7, type: 3}
+  m_Script: {fileID: 11500000, guid: 79df168a8b9c9594aa3856992a14b097, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 0
-  hpFactor: 1.5
-  damageFactor: 1.5
-  xpFactor: 1.5
-  range: 20
-  movementSpeed: 1
-  baseHP: 50
-  baseDamage: 10
+  attackDistance: 7
+  lookDistance: 10
+  npcHP: 100
+  npcDamage: 5
   attackRate: 0.5
-  baseXP: 100
-  enemy: {fileID: 0}
   firePoint: {fileID: 1768026721762082901}
   playerTransform: {fileID: 0}
 --- !u!1 &3315315185875447297
