@@ -11,11 +11,14 @@ public class EnemyAI : MonoBehaviour, IEntity
     public float npcHP = 100;
     public float npcDamage = 5;
     public float attackRate = 0.5f;
+    public float experienceGain = 5f;
     public Transform firePoint;
     float nextAttackTime = 0;
     [HideInInspector]
     public Transform playerTransform;
     Rigidbody r;
+
+    private static float playerXP;
     // Start is called before the first frame update
     void Start()
     {
@@ -60,9 +63,10 @@ public class EnemyAI : MonoBehaviour, IEntity
         npcHP -= points;
         if (npcHP <= 0)
         {
+            playerXP = playerXP + experienceGain;
             //Slightly bounce the npc dead prefab up
             gameObject.GetComponent<Rigidbody>().velocity = (-(playerTransform.position - transform.position).normalized * 8) + new Vector3(0, 5, 0);
-            Destroy(gameObject, 10);
+            Destroy(gameObject, 1);
         }
     }
 }

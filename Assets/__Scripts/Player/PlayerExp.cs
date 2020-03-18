@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerExp : MonoBehaviour
 {
-    public float playerXP = 0;
+    public static float playerXP = 0;
     public Text XP;
 
     // Start is called before the first frame update
