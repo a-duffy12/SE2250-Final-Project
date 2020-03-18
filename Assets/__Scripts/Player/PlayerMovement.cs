@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpHt = 3f; //jump height    
 
     Vector3 vel; //velocity
-    bool isGrounded; //is the player in the ground
+    bool isGrounded; //is the player on the ground
 
     public Transform groundTest;
     public float groundDist = 0.7f; //radius of ground check
@@ -55,11 +55,13 @@ public class PlayerMovement : MonoBehaviour
 
         Walk(); // walks
 
-        if (Input.GetButtonDown("Jump") && isGrounded) { // if player in on the ground and jump key is pressed
+        if (((Input.GetButtonDown("Jump") && isGrounded) || (Input.GetButtonDown("Jump") && isGrounded == false)))
+        { // if player in on the ground and jump key is pressed
             
             Jump(); // jumps
         }
 
+     
         if (Input.GetKeyDown(KeyCode.G)) { // if the player presses G and a grenade is available
 
             ThrowGrenade(); // throws grenade
