@@ -5,12 +5,14 @@ using UnityEngine.UI;
 
 public class DamageReceiver : MonoBehaviour, IEntity
 {
-    public float playerHP = 100;
-    public Text DeathText;    
+    public float playerHP = 12;
+    public Text DeathText;
+    public Text HP;    
 
     public void ApplyDamage(float dmg)
     {
         playerHP -= dmg;
+        HP.text = "HP: " + playerHP.ToString();
 
         if(playerHP <= 0)
         {
