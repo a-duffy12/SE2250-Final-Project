@@ -1052,7 +1052,7 @@ GameObject:
   - component: {fileID: 765822932}
   - component: {fileID: 765822931}
   - component: {fileID: 765822930}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1608,7 +1608,7 @@ MonoBehaviour:
   groundDist: 0.5
   groundMask:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 512
   grenadePrefab: {fileID: 191839255540497897, guid: 4f9c960c88c49d04eb365a15290754cc,
     type: 3}
   throwPoint: {fileID: 1019312753}

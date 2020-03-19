@@ -7,6 +7,10 @@ TagManager:
   - Weapon
   - FleshEnemy
   - UI
+  - Emp
+  - Bullet
+  - Rail
+  - Plasma
   layers:
   - Default
   - TransparentFX
@@ -17,7 +21,7 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
+  - Ground
   - 
   - 
   - 
