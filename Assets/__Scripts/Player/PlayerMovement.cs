@@ -9,13 +9,14 @@ public class PlayerMovement : MonoBehaviour
 {
     public CharacterController control;
 
+    static public PlayerMovement S; // singleton variable
+
     public float speed = 12f; // movement speed
     public float grav = -9.81f; //gravity
     public float jumpHt = 3f; //jump height    
 
     Vector3 vel; //velocity
-    bool isGrounded; //is the player on the ground
-    
+    bool isGrounded; //is the player on the ground    
 
     public Transform groundTest;
     public float groundDist = 0.7f; //radius of ground check
@@ -40,6 +41,11 @@ public class PlayerMovement : MonoBehaviour
     private AudioSource _source; // source for player audio
     private float _nextGrenadeTime = 0; // tracks time when the next grenade becomes available
 
+    void Awake() //makes class a singleton
+    {
+        S = this;        
+    }
+    
     // Start is called before the first frame update
     void Start() {
     
