@@ -15,10 +15,15 @@ public class PlayerMovement : MonoBehaviour
 
     Vector3 vel; //velocity
     bool isGrounded; //is the player on the ground
+    
 
     public Transform groundTest;
     public float groundDist = 0.7f; //radius of ground check
-    public LayerMask groundMask; 
+    public LayerMask groundMask;
+
+    public Transform FloatingObject;
+    public float FloatingObjectDist = 0.7f;
+    public LayerMask FloatingObjectMask;
 
     public GameObject grenadePrefab; // grenade object
     public Transform throwPoint; // where the throw comes from
@@ -55,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
 
         Walk(); // walks
 
-        if (((Input.GetButtonDown("Jump") && isGrounded) || (Input.GetButtonDown("Jump") && isGrounded == false)))
+        if (((Input.GetButtonDown("Jump") && isGrounded)))
         { // if player in on the ground and jump key is pressed
             
             Jump(); // jumps
