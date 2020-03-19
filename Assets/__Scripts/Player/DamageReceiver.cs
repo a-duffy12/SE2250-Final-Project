@@ -21,6 +21,20 @@ public class DamageReceiver : MonoBehaviour, IEntity
         _source = GetComponent<AudioSource>(); // gets audio source
         _source.playOnAwake = false; // does not play on startup
         _source.spatialBlend = 1f; // makes the sound 3D
+        Time.timeScale = 1;
+    }
+
+    public void Update()
+    {
+        if(playerHP <= 0)
+        {
+            playerHP = 0;
+            _source.clip = killPlayerAudio; // sets death audio
+            _source.Play(); // plays death audio            
+            DeathText.text = "You Died";
+            StartCoroutine(ExecuteAfterTime(0.00003f)); // waits 5 seconds, then runs ExecuteAfterTime function
+            Time.timeScale = 0.00001f;
+        }
     }
 
     public void ApplyDamage(float dmg)
@@ -30,15 +44,7 @@ public class DamageReceiver : MonoBehaviour, IEntity
 
         _source.clip = damagePlayerAudio; // sets hurt audio
         _source.Play(); // plays hurt audio 
-
-        if(playerHP <= 0)
-        {
-            playerHP = 0;
-            _source.clip = killPlayerAudio; // sets death audio
-            _source.Play(); // plays death audio 
-            DeathText.text = "You Died";
-            StartCoroutine(ExecuteAfterTime(5)); // waits 5 seconds, then runs ExecuteAfterTime function
-        }
+        
     }
 
     IEnumerator ExecuteAfterTime(float time){ 
