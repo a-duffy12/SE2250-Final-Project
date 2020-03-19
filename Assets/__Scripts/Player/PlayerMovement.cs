@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public CharacterController control;
 
-    static public PlayerMovement S = null; // singleton variable
+    static public PlayerMovement S; // singleton variable
 
     public float speed = 12f; // movement speed
     public float grav = -9.81f; //gravity
@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
             S = this;        
         }
         else{
-            print("Error: More than 1 player singleton");
+            print("Error: Attempted to create more than 1 player singleton");
         }
     }
     
