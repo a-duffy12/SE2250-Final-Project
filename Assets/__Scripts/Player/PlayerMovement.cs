@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public CharacterController control;
 
-    static public PlayerMovement S; // singleton variable
+    static public PlayerMovement S = null; // singleton variable
 
     public float speed = 12f; // movement speed
     public float grav = -9.81f; //gravity
@@ -43,7 +43,12 @@ public class PlayerMovement : MonoBehaviour
 
     void Awake() //makes class a singleton
     {
-        S = this;        
+        if (S == null){
+            S = this;        
+        }
+        else{
+            print("Error: More than 1 player singleton");
+        }
     }
     
     // Start is called before the first frame update
