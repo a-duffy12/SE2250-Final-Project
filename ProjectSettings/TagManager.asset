@@ -12,6 +12,10 @@ TagManager:
   - Rail
   - Plasma
   - FloatingRock
+  - RespawnLight
+  - RespawnLight2
+  - RespawnLight3
+  - RespawnLight4
   layers:
   - Default
   - TransparentFX
