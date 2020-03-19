@@ -3,18 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+[RequireComponent(typeof(AudioSource))]
 
 public class EnemyAI : MonoBehaviour, IEntity
 {
-    public float attackDistance = 7f;
-    public float lookDistance = 10f;
-    public float npcHP = 100;
-    public float npcDamage = 5;
-    public float attackRate = 0.5f;
-    public float experienceGain = 5f;
+    public float attackDistance;
+    public float lookDistance;
+    public float npcHP;
+    public float npcDamage;
+    public float attackRate;
+    public float experienceGain;
     public bool giveXP = true;
     public Transform firePoint;
-    float nextAttackTime = 0;
+    public AudioClip damageEnemyAudio; // sound for taking damage
+    public AudioClip killEnemyAudio; // sound upon death
+    public AudioClip enemyAttackAudio; // sound for enemy attack
+    public AudioClip enemyAlertAudio; // sound for enemy altered to player
+
+    private AudioSource _source; // source for enemy audio
+    private float _nextAttackTime = 0;
     [HideInInspector]
     public Transform playerTransform;
     Rigidbody r;
@@ -25,6 +32,9 @@ public class EnemyAI : MonoBehaviour, IEntity
     {
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         r = GetComponent<Rigidbody>();
+        _source = GetComponent<AudioSource>(); // gets audio source
+        _source.playOnAwake = false; // does not play on startup
+        _source.spatialBlend = 1f; // makes the sound 3D
     }
 
     // Update is called once per frame
@@ -38,12 +48,15 @@ public class EnemyAI : MonoBehaviour, IEntity
             // if close enough then enemy actually tries shoots
             if (distance <= attackDistance)
             {
-                // only shoots 
-                if (Time.time > nextAttackTime)
+                // only shoots once the time allows it
+                if (Time.time > _nextAttackTime)
                 {
-                    nextAttackTime = Time.time + attackRate;
+                    _nextAttackTime = Time.time + attackRate;
 
-                    //Attack
+                    _source.clip = enemyAttackAudio; // sets attack audio
+                    _source.Play(); // plays attack audio 
+
+                    // Attack
                     RaycastHit hit;
                     if (Physics.Raycast(firePoint.position, firePoint.forward, out hit, attackDistance))
                     {
@@ -62,14 +75,20 @@ public class EnemyAI : MonoBehaviour, IEntity
     public void ApplyDamage(float points)
     {
         npcHP -= points;
+        _source.clip = damageEnemyAudio; // sets hurt audio
+        _source.Play(); // plays hurt audio 
+
         if (npcHP <= 0)
         {
+            _source.clip = killEnemyAudio; // sets death audio
+            _source.Play(); // plays death audio 
+
             if(giveXP){
                 GameObject.Find("Player").GetComponent<PlayerExp>().playerXP += experienceGain;
                 giveXP = false;
             }            
             //Slightly bounce the npc dead prefab up
-            gameObject.GetComponent<Rigidbody>().velocity = (-(playerTransform.position - transform.position).normalized * 8) + new Vector3(0, 5, 0);
+            gameObject.GetComponent<Rigidbody>().velocity = (-(playerTransform.position - transform.position).normalized * 8) + new Vector3(0, 2, 0);
             Destroy(gameObject, 1);            
         }
     }

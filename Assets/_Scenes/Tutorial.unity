@@ -1031,7 +1031,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '[G] 0/1'
+  m_Text: '[G] 1/1'
 --- !u!222 &740119555
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1779,6 +1779,8 @@ MonoBehaviour:
   playerHP: 100
   DeathText: {fileID: 0}
   HP: {fileID: 462437196}
+  damagePlayerAudio: {fileID: 8300000, guid: a18787cba103f5843b51117c0b10543c, type: 3}
+  killPlayerAudio: {fileID: 8300000, guid: 0e697e565e281f04aadd1c5523882fc5, type: 3}
 --- !u!1 &1315905716
 GameObject:
   m_ObjectHideFlags: 0
