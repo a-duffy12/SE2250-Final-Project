@@ -43,7 +43,12 @@ public class PlayerMovement : MonoBehaviour
 
     void Awake() //makes class a singleton
     {
-        S = this;        
+        if (S == null){
+            S = this;        
+        }
+        else{
+            print("Error: Attempted to create more than 1 player singleton");
+        }
     }
     
     // Start is called before the first frame update

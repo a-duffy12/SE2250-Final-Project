@@ -8,8 +8,9 @@ using UnityEngine.UI;
 public class DamageReceiver : MonoBehaviour, IEntity
 {
     public float playerHP = 12;
+    public static bool invulnerable = false;  
     public Text DeathText;
-    public Text HP;   
+    public Text HP; 
     public AudioClip damagePlayerAudio; // sound for taking damage
     public AudioClip killPlayerAudio; // sound upon death
 
@@ -32,18 +33,20 @@ public class DamageReceiver : MonoBehaviour, IEntity
             _source.clip = killPlayerAudio; // sets death audio
             _source.Play(); // plays death audio            
             DeathText.text = "You Died";
-            StartCoroutine(ExecuteAfterTime(0.00003f)); // waits 5 seconds, then runs ExecuteAfterTime function
-            Time.timeScale = 0.00001f;
-        }
+            StartCoroutine(ExecuteAfterTime(0.00003f)); // waits , then runs ExecuteAfterTime function
+            Time.timeScale = 0.00001f; //stops time so player cannot move
+        
     }
 
     public void ApplyDamage(float dmg)
     {
-        playerHP -= dmg;
-        HP.text = "HP: " + playerHP.ToString();
+        if (!invulnerable) {
+            playerHP -= dmg;
+            HP.text = "HP: " + playerHP.ToString();
 
-        _source.clip = damagePlayerAudio; // sets hurt audio
-        _source.Play(); // plays hurt audio 
+            _source.clip = damagePlayerAudio; // sets hurt audio
+            _source.Play(); // plays hurt audio             
+        }
         
     }
 
