@@ -35,7 +35,7 @@ public class DamageReceiver : MonoBehaviour, IEntity
             DeathText.text = "You Died";
             StartCoroutine(ExecuteAfterTime(0.00003f)); // waits , then runs ExecuteAfterTime function
             Time.timeScale = 0.00001f; //stops time so player cannot move
-        
+        }   
     }
 
     public void ApplyDamage(float dmg)
@@ -53,5 +53,5 @@ public class DamageReceiver : MonoBehaviour, IEntity
     IEnumerator ExecuteAfterTime(float time){ 
         yield return new WaitForSeconds(time); // waits for time seconds
         Application.LoadLevel(0); // reloads the level
-    }
+    }    
 }
