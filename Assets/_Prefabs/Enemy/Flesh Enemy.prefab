@@ -178,8 +178,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79df168a8b9c9594aa3856992a14b097, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDistance: 7
-  lookDistance: 10
+  attackDistance: 18
+  lookDistance: 20
   npcHP: 100
   npcDamage: 5
   attackRate: 0.5

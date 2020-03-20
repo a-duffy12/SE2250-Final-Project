@@ -2095,7 +2095,7 @@ MonoBehaviour:
     type: 3}
   throwPoint: {fileID: 1414013983}
   throwSpeed: 1200
-  grenadeCooldown: 0.5
+  grenadeCooldown: 10
   playerWarning: {fileID: 742519290}
   grenadeCount: {fileID: 1336658792}
   jumpAudio: {fileID: 8300000, guid: b5878730fa3f67342a88d766ac068b16, type: 3}
@@ -2168,7 +2168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 348f44da3f542394781e4808bf0a2554, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHP: 10
+  playerHP: 100
   DeathText: {fileID: 742519290}
   HP: {fileID: 281845580}
   damagePlayerAudio: {fileID: 8300000, guid: a18787cba103f5843b51117c0b10543c, type: 3}

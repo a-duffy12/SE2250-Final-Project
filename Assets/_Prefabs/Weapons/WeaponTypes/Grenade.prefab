@@ -175,7 +175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fuseTime: 2.5
   blastRadius: 2.5
-  damage: 50
+  damage: 90
   explosionParticle: {fileID: 8667249526204175986, guid: 36ba9e25454bc124f8c7bc56bb5cbbcc,
     type: 3}
 --- !u!1001 &3581934168553790240
