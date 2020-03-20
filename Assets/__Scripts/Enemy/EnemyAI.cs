@@ -44,7 +44,7 @@ public class EnemyAI : MonoBehaviour, IEntity
         // if within a certain distance then looks at target
         if (distance <= lookDistance)
         {
-            transform.LookAt(new Vector3(playerTransform.transform.position.x, playerTransform.transform.position.y, playerTransform.position.z));
+            transform.LookAt(new Vector3(playerTransform.transform.position.x, playerTransform.transform.position.y + 0.6f, playerTransform.position.z));
             // if close enough then enemy actually tries shoots
             if (distance <= attackDistance)
             {
