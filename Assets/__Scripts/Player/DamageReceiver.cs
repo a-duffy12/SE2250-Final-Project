@@ -23,6 +23,7 @@ public class DamageReceiver : MonoBehaviour, IEntity
         _source.playOnAwake = false; // does not play on startup
         _source.spatialBlend = 1f; // makes the sound 3D
         Time.timeScale = 1;
+        HP.text = "HP: " + playerHP.ToString();
     }
 
     public void Update()
