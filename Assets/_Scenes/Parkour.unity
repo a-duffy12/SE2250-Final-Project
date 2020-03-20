@@ -2399,7 +2399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerXP: 0
-  abilityXP: 25
+  abilityXP: 20
   abilityDuration: 5
   abilityCooldown: 10
   XP: {fileID: 1871456460}
