@@ -2204,13 +2204,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerXP: 0
-  abilityXP: 100
+  abilityXP: 25
   abilityDuration: 5
   abilityCooldown: 10
   XP: {fileID: 1871456460}
   abilityText: {fileID: 1138785805}
   abilityWarningText: {fileID: 515456609}
-  abilityAudio: {fileID: 0}
+  abilityAudio: {fileID: 8300000, guid: ea441a8650e1dcc49aa60e9c93de54a2, type: 3}
 --- !u!114 &387212104
 MonoBehaviour:
   m_ObjectHideFlags: 0
