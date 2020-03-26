@@ -16,6 +16,7 @@ TagManager:
   - RespawnLight2
   - RespawnLight3
   - RespawnLight4
+  - ArmorEnemy
   layers:
   - Default
   - TransparentFX
