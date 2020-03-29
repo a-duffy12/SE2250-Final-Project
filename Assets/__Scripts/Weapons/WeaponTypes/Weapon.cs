@@ -129,7 +129,7 @@ public class Weapon : MonoBehaviour
 
                     // could have it reload, instead play a message saying to reload
                     // automatic reloads are waste
-                    //bprevents weapon from firing   
+                    // prevents weapon from firing   
                 }          
             }
         }

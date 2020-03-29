@@ -8,6 +8,9 @@ public class DefaultBullet : MonoBehaviour
     public float speed; // how fast the bullet travels
     public float hitForce; // strength of impact
     public float destroyAfter; // how long the bullet object stays instantiated
+    public float fleshMod = 1.0f; // modifier for damage against flesh enemies
+    public float armorMod = 1.0f; // modifier for damage against armored enemies
+    public float robotMod = 1.0f; // modifier for damage against robotic enemies
 
     private float _currentTime = 0; // game time
     private Vector3 _oldPos; // intial position
@@ -41,7 +44,22 @@ public class DefaultBullet : MonoBehaviour
                     
                     if (npc != null) { // check if it is a valid entity
 
-                        npc.ApplyDamage(_damagePoints); // deals damage to the npc
+                        if (hit.rigidbody.CompareTag("FleshEnemy")) { // checks if it is a flesh enemy
+
+                            npc.ApplyDamage(_damagePoints*fleshMod); // deals damage to the npc
+                        
+                        } else if (hit.rigidbody.CompareTag("ArmorEnemy")) { // checks if it is an armored enemy
+
+                            npc.ApplyDamage(_damagePoints*armorMod); // deals damage to the npc
+                        
+                        } else if (hit.rigidbody.CompareTag("RobotEnemy")) { // checks if it is a robotic enemy
+
+                            npc.ApplyDamage(_damagePoints*robotMod); // deals damage to the npc
+                        
+                        } else {
+
+                            npc.ApplyDamage(_damagePoints); // deals damage to the npc
+                        }
                     }
                 }
 

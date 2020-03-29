@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 82943226114652394}
   m_Layer: 0
   m_Name: Armor Enemy Right Lower Arm
-  m_TagString: Untagged
+  m_TagString: ArmorEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 4267565484151822000}
   m_Layer: 0
   m_Name: Armor Enemy Left Leg
-  m_TagString: Untagged
+  m_TagString: ArmorEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -232,7 +232,7 @@ GameObject:
   - component: {fileID: 4267565484158147800}
   m_Layer: 0
   m_Name: Armor Enemy Body
-  m_TagString: Untagged
+  m_TagString: ArmorEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -325,7 +325,7 @@ GameObject:
   - component: {fileID: 4267565484703387825}
   m_Layer: 0
   m_Name: Armor Enemy Head
-  m_TagString: Untagged
+  m_TagString: ArmorEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -418,7 +418,7 @@ GameObject:
   - component: {fileID: 4267565485096472125}
   m_Layer: 0
   m_Name: Armor Enemy Right Leg
-  m_TagString: Untagged
+  m_TagString: ArmorEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -708,7 +708,7 @@ GameObject:
   - component: {fileID: 4267565485769883144}
   m_Layer: 0
   m_Name: Armor Enemy Right Foot
-  m_TagString: Untagged
+  m_TagString: ArmorEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -801,7 +801,7 @@ GameObject:
   - component: {fileID: 4267565486190531872}
   m_Layer: 0
   m_Name: Armor Enemy Left Foot
-  m_TagString: Untagged
+  m_TagString: ArmorEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -894,7 +894,7 @@ GameObject:
   - component: {fileID: 316077174782604650}
   m_Layer: 0
   m_Name: Armor Enemy Left Upper Arm
-  m_TagString: Untagged
+  m_TagString: ArmorEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -988,7 +988,7 @@ GameObject:
   - component: {fileID: 7585336385007445368}
   m_Layer: 0
   m_Name: Armor Enemy Right Upper Arm
-  m_TagString: Untagged
+  m_TagString: ArmorEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1082,7 +1082,7 @@ GameObject:
   - component: {fileID: 4490666778593352516}
   m_Layer: 0
   m_Name: Armor Enemy Left Lower Arm
-  m_TagString: Untagged
+  m_TagString: ArmorEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -1769,8 +1769,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerXP: 0
   abilityXP: 0
-  abilityDuration: 0
-  abilityCooldown: 0
+  abilityDuration: 5
+  abilityCooldown: 10
   XP: {fileID: 560404905}
   abilityText: {fileID: 1563481949}
   abilityWarningText: {fileID: 1392010715}
@@ -1788,7 +1788,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHP: 100
-  DeathText: {fileID: 0}
+  DeathText: {fileID: 215022532}
   HP: {fileID: 462437196}
   damagePlayerAudio: {fileID: 8300000, guid: a18787cba103f5843b51117c0b10543c, type: 3}
   killPlayerAudio: {fileID: 8300000, guid: 0e697e565e281f04aadd1c5523882fc5, type: 3}

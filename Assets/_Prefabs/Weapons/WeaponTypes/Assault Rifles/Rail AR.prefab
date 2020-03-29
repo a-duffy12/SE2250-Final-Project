@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 554854882605793624}
-  - component: {fileID: 4080769717049788062}
   - component: {fileID: 2755869321276689182}
+  - component: {fileID: 4080769717049788062}
   m_Layer: 0
   m_Name: Rail AR
   m_TagString: Weapon
@@ -34,6 +34,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2755869321276689182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5848092804758425468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ccb4128730ac0d4ea08f3c2620de46a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletType: {fileID: 9075844367318052069, guid: a33524d925185104abea44170aade8dd,
+    type: 3}
+  firePoint: {fileID: 4590222551476010872}
+  ammoType: 2
+  singleFire: 0
+  fireRate: 570
+  magSize: 20
+  reloadTime: 2.5
+  damage: 37
+  range: 40
+  bulletAudio: {fileID: 8300000, guid: 563bb50fbce0918409b974624e139955, type: 3}
+  plasmaAudio: {fileID: 8300000, guid: e79dee70c531e934583e0de7fd102dfe, type: 3}
+  railAudio: {fileID: 8300000, guid: 63520879d242cd542a624a1954f6c930, type: 3}
+  empAudio: {fileID: 8300000, guid: 162b4986b2503514a9d2a8b419a99c2e, type: 3}
+  reloadAudio: {fileID: 8300000, guid: 3b03531bb175fc6489e497cd0dca4e15, type: 3}
+  manager: {fileID: 0}
 --- !u!82 &4080769717049788062
 AudioSource:
   m_ObjectHideFlags: 0
@@ -130,34 +158,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &2755869321276689182
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5848092804758425468}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ccb4128730ac0d4ea08f3c2620de46a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletType: {fileID: 9075844367318052069, guid: a33524d925185104abea44170aade8dd,
-    type: 3}
-  firePoint: {fileID: 4590222551476010872}
-  ammoType: 2
-  singleFire: 0
-  fireRate: 570
-  magSize: 20
-  reloadTime: 2.5
-  damage: 37
-  range: 40
-  bulletAudio: {fileID: 8300000, guid: 563bb50fbce0918409b974624e139955, type: 3}
-  plasmaAudio: {fileID: 8300000, guid: e79dee70c531e934583e0de7fd102dfe, type: 3}
-  railAudio: {fileID: 8300000, guid: 63520879d242cd542a624a1954f6c930, type: 3}
-  empAudio: {fileID: 8300000, guid: 162b4986b2503514a9d2a8b419a99c2e, type: 3}
-  reloadAudio: {fileID: 8300000, guid: 3b03531bb175fc6489e497cd0dca4e15, type: 3}
-  manager: {fileID: 0}
 --- !u!1 &7379760974191022367
 GameObject:
   m_ObjectHideFlags: 0

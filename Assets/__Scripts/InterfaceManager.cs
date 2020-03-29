@@ -5,4 +5,5 @@ using UnityEngine;
 interface IEntity {
 
     void ApplyDamage(float damageTaken);
+    GameObject gameObject { get ; }
 }

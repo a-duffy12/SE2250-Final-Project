@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 414571326718583921}
-  - component: {fileID: 414571326718583920}
   - component: {fileID: -2425372086092401698}
+  - component: {fileID: 414571326718583920}
   m_Layer: 0
   m_Name: Plasma
   m_TagString: Plasma
@@ -32,6 +32,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-2425372086092401698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 414571326718583923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30b139420edda79448c8cadd6db9a1e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 200
+  hitForce: 0.5
+  destroyAfter: 5
+  fleshMod: 2
+  armorMod: 0.5
+  robotMod: 1
 --- !u!96 &414571326718583920
 TrailRenderer:
   serializedVersion: 2
@@ -129,18 +147,3 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 1
   m_Emitting: 1
---- !u!114 &-2425372086092401698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 414571326718583923}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30b139420edda79448c8cadd6db9a1e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 200
-  hitForce: 0.5
-  destroyAfter: 5

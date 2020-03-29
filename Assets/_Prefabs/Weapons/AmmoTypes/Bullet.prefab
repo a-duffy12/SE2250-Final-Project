@@ -47,6 +47,9 @@ MonoBehaviour:
   speed: 300
   hitForce: 20
   destroyAfter: 2
+  fleshMod: 1
+  armorMod: 1
+  robotMod: 1
 --- !u!96 &-8451387505742073823
 TrailRenderer:
   serializedVersion: 2

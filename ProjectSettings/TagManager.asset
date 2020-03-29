@@ -17,6 +17,7 @@ TagManager:
   - RespawnLight3
   - RespawnLight4
   - ArmorEnemy
+  - RobotEnemy
   layers:
   - Default
   - TransparentFX

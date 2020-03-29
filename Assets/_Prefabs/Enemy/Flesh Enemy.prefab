@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3315315185479507582}
   m_Layer: 0
   m_Name: Flesh Enemy Body
-  m_TagString: Untagged
+  m_TagString: FleshEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -301,7 +301,7 @@ GameObject:
   - component: {fileID: 3315315185875447299}
   m_Layer: 0
   m_Name: 'Flesh Enemy Left Upper Arm '
-  m_TagString: Untagged
+  m_TagString: FleshEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -395,7 +395,7 @@ GameObject:
   - component: {fileID: 3315315186031327384}
   m_Layer: 0
   m_Name: Flesh Enemy Right Upper Arm
-  m_TagString: Untagged
+  m_TagString: FleshEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -489,7 +489,7 @@ GameObject:
   - component: {fileID: 3315315186133769888}
   m_Layer: 0
   m_Name: Flesh Enemy Left Leg
-  m_TagString: Untagged
+  m_TagString: FleshEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -583,7 +583,7 @@ GameObject:
   - component: {fileID: 3315315186175189010}
   m_Layer: 0
   m_Name: Flesh Enemy Right Leg
-  m_TagString: Untagged
+  m_TagString: FleshEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -677,7 +677,7 @@ GameObject:
   - component: {fileID: 3315315186277255614}
   m_Layer: 0
   m_Name: Flesh Enemy Left Lower Arm
-  m_TagString: Untagged
+  m_TagString: FleshEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -771,7 +771,7 @@ GameObject:
   - component: {fileID: 3315315186370291530}
   m_Layer: 0
   m_Name: Flesh Enemy Right Foot
-  m_TagString: Untagged
+  m_TagString: FleshEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -861,7 +861,7 @@ GameObject:
   - component: {fileID: 3315315186461303649}
   m_Layer: 0
   m_Name: Flesh Enemy L Leg
-  m_TagString: Untagged
+  m_TagString: FleshEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -893,7 +893,7 @@ GameObject:
   - component: {fileID: 3315315186634064417}
   m_Layer: 0
   m_Name: Flesh Enemy R Leg
-  m_TagString: Untagged
+  m_TagString: FleshEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -928,7 +928,7 @@ GameObject:
   - component: {fileID: 3315315186997313956}
   m_Layer: 0
   m_Name: Flesh Enemy Right Lower Arm
-  m_TagString: Untagged
+  m_TagString: FleshEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1022,7 +1022,7 @@ GameObject:
   - component: {fileID: 3315315187026919880}
   m_Layer: 0
   m_Name: Flesh Enemy Left Foot
-  m_TagString: Untagged
+  m_TagString: FleshEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1115,7 +1115,7 @@ GameObject:
   - component: {fileID: 3315315187342512729}
   m_Layer: 0
   m_Name: Flesh Enemy Head
-  m_TagString: Untagged
+  m_TagString: FleshEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
