@@ -25,7 +25,7 @@ public class EnemyAI : MonoBehaviour, IEntity
     [HideInInspector]
     public Transform playerTransform;
     Rigidbody r;
-
+    
     //private static float playerXP;
     // Start is called before the first frame update
     void Start()
@@ -84,7 +84,10 @@ public class EnemyAI : MonoBehaviour, IEntity
             _source.Play(); // plays death audio 
 
             if(giveXP){
-                GameObject.Find("Player").GetComponent<PlayerExp>().playerXP += experienceGain;
+                //TODO
+                //code removed when playerXP was changed to static
+                //GameObject.Find("Player").GetComponent<PlayerExp>().playerXP += experienceGain;
+                PlayerExp.playerXP += experienceGain;
                 giveXP = false;
             }            
             //Slightly bounce the npc dead prefab up
