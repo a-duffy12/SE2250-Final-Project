@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(AudioSource))]
 
@@ -53,6 +54,6 @@ public class DamageReceiver : MonoBehaviour, IEntity
 
     IEnumerator ExecuteAfterTime(float time){ 
         yield return new WaitForSeconds(time); // waits for time seconds
-        Application.LoadLevel(1); // reloads the level
+        Application.LoadLevel(SceneManager.GetActiveScene().buildIndex); // reloads the level
     }    
 }
