@@ -53,6 +53,6 @@ public class DamageReceiver : MonoBehaviour, IEntity
 
     IEnumerator ExecuteAfterTime(float time){ 
         yield return new WaitForSeconds(time); // waits for time seconds
-        Application.LoadLevel(0); // reloads the level
+        Application.LoadLevel(1); // reloads the level
     }    
 }

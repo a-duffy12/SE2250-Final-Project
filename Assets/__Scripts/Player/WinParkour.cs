@@ -20,8 +20,11 @@ public class WinParkour : MonoBehaviour
     void Update()
     {
         if(Physics.CheckSphere(groundTest.position, groundDist, winMask)){
-            winText.text = "You Win!";            
+            winText.text = "Level Complete!\nPress Enter to continue to the next level";          
             Time.timeScale = 0f; //stops time so player cannot move
+            if(Input.GetKeyDown(KeyCode.Return)){
+                Application.LoadLevel(2);
+            }
         }
         
     }
