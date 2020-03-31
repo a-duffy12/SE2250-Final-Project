@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class ObjectLifts : MonoBehaviour
 {
-
+    //Creates a variable called speed 
     float speed = 1.5f;
 
-    //adjust this to change how high it goes
     
 
     // Start is called before the first frame update
@@ -16,34 +15,41 @@ public class ObjectLifts : MonoBehaviour
         
     }
 
-
-
-
-   
     // Update is called once per frame
     void Update()
     {
 
-        
 
-        //get the objects current position and put it in a variable so we can access it later with less code
-
+        //Puts current position of object into a variable so we can access it later with less code
         Vector3 pos = transform.position;
+
+        //Sets current position of object
         pos.x = 0;
-        pos.y = 7.5f;
+        pos.y = 9.2f;
         pos.z = -93f;
 
+        //Transforms it into it's position
         transform.position = new Vector3(pos.x, pos.y, pos.z);
 
 
-
         //calculate what the new Y position will be
-        float newY = Mathf.Sin((Time.time * speed))*3;
+        float newY = Mathf.Sin((Time.time * speed))*7+pos.y;
+        
 
         //set the object's Y to the new calculated Y
+        transform.position = new Vector3(pos.x, newY, pos.z);
+
+        //If the object tries to go through the floor, don't let it 
+        if(newY<7.5)
+        {
+            pos.x = 0;
+            pos.y = 7.6f;
+            pos.z = -93f;
+
+            transform.position = new Vector3(pos.x, pos.y, pos.z);
+        }
 
         
-            transform.position = new Vector3(pos.x, newY*pos.y, pos.z);
         
 
 
