@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 3315315185721692325}
   - component: {fileID: 3315315185721692326}
   - component: {fileID: 3315315185721692327}
-  - component: {fileID: 6644910573887863409}
+  - component: {fileID: 8413651707941341390}
   - component: {fileID: 1293464137491832051}
   m_Layer: 0
   m_Name: Flesh Enemy
@@ -166,7 +166,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 2
---- !u!114 &6644910573887863409
+--- !u!114 &8413651707941341390
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

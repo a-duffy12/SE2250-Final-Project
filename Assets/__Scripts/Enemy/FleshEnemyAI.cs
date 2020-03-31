@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 [RequireComponent(typeof(AudioSource))]
 
-public class EnemyAI : MonoBehaviour, IEntity
+public class FleshEnemyAI : MonoBehaviour, IEntity
 {
     public float attackDistance;
     public float lookDistance;
@@ -40,40 +40,46 @@ public class EnemyAI : MonoBehaviour, IEntity
     // Update is called once per frame
     void Update()
     {
-        var distance = Vector3.Distance(playerTransform.position, transform.position);
+        float distance = Vector3.Distance(playerTransform.position, transform.position);
         // if within a certain distance then looks at target
         if (distance <= lookDistance)
         {
-            transform.LookAt(new Vector3(playerTransform.transform.position.x, playerTransform.transform.position.y + 0.6f, playerTransform.position.z));
-            // if close enough then enemy actually tries shoots
+            // look at player
+            transform.LookAt(new Vector3(playerTransform.position.x, playerTransform.position.y + 0.6f, playerTransform.position.z));
+            
+            // if close enough then enemy actually attacks
             if (distance <= attackDistance)
+            {   
+                Attack();
+            }
+        }
+    }
+
+    void Attack() {
+        // only shoots once the time allows it
+        if (Time.time > _nextAttackTime)
+        {
+            _nextAttackTime = Time.time + attackRate;
+
+            _source.clip = enemyAttackAudio; // sets attack audio
+            _source.Play(); // plays attack audio 
+
+            // Attack
+            RaycastHit hit;
+            if (Physics.Raycast(firePoint.position, firePoint.forward, out hit, attackDistance))
             {
-                // only shoots once the time allows it
-                if (Time.time > _nextAttackTime)
+                if (hit.transform.CompareTag("Player"))
                 {
-                    _nextAttackTime = Time.time + attackRate;
+                    Debug.DrawLine(firePoint.position, firePoint.position + firePoint.forward * attackDistance, Color.cyan);
 
-                    _source.clip = enemyAttackAudio; // sets attack audio
-                    _source.Play(); // plays attack audio 
-
-                    // Attack
-                    RaycastHit hit;
-                    if (Physics.Raycast(firePoint.position, firePoint.forward, out hit, attackDistance))
-                    {
-                        if (hit.transform.CompareTag("Player"))
-                        {
-                            Debug.DrawLine(firePoint.position, firePoint.position + firePoint.forward * attackDistance, Color.cyan);
-
-                            IEntity player = hit.transform.GetComponent<IEntity>();
-                            player.ApplyDamage(npcDamage);
-                        }
-                    }
+                    IEntity player = hit.transform.GetComponent<IEntity>();
+                    player.ApplyDamage(npcDamage);
                 }
             }
         }
     }
-    public void ApplyDamage(float points)
-    {
+
+    public void ApplyDamage(float points) {
         npcHP -= points;
         _source.clip = damageEnemyAudio; // sets hurt audio
         _source.Play(); // plays hurt audio 
