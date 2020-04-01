@@ -178,7 +178,7 @@ MonoBehaviour:
   fuseTime: 3
   blastRadius: 1
   damage: 50
-  explosionParticle: {fileID: 8667249526204175986, guid: 36ba9e25454bc124f8c7bc56bb5cbbcc,
+  explosionParticle: {fileID: 151039516118699280, guid: 4085b5b27b6f09747bb0a4b42e3d7e70,
     type: 3}
   fireAudio: {fileID: 8300000, guid: 63520879d242cd542a624a1954f6c930, type: 3}
   playerTransform: {fileID: 0}

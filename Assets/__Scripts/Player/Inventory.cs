@@ -12,7 +12,6 @@ public class Inventory : MonoBehaviour
     public Weapon defaultPistol; // default weapon the player always has
     public Weapon firstWeapon; // first weapon slot
     public Weapon secondWeapon; // second weapon slot
-    //public Weapon bonusWeapon; // bonus weapon to show differences in all ammo types //TODO
     public Text ammoCount; // ammo remaining display value
     public Text reloadWarning; // warns player to reload their gun
     public AudioClip swapAudio; // sound of switching weapons
@@ -62,15 +61,21 @@ public class Inventory : MonoBehaviour
         firstWeapon.ActivateWeapon(false); // 1st slot disabled
         secondWeapon.ActivateWeapon(false); // 2nd slot disabled
         currentWeapon = defaultPistol; // player has pistol in hand by default
-
-        //bonusWeapon.ActivateWeapon(false);
         
         // setting this file to the manager for all the weapon slots
         defaultPistol.manager = this; 
         firstWeapon.manager = this;
         secondWeapon.manager = this;
 
-        //bonusWeapon.manager = this;
+        empSMG.manager = this;
+        plasmaSMG.manager = this;
+        railSMG.manager = this;
+        empAR.manager = this;
+        plasmaAR.manager = this;
+        railAR.manager = this;
+        empSR.manager = this;
+        plasmaSR.manager = this;
+        railSR.manager = this;
 
         _source = GetComponent<AudioSource>(); // gets the audio
         _source.playOnAwake = false; // does not play on startup
@@ -96,6 +101,7 @@ public class Inventory : MonoBehaviour
             }                
         }   
     }
+
     public void ChangeColor (Image img, Color col)
     {
         img.color = col;
@@ -160,13 +166,6 @@ public class Inventory : MonoBehaviour
             ChangeColor(slot3, green);
             ChangeColor(slotHealth, def);
         } 
-    /*
-        // brings up second weapon when pressing 3
-        if (Input.GetKeyDown(KeyCode.Alpha4)) {
-            
-            _source.clip = swapAudio; // sets swap audio
-            _source.Play(); // plays swap audio
-        } */
 
         // display the current ammo and the reserve ammo
         ammoCount.text = currentWeapon.GetAmmo().ToString() + " / " + currentWeapon.magSize.ToString();
