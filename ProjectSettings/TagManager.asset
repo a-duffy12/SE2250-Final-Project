@@ -20,6 +20,7 @@ TagManager:
   - RobotEnemy
   - MazeComplete
   - Boss
+  - railSR
   layers:
   - Default
   - TransparentFX
