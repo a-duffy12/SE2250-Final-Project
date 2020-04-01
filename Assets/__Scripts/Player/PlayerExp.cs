@@ -11,7 +11,7 @@ public class PlayerExp : MonoBehaviour
     public float abilityXP; // XP threshold to unlock ability
     public float abilityDuration = 5; // how long ability lasts for
     public float abilityCooldown = 10; // how long between abilities
-
+    
     public Text XP; // text for xp
     public Text abilityText; // text for ability
     public Text abilityWarningText; // text for ability cooldown

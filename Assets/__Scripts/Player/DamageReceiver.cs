@@ -16,6 +16,7 @@ public class DamageReceiver : MonoBehaviour, IEntity
     public AudioClip killPlayerAudio; // sound upon death
 
     private AudioSource _source; // source for player audio
+    private float _deathXP = 0;
 
     // Start is called before the first frame update
     void Start() {
@@ -23,6 +24,7 @@ public class DamageReceiver : MonoBehaviour, IEntity
         _source = GetComponent<AudioSource>(); // gets audio source
         _source.playOnAwake = false; // does not play on startup
         _source.spatialBlend = 1f; // makes the sound 3D
+        _deathXP = PlayerExp.playerXP;
         Time.timeScale = 1;
         HP.text = "HP: " + playerHP.ToString();
     }
@@ -54,6 +56,7 @@ public class DamageReceiver : MonoBehaviour, IEntity
 
     IEnumerator ExecuteAfterTime(float time){ 
         yield return new WaitForSeconds(time); // waits for time seconds
+        PlayerExp.playerXP = _deathXP;
         Application.LoadLevel(SceneManager.GetActiveScene().buildIndex); // reloads the level
     }    
 }
