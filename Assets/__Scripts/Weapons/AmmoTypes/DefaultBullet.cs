@@ -56,6 +56,10 @@ public class DefaultBullet : MonoBehaviour
 
                             npc.ApplyDamage(_damagePoints*robotMod); // deals damage to the npc
                         
+                        } else if (hit.rigidbody.CompareTag("Boss")) { // checks if it is the boss
+
+                            npc.ApplyDamage(_damagePoints*0.5f); // deals damage to the boss
+
                         } else {
 
                             npc.ApplyDamage(_damagePoints); // deals damage to the npc

@@ -19,6 +19,7 @@ TagManager:
   - ArmorEnemy
   - RobotEnemy
   - MazeComplete
+  - Boss
   layers:
   - Default
   - TransparentFX
