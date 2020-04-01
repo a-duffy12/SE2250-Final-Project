@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
             S = this;        
         }
         else{
-            print("Error: Attempted to create more than 1 player singleton");
+            print("Error: Attempted to create more than one player singleton");
         }
     }
     

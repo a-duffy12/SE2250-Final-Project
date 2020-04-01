@@ -1457,7 +1457,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 125
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -1551,7 +1551,6 @@ MonoBehaviour:
   defaultPistol: {fileID: 513706092}
   firstWeapon: {fileID: 227490242}
   secondWeapon: {fileID: 1023465756}
-  bonusWeapon: {fileID: 1595481196}
   ammoCount: {fileID: 1484680004}
   reloadWarning: {fileID: 1336178777}
   swapAudio: {fileID: 8300000, guid: b4408aaefc766be41a6c76c142b83cc6, type: 3}
@@ -1839,7 +1838,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 120
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -6529,18 +6528,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1497322538}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1595481196 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2755869321276689182, guid: 61e8f9e9244c6024981e87a37e8b822f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1497322538}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ccb4128730ac0d4ea08f3c2620de46a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1624849333
 GameObject:
   m_ObjectHideFlags: 0
