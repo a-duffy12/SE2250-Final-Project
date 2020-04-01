@@ -371,16 +371,19 @@ MonoBehaviour:
 
     Mouse - Player view
 
-    Left Click - Shoot
+    Space - Jump
 
-    1
-    2 3 4 - Inventory
+    Left
+    Click - Shoot
+
+    1 2 3 - Inventory
 
     G - Grenade
 
     R - Reload
 
-    E - Ability
+    E
+    - Ability
 
 '
 --- !u!222 &625305650

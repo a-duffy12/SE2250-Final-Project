@@ -24,14 +24,12 @@ public class FleshEnemyAI : MonoBehaviour, IEntity
     private float _nextAttackTime = 0;
     [HideInInspector]
     public Transform playerTransform;
-    Rigidbody r;
     
     //private static float playerXP;
     // Start is called before the first frame update
     void Start()
     {
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-        r = GetComponent<Rigidbody>();
         _source = GetComponent<AudioSource>(); // gets audio source
         _source.playOnAwake = false; // does not play on startup
         _source.spatialBlend = 1f; // makes the sound 3D
@@ -97,7 +95,7 @@ public class FleshEnemyAI : MonoBehaviour, IEntity
                 giveXP = false;
             }            
             //Slightly bounce the npc dead prefab up
-            gameObject.GetComponent<Rigidbody>().velocity = (-(playerTransform.position - transform.position).normalized * 8) + new Vector3(0, 2, 0);
+            gameObject.GetComponent<Rigidbody>().velocity = (-(playerTransform.position - transform.position).normalized * 8) + new Vector3(0, 0.6f, 0);
             Destroy(gameObject, 1);            
         }
     }

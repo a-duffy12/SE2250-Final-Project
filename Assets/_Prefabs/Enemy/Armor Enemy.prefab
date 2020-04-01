@@ -579,7 +579,7 @@ GameObject:
   - component: {fileID: 4267565485667620494}
   - component: {fileID: 7908390719949216654}
   - component: {fileID: 4855047564217283259}
-  - component: {fileID: 9166753703170364109}
+  - component: {fileID: 6389453418772845921}
   - component: {fileID: 4803575400346027028}
   m_Layer: 0
   m_Name: Armor Enemy
@@ -635,7 +635,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
---- !u!114 &9166753703170364109
+--- !u!114 &6389453418772845921
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -644,21 +644,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 4267565485667620495}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79df168a8b9c9594aa3856992a14b097, type: 3}
+  m_Script: {fileID: 11500000, guid: f5d8b6a37c7296b44a28807f6969a471, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDistance: 12
-  lookDistance: 15
-  npcHP: 200
-  npcDamage: 11
+  attackDistance: 18
+  lookDistance: 20
+  npcHP: 140
+  npcDamage: 7
   attackRate: 1
   experienceGain: 10
-  giveXP: 0
+  giveXP: 1
   firePoint: {fileID: 2326243125598147607}
   damageEnemyAudio: {fileID: 8300000, guid: 273d285fae0cc234f8cd62773cae29cf, type: 3}
   killEnemyAudio: {fileID: 8300000, guid: f6432f702f7a4d140b2e73ba89f6fbc1, type: 3}
   enemyAttackAudio: {fileID: 8300000, guid: 6021a9493e9abf548ac2aa41911ac7b8, type: 3}
   enemyAlertAudio: {fileID: 8300000, guid: 08571fb13b875fa4491412d211fd6378, type: 3}
+  enemyRageAudio: {fileID: 8300000, guid: ea441a8650e1dcc49aa60e9c93de54a2, type: 3}
   playerTransform: {fileID: 0}
 --- !u!82 &4803575400346027028
 AudioSource:
@@ -671,7 +672,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

@@ -21,6 +21,7 @@ public class PlayerExp : MonoBehaviour
     private AudioSource _source; // source for audio
     private float _nextAbilityTime = 0; // time that the next ability can be used
     private bool _abilityAvailable = false; // is the ability able to be used
+    private bool _abilityActive = false; // is the ability currently active
 
     // Start is called before the first frame update
     void Start() {
@@ -48,6 +49,12 @@ public class PlayerExp : MonoBehaviour
             abilityText.text = "[E] 1/1"; // UI says ability is available
             StartCoroutine(ShowWarning("Ability now available [E]", 1.0f));
         }
+
+        if (_abilityActive && !_source.isPlaying) { // check if the ability is active
+            
+            _source.clip = abilityAudio; // sets ability audio
+            _source.Play(); // plays ability audio 
+        }
     }
 
     // function to throw grenades
@@ -56,10 +63,8 @@ public class PlayerExp : MonoBehaviour
         if (Time.time > _nextAbilityTime) {
 
             _nextAbilityTime = Time.time + abilityDuration + abilityCooldown; // set time for next ability to be available
+            _abilityActive = true;
             StartCoroutine(AbilityCooldown()); // update ability count, activate invulnerability
-
-            _source.clip = abilityAudio; // sets ability audio
-            _source.Play(); // plays ability audio
         
         } else if (((_nextAbilityTime - abilityCooldown) > Time.time) && (Time.time > (_nextAbilityTime - abilityCooldown - abilityDuration))) { // if ability is active
 
@@ -85,6 +90,7 @@ public class PlayerExp : MonoBehaviour
         DamageReceiver.invulnerable = true; // player becomes invulnerable
         abilityText.text = "[E] 0/1"; // no ability left
         yield return new WaitForSeconds(abilityDuration-0.1f); // wait until ability is done
+        _abilityActive = false; // ability is no longer active
         DamageReceiver.invulnerable = false; // player becomes vulnerable again
         yield return new WaitForSeconds(abilityCooldown-0.1f); // wait until cooldown is done
         abilityText.text = "[E] 1/1"; // one ability left

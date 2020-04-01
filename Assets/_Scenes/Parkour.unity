@@ -2286,7 +2286,6 @@ GameObject:
   - component: {fileID: 387212104}
   - component: {fileID: 387212103}
   - component: {fileID: 387212099}
-  - component: {fileID: 387212105}
   - component: {fileID: 387212107}
   m_Layer: 0
   m_Name: Player
@@ -2498,18 +2497,6 @@ MonoBehaviour:
   HP: {fileID: 281845580}
   damagePlayerAudio: {fileID: 8300000, guid: a18787cba103f5843b51117c0b10543c, type: 3}
   killPlayerAudio: {fileID: 8300000, guid: 0e697e565e281f04aadd1c5523882fc5, type: 3}
---- !u!114 &387212105
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 387212098}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6a0691b648392349836adab94088bd0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &387212107
 MonoBehaviour:
   m_ObjectHideFlags: 0
