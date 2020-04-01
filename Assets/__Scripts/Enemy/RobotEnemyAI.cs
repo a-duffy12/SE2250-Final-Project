@@ -17,7 +17,6 @@ public class RobotEnemyAI : MonoBehaviour, IEntity
     public GameObject explosionParticle; // particle effect for suicide explosion
     public AudioClip damageEnemyAudio; // sound for taking damage
     public AudioClip killEnemyAudio; // sound upon death
-    public AudioClip enemyAttackAudio; // sound for enemy attack
     public AudioClip enemyAlertAudio; // sound for enemy altered to player
 
     private AudioSource _source; // source for enemy audio
@@ -45,6 +44,9 @@ public class RobotEnemyAI : MonoBehaviour, IEntity
         {
             // enemy is now going to actively hunt the player
             _huntPlayer = true; 
+
+            _source.clip = enemyAlertAudio; // sets alert audio
+            _source.Play(); // plays alert audio
         }
 
         if (_huntPlayer) { // enemy is hunting player
@@ -52,7 +54,7 @@ public class RobotEnemyAI : MonoBehaviour, IEntity
             // look at player
             transform.LookAt(new Vector3(playerTransform.position.x, playerTransform.position.y + 0.4f, playerTransform.position.z));
             
-            // enemy moves towards player //TODO
+            // enemy moves towards player
             transform.position = Vector3.MoveTowards(transform.position, playerTransform.position, npcSpeed*Time.deltaTime);
 
             if (distance <= (suicideRadius-0.5))

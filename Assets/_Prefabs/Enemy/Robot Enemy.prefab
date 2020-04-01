@@ -683,10 +683,9 @@ MonoBehaviour:
   giveXP: 1
   explosionParticle: {fileID: 8667249526204175986, guid: 36ba9e25454bc124f8c7bc56bb5cbbcc,
     type: 3}
-  damageEnemyAudio: {fileID: 8300000, guid: 273d285fae0cc234f8cd62773cae29cf, type: 3}
-  killEnemyAudio: {fileID: 8300000, guid: f6432f702f7a4d140b2e73ba89f6fbc1, type: 3}
-  enemyAttackAudio: {fileID: 8300000, guid: 6021a9493e9abf548ac2aa41911ac7b8, type: 3}
-  enemyAlertAudio: {fileID: 8300000, guid: 08571fb13b875fa4491412d211fd6378, type: 3}
+  damageEnemyAudio: {fileID: 8300000, guid: 08aec89efdff7704aae0ae4e2ff8304c, type: 3}
+  killEnemyAudio: {fileID: 8300000, guid: 4d4a5f36e8d6f66468f22e7843a32e39, type: 3}
+  enemyAlertAudio: {fileID: 8300000, guid: 88fe29e6afda67a4c9090f44cd66bac1, type: 3}
   playerTransform: {fileID: 0}
 --- !u!82 &4411938173775583763
 AudioSource:

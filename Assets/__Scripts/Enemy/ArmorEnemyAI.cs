@@ -49,6 +49,9 @@ public class ArmorEnemyAI : MonoBehaviour, IEntity
         {
             // look at player
             transform.LookAt(new Vector3(playerTransform.position.x, playerTransform.position.y + 0.5f, playerTransform.position.z));
+
+            _source.clip = enemyAlertAudio; // sets alert audio
+            _source.Play(); // plays alert audio
             
             // if close enough then enemy actually attacks
             if (distance <= attackDistance)
@@ -57,7 +60,7 @@ public class ArmorEnemyAI : MonoBehaviour, IEntity
             }
         }
 
-        if ((npcHP > 0) && (npcHP <= 0.5*_maxHP) && !isEnraged) // boosts stats while low health
+        if ((npcHP > 0) && (npcHP < 0.5*_maxHP) && !isEnraged) // boosts stats while low health
         {
             isEnraged = true; // enemy is now enraged
             Rage(); // enemy gets enraged

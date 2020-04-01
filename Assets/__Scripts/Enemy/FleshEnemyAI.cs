@@ -44,6 +44,9 @@ public class FleshEnemyAI : MonoBehaviour, IEntity
         {
             // look at player
             transform.LookAt(new Vector3(playerTransform.position.x, playerTransform.position.y + 0.6f, playerTransform.position.z));
+
+            _source.clip = enemyAlertAudio; // sets alert audio
+            _source.Play(); // plays alert audio
             
             // if close enough then enemy actually attacks
             if (distance <= attackDistance)

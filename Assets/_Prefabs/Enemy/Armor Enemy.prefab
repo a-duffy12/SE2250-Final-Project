@@ -655,11 +655,11 @@ MonoBehaviour:
   experienceGain: 10
   giveXP: 1
   firePoint: {fileID: 2326243125598147607}
-  damageEnemyAudio: {fileID: 8300000, guid: 273d285fae0cc234f8cd62773cae29cf, type: 3}
-  killEnemyAudio: {fileID: 8300000, guid: f6432f702f7a4d140b2e73ba89f6fbc1, type: 3}
-  enemyAttackAudio: {fileID: 8300000, guid: 6021a9493e9abf548ac2aa41911ac7b8, type: 3}
-  enemyAlertAudio: {fileID: 8300000, guid: 08571fb13b875fa4491412d211fd6378, type: 3}
-  enemyRageAudio: {fileID: 8300000, guid: ea441a8650e1dcc49aa60e9c93de54a2, type: 3}
+  damageEnemyAudio: {fileID: 8300000, guid: e3ce20900354653418e2ff021684cc3e, type: 3}
+  killEnemyAudio: {fileID: 8300000, guid: aa28f226eedc4f04fb5d40f485715874, type: 3}
+  enemyAttackAudio: {fileID: 8300000, guid: b48fa0bd56ba7d541af2ecdeb65b005b, type: 3}
+  enemyAlertAudio: {fileID: 8300000, guid: f0243b83c2d5faf458135d374a854d96, type: 3}
+  enemyRageAudio: {fileID: 8300000, guid: 4d21b4546d4d1194da92cf2357a7dc63, type: 3}
   playerTransform: {fileID: 0}
 --- !u!82 &4803575400346027028
 AudioSource:
