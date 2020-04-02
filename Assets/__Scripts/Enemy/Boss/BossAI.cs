@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -184,6 +185,12 @@ public class BossAI : MonoBehaviour, IEntity
                 //code removed when playerXP was changed to static
                 //GameObject.Find("Player").GetComponent<PlayerExp>().playerXP += experienceGain;
                 PlayerExp.playerXP += experienceGain;
+                // Checks if the player has enough experience to obtain a skill point
+                if(PlayerExp.playerXP/PlayerSkillManager.expNeeded >= 1)
+                {
+                    PlayerSkillManager.availSkillPoints++;
+                    PlayerSkillManager.expNeeded+=PlayerSkillManager.expNeeded; // increases the amount of experience needed to next interval
+                }
                 giveXP = false;
             }            
             // play explosion upon death

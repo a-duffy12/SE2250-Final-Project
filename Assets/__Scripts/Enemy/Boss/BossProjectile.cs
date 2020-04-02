@@ -67,7 +67,7 @@ public class BossProjectile : MonoBehaviour
 
             if (entity != null) { // check if it is a valid entity
 
-                entity.ApplyDamage(damage); // deals damage
+                entity.ApplyDamage(damage*PlayerSkillManager.dmgReductionMult); // deals damage
             }
         }
 
