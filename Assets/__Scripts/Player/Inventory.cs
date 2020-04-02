@@ -17,6 +17,7 @@ public class Inventory : MonoBehaviour
     public AudioClip swapAudio; // sound of switching weapons
     public Text pickUp;
     public Text healthKit;
+    public static float healthKitAmount = 50; // sets health kit heal amount
 
     public Image slot1;
     public Image slot2;
@@ -34,6 +35,16 @@ public class Inventory : MonoBehaviour
     public Weapon empSR;
     public Weapon plasmaSR;
     public Weapon railSR;
+
+    public GameObject empSMGP; //set all weapon pickups
+    public GameObject plasmaSMGP;
+    public GameObject railSMGP;    
+    public GameObject empARP;
+    public GameObject plasmaARP;
+    public GameObject railARP;
+    public GameObject empSRP;
+    public GameObject plasmaSRP;
+    public GameObject railSRP;
 
     public int healthKits = 0;    
 
@@ -103,14 +114,16 @@ public class Inventory : MonoBehaviour
                 healthKit.text = healthKits.ToString(); // updates UI               
         }
         
-        if (Input.GetKeyDown(KeyCode.Q)){ // checks for when player clicks Q button
+        if (Input.GetKeyDown(KeyCode.Q)){ // checks for when player clicks Q button                       
             if(other.gameObject.CompareTag("empSR")){ // if the weapon tag is empSR 
                 if(firstWeapon == currentWeapon){ //checks if the active slot is slot1
+                    DropWeapon(); // drops current weapon                   
                     firstWeapon.ActivateWeapon(false); // sets slot1 weapon to false
                     firstWeapon = empSR; // sets slot1 weapon to empSR
                     currentWeapon = empSR; // sets current weapon to empSR
                     firstWeapon.ActivateWeapon(true); // activates slot1 weapon (now empSR)
                 }else if(secondWeapon == currentWeapon){ //checks if the active slot is slot2
+                    DropWeapon(); // drops current weapon 
                     secondWeapon.ActivateWeapon(false); // sets slot2 weapon to false
                     secondWeapon = empSR; //sets slot2 and current weapon to empSR
                     currentWeapon = empSR;
@@ -122,11 +135,13 @@ public class Inventory : MonoBehaviour
             // the following code has the same structure as above but works on each of the nice weapons
             else if(other.gameObject.CompareTag("plasmaSR")){ 
                 if(firstWeapon == currentWeapon){
+                    DropWeapon();
                     firstWeapon.ActivateWeapon(false);
                     firstWeapon = plasmaSR;
                     currentWeapon = plasmaSR;
                     firstWeapon.ActivateWeapon(true);
                 }else if(secondWeapon == currentWeapon){
+                    DropWeapon();
                     secondWeapon.ActivateWeapon(false);
                     secondWeapon = plasmaSR;
                     currentWeapon = plasmaSR;
@@ -137,11 +152,13 @@ public class Inventory : MonoBehaviour
             } 
             else if(other.gameObject.CompareTag("railSR")){ 
                 if(firstWeapon == currentWeapon){
+                    DropWeapon();
                     firstWeapon.ActivateWeapon(false);
                     firstWeapon = railSR;
                     currentWeapon = railSR;
                     firstWeapon.ActivateWeapon(true);
                 }else if(secondWeapon == currentWeapon){
+                    DropWeapon();
                     secondWeapon.ActivateWeapon(false);
                     secondWeapon = railSR;
                     currentWeapon = railSR;
@@ -152,11 +169,13 @@ public class Inventory : MonoBehaviour
             }
             else if(other.gameObject.CompareTag("empSMG")){ 
                 if(firstWeapon == currentWeapon){
+                    DropWeapon();
                     firstWeapon.ActivateWeapon(false);
                     firstWeapon = empSMG;
                     currentWeapon = empSMG;
                     firstWeapon.ActivateWeapon(true);
                 }else if(secondWeapon == currentWeapon){
+                    DropWeapon();
                     secondWeapon.ActivateWeapon(false);
                     secondWeapon = empSMG;
                     currentWeapon = empSMG;
@@ -167,11 +186,13 @@ public class Inventory : MonoBehaviour
             }
             else if(other.gameObject.CompareTag("plasmaSMG")){ 
                 if(firstWeapon == currentWeapon){
+                    DropWeapon();
                     firstWeapon.ActivateWeapon(false);
                     firstWeapon = plasmaSMG;
                     currentWeapon = plasmaSMG;
                     firstWeapon.ActivateWeapon(true);
                 }else if(secondWeapon == currentWeapon){
+                    DropWeapon();
                     secondWeapon.ActivateWeapon(false);
                     secondWeapon = plasmaSMG;
                     currentWeapon = plasmaSMG;
@@ -182,11 +203,13 @@ public class Inventory : MonoBehaviour
             } 
             else if(other.gameObject.CompareTag("railSMG")){ 
                 if(firstWeapon == currentWeapon){
+                    DropWeapon();
                     firstWeapon.ActivateWeapon(false);
                     firstWeapon = railSMG;
                     currentWeapon = railSMG;
                     firstWeapon.ActivateWeapon(true);
                 }else if(secondWeapon == currentWeapon){
+                    DropWeapon();
                     secondWeapon.ActivateWeapon(false);
                     secondWeapon = railSMG;
                     currentWeapon = railSMG;
@@ -197,11 +220,13 @@ public class Inventory : MonoBehaviour
             }
             else if(other.gameObject.CompareTag("empAR")){ 
                 if(firstWeapon == currentWeapon){
+                    DropWeapon();
                     firstWeapon.ActivateWeapon(false);
                     firstWeapon = empAR;
                     currentWeapon = empAR;
                     firstWeapon.ActivateWeapon(true);
                 }else if(secondWeapon == currentWeapon){
+                    DropWeapon();
                     secondWeapon.ActivateWeapon(false);
                     secondWeapon = empAR;
                     currentWeapon = empAR;
@@ -212,11 +237,13 @@ public class Inventory : MonoBehaviour
             }
             else if(other.gameObject.CompareTag("plasmaAR")){ 
                 if(firstWeapon == currentWeapon){
+                    DropWeapon();
                     firstWeapon.ActivateWeapon(false);
                     firstWeapon = plasmaAR;
                     currentWeapon = plasmaAR;
                     firstWeapon.ActivateWeapon(true);
                 }else if(secondWeapon == currentWeapon){
+                    DropWeapon();
                     secondWeapon.ActivateWeapon(false);
                     secondWeapon = plasmaAR;
                     currentWeapon = plasmaAR;
@@ -227,11 +254,13 @@ public class Inventory : MonoBehaviour
             } 
             else if(other.gameObject.CompareTag("railAR")){ 
                 if(firstWeapon == currentWeapon){
+                    DropWeapon();
                     firstWeapon.ActivateWeapon(false);
                     firstWeapon = railAR;
                     currentWeapon = railAR;
                     firstWeapon.ActivateWeapon(true);
                 }else if(secondWeapon == currentWeapon){
+                    DropWeapon();
                     secondWeapon.ActivateWeapon(false);
                     secondWeapon = railAR;
                     currentWeapon = railAR;
@@ -254,16 +283,38 @@ public class Inventory : MonoBehaviour
         img.color = col; // changes img color to col
     }
 
+    public void DropWeapon() // method for dropping current weapon 
+    {   GameObject playerObj = GameObject.FindGameObjectWithTag("Player"); // gets player object
+        Vector3 pos = new Vector3(playerObj.transform.position.x, playerObj.transform.position.y - 1, playerObj.transform.position.z); // gets player position 
+
+        if(currentWeapon == empSMG){ // checks for current weapon and drops it at player position (for all weapons)
+            Instantiate(empSMGP, pos, Quaternion.identity);
+        }else if(currentWeapon == plasmaSMG){
+            Instantiate(plasmaSMGP, pos, Quaternion.identity);
+        }else if(currentWeapon == railSMG){
+            Instantiate(railSMGP, pos, Quaternion.identity);
+        }else if(currentWeapon == empAR){
+            Instantiate(empARP, pos, Quaternion.identity);
+        }else if(currentWeapon == plasmaAR){
+            Instantiate(plasmaARP, pos, Quaternion.identity);
+        }else if(currentWeapon == railAR){
+            Instantiate(railARP, pos, Quaternion.identity);
+        }else if(currentWeapon == empSR){
+            Instantiate(empSRP, pos, Quaternion.identity);
+        }else if(currentWeapon == plasmaSR){
+            Instantiate(plasmaSRP, pos, Quaternion.identity);
+        }else if(currentWeapon == railSR){
+            Instantiate(railSRP, pos, Quaternion.identity);
+        }
+    }
+
     // Update is called once per frame
     void Update() {
     
         if (Input.GetKeyDown(KeyCode.H)) { // runs when player presses H key
             healthKits -= 1; // subtracts health kit
-            healthKit.text = healthKits.ToString(); // updates UI
-            /*GameObject thePlayer = GameObject.Find("Player");
-            DamageReceiver playerHP = thePlayer.GetComponent<DamageReceiver>();
-            playerHP.playerHP += 10.0f;*/
-            DamageReceiver.playerHP += 50;
+            healthKit.text = healthKits.ToString(); // updates UI            
+            DamageReceiver.playerHP += healthKitAmount;
 
         }
         
