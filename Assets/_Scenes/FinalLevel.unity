@@ -4343,6 +4343,7 @@ MonoBehaviour:
   ammoCount: {fileID: 476905412}
   reloadWarning: {fileID: 1093504323}
   swapAudio: {fileID: 8300000, guid: b4408aaefc766be41a6c76c142b83cc6, type: 3}
+  healthKitAudio: {fileID: 8300000, guid: 7c5253f6bf39b864d9872e5f5f547d73, type: 3}
   pickUp: {fileID: 0}
   healthKit: {fileID: 0}
   slot1: {fileID: 1408840794}
@@ -4358,6 +4359,15 @@ MonoBehaviour:
   empSR: {fileID: 1855272873}
   plasmaSR: {fileID: 439080006}
   railSR: {fileID: 1081612399}
+  empSMGP: {fileID: 0}
+  plasmaSMGP: {fileID: 0}
+  railSMGP: {fileID: 0}
+  empARP: {fileID: 0}
+  plasmaARP: {fileID: 0}
+  railARP: {fileID: 0}
+  empSRP: {fileID: 0}
+  plasmaSRP: {fileID: 0}
+  railSRP: {fileID: 0}
   healthKits: 0
   currentWeapon: {fileID: 0}
 --- !u!1001 &1122492310

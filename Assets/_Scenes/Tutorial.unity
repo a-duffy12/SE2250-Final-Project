@@ -2813,6 +2813,7 @@ MonoBehaviour:
   ammoCount: {fileID: 1811496491}
   reloadWarning: {fileID: 1968366273}
   swapAudio: {fileID: 8300000, guid: b4408aaefc766be41a6c76c142b83cc6, type: 3}
+  healthKitAudio: {fileID: 8300000, guid: 7c5253f6bf39b864d9872e5f5f547d73, type: 3}
   pickUp: {fileID: 1392010715}
   healthKit: {fileID: 499351540}
   slot1: {fileID: 177866185}
