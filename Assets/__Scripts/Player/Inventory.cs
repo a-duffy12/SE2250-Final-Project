@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(AudioSource))]
 
@@ -21,8 +20,6 @@ public class Inventory : MonoBehaviour
     public AudioClip healthKitAudio; // sound for using health kit
     public Text pickUp;
     public Text healthKit;
-    public Text slot1Text;
-    public Text slot2Text;
     public static float healthKitAmount = 50; // sets health kit heal amount
 
     public Image slot1;

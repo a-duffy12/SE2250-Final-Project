@@ -60,7 +60,7 @@ public class FleshEnemyAI : MonoBehaviour, IEntity
     void Attack()
     {
         // only shoots once the time allows it
-        if (Time.time > _nextAttackTime)
+        if ((Time.time > _nextAttackTime) && (npcHP > 0))
         {
             _nextAttackTime = Time.time + attackRate;
 
@@ -95,7 +95,9 @@ public class FleshEnemyAI : MonoBehaviour, IEntity
 
             if (giveXP)
             {
-                //increases player xp
+                //TODO
+                //code removed when playerXP was changed to static
+                //GameObject.Find("Player").GetComponent<PlayerExp>().playerXP += experienceGain;
                 PlayerExp.playerXP += experienceGain;
                 if(Math.Floor(PlayerExp.playerXP/PlayerSkillManager.expNeeded) >= 1) // Checks if the player has enough experience to obtain a skill point
                 {

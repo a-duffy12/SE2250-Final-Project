@@ -24,13 +24,14 @@ public class BossAI : MonoBehaviour, IEntity
     public GameObject bossProjectile; // projectile boss shoots
     public GameObject explosionParticle; // particle effect for explosion upon death
     public GameObject robotEnemy; // robot enemy to be summoned
+    public Text bossHP; // text to display boss hp
     public AudioClip damageBossAudio; // sound for taking damage
     public AudioClip killBossAudio; // sound upon death
     public AudioClip bossAlertAudio; // sound for enemy alerted to player
     public AudioClip bossSummonAudio; // sound for summoning enemies in
 
     private AudioSource _source; // source for enemy audio
-    private float _nextAttackTime; // boss gives you 10 seconds before attacking
+    private float _nextAttackTime = 8.0f; // boss gives you 10 seconds before attacking
     private float _spawnTime; // time when boss spawns in
     private float _attackNum = 0; // number of attacks completed
     private bool _vulnerable = false; // whether or not boss can be damaged
@@ -60,10 +61,11 @@ public class BossAI : MonoBehaviour, IEntity
         _source.spatialBlend = 1f; // makes the sound 3D
 
         _spawnTime = Time.time; // set spawn time
-        _nextAttackTime = _spawnTime + 8.0f; // set time for 1st attack
 
         _source.clip = bossAlertAudio; // sets alert audio
         _source.Play(); // plays alert audio 
+
+        bossHP.text = npcHP.ToString(); // display boss' remaining HP
     }
 
     // Update is called once per frame
@@ -71,6 +73,8 @@ public class BossAI : MonoBehaviour, IEntity
     {
         // boss always looks at player
         transform.LookAt(new Vector3(playerTransform.position.x, playerTransform.position.y + 3.8f, playerTransform.position.z));
+
+        bossHP.text = npcHP.ToString(); // updates boss' remaining HP
 
         if ((Time.time > (_spawnTime + 8.0f)) && !_vulnerable) { // boss cannot be damaged until it starts attacking
 

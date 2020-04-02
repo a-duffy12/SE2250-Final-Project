@@ -65,11 +65,6 @@ public class DamageReceiver : MonoBehaviour, IEntity
     IEnumerator ExecuteAfterTime(float time){ 
         yield return new WaitForSeconds(time); // waits for time seconds
         PlayerExp.playerXP = _deathXP;
-        if(_deathXP >= 5){
-            PlayerExp.playerXP = (_deathXP-5); // sets xp to 5 less than it was at the start of the level if the starting xp was 5 or higher
-        } else{
-            PlayerExp.playerXP = _deathXP; // sets xp to what it was at the start of the level if the level was started with xp greater than 5
-        }
         playerHP = maxHP; // restarts player with max health
         Application.LoadLevel(SceneManager.GetActiveScene().buildIndex); // reloads the level        
     }    
