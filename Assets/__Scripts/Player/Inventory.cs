@@ -13,6 +13,8 @@ public class Inventory : MonoBehaviour
     public Weapon defaultPistol; // default weapon the player always has
     public Weapon firstWeapon; // first weapon slot
     public Weapon secondWeapon; // second weapon slot
+    public static string slot1Wep; // static variable for slot 1
+    public static string slot2Wep; // static variable for slot 2
     public Text ammoCount; // ammo remaining display value
     public Text reloadWarning; // warns player to reload their gun
     public AudioClip swapAudio; // sound of switching weapons
@@ -67,7 +69,27 @@ public class Inventory : MonoBehaviour
         {
             firstWeapon = plasmaSMG;
             secondWeapon = empAR;
-        }  
+        }else{
+            if(slot1Wep == "empSMG"){firstWeapon = empSMG;} // checks static string ands sets weapon accordingly in slot 1
+            else if(slot1Wep == "plasmaSMG"){firstWeapon = plasmaSMG;}
+            else if(slot1Wep == "railSMG"){firstWeapon = railSMG;}
+            else if(slot1Wep == "empAR"){firstWeapon = empAR;}
+            else if(slot1Wep == "plasmaAR"){firstWeapon = plasmaAR;}
+            else if(slot1Wep == "railAR"){firstWeapon = railAR;}
+            else if(slot1Wep == "empSR"){firstWeapon = empSR;}
+            else if(slot1Wep == "plasmaSR"){firstWeapon = plasmaSR;}
+            else if(slot1Wep == "railSR"){firstWeapon = railSR;}
+
+            if(slot2Wep == "empSMG"){secondWeapon = empSMG;} // checks static string ands sets weapon accordingly in slot 2
+            else if(slot2Wep == "plasmaSMG"){secondWeapon = plasmaSMG;}
+            else if(slot2Wep == "railSMG"){secondWeapon = railSMG;}
+            else if(slot2Wep == "empAR"){secondWeapon = empAR;}
+            else if(slot2Wep == "plasmaAR"){secondWeapon = plasmaAR;}
+            else if(slot2Wep == "railAR"){secondWeapon = railAR;}
+            else if(slot2Wep == "empSR"){secondWeapon = empSR;}
+            else if(slot2Wep == "plasmaSR"){secondWeapon = plasmaSR;}
+            else if(slot2Wep == "railSR"){secondWeapon = railSR;}
+        }   
 
         UpdateSlotText(); // updates UI text        
 
@@ -135,12 +157,14 @@ public class Inventory : MonoBehaviour
                         firstWeapon = empSR; // sets slot1 weapon to empSR
                         currentWeapon = empSR; // sets current weapon to empSR
                         firstWeapon.ActivateWeapon(true); // activates slot1 weapon (now empSR)
+                        slot1Wep = "empSR";
                     }else if(secondWeapon == currentWeapon){ //checks if the active slot is slot2
                         DropWeapon(); // drops current weapon 
                         secondWeapon.ActivateWeapon(false); // sets slot2 weapon to false
                         secondWeapon = empSR; //sets slot2 and current weapon to empSR
                         currentWeapon = empSR;
                         secondWeapon.ActivateWeapon(true); // activates slot2 weapon (now empSR)
+                        slot2Wep = "empSR";
                     }
                     other.gameObject.SetActive(false); // destroys pickup 
                     pickUp.text = ""; // sets pickup text to nothing                
@@ -153,12 +177,14 @@ public class Inventory : MonoBehaviour
                         firstWeapon = plasmaSR;
                         currentWeapon = plasmaSR;
                         firstWeapon.ActivateWeapon(true);
+                        slot1Wep = "plasmaSR";
                     }else if(secondWeapon == currentWeapon){
                         DropWeapon();
                         secondWeapon.ActivateWeapon(false);
                         secondWeapon = plasmaSR;
                         currentWeapon = plasmaSR;
                         secondWeapon.ActivateWeapon(true);
+                        slot2Wep = "plasmaSR";
                     }
                     other.gameObject.SetActive(false);
                     pickUp.text = "";                
@@ -170,12 +196,14 @@ public class Inventory : MonoBehaviour
                         firstWeapon = railSR;
                         currentWeapon = railSR;
                         firstWeapon.ActivateWeapon(true);
+                        slot1Wep = "railSR";
                     }else if(secondWeapon == currentWeapon){
                         DropWeapon();
                         secondWeapon.ActivateWeapon(false);
                         secondWeapon = railSR;
                         currentWeapon = railSR;
                         secondWeapon.ActivateWeapon(true);
+                        slot2Wep = "railSR";
                     }
                     other.gameObject.SetActive(false);
                     pickUp.text = "";                            
@@ -187,12 +215,14 @@ public class Inventory : MonoBehaviour
                         firstWeapon = empSMG;
                         currentWeapon = empSMG;
                         firstWeapon.ActivateWeapon(true);
+                        slot1Wep = "empSMG";
                     }else if(secondWeapon == currentWeapon){
                         DropWeapon();
                         secondWeapon.ActivateWeapon(false);
                         secondWeapon = empSMG;
                         currentWeapon = empSMG;
                         secondWeapon.ActivateWeapon(true);
+                        slot2Wep = "empSMG";
                     }
                     other.gameObject.SetActive(false);
                     pickUp.text = "";                
@@ -204,12 +234,14 @@ public class Inventory : MonoBehaviour
                         firstWeapon = plasmaSMG;
                         currentWeapon = plasmaSMG;
                         firstWeapon.ActivateWeapon(true);
+                        slot1Wep = "plasmaSMG";
                     }else if(secondWeapon == currentWeapon){
                         DropWeapon();
                         secondWeapon.ActivateWeapon(false);
                         secondWeapon = plasmaSMG;
                         currentWeapon = plasmaSMG;
                         secondWeapon.ActivateWeapon(true);
+                        slot2Wep = "plasmaSMG";
                     }
                     other.gameObject.SetActive(false);
                     pickUp.text = "";                
@@ -221,12 +253,14 @@ public class Inventory : MonoBehaviour
                         firstWeapon = railSMG;
                         currentWeapon = railSMG;
                         firstWeapon.ActivateWeapon(true);
+                        slot1Wep = "railSMG";
                     }else if(secondWeapon == currentWeapon){
                         DropWeapon();
                         secondWeapon.ActivateWeapon(false);
                         secondWeapon = railSMG;
                         currentWeapon = railSMG;
                         secondWeapon.ActivateWeapon(true);
+                        slot2Wep = "railSMG";
                     }
                     other.gameObject.SetActive(false);
                     pickUp.text = "";                            
@@ -238,12 +272,14 @@ public class Inventory : MonoBehaviour
                         firstWeapon = empAR;
                         currentWeapon = empAR;
                         firstWeapon.ActivateWeapon(true);
+                        slot1Wep = "empAR";
                     }else if(secondWeapon == currentWeapon){
                         DropWeapon();
                         secondWeapon.ActivateWeapon(false);
                         secondWeapon = empAR;
                         currentWeapon = empAR;
                         secondWeapon.ActivateWeapon(true);
+                        slot2Wep = "empAR";
                     }
                     other.gameObject.SetActive(false);
                     pickUp.text = "";                
@@ -255,12 +291,14 @@ public class Inventory : MonoBehaviour
                         firstWeapon = plasmaAR;
                         currentWeapon = plasmaAR;
                         firstWeapon.ActivateWeapon(true);
+                        slot1Wep = "plasmaAR";
                     }else if(secondWeapon == currentWeapon){
                         DropWeapon();
                         secondWeapon.ActivateWeapon(false);
                         secondWeapon = plasmaAR;
                         currentWeapon = plasmaAR;
                         secondWeapon.ActivateWeapon(true);
+                        slot2Wep = "plasmaAR";
                     }
                     other.gameObject.SetActive(false);
                     pickUp.text = "";                
@@ -272,12 +310,14 @@ public class Inventory : MonoBehaviour
                         firstWeapon = railAR;
                         currentWeapon = railAR;
                         firstWeapon.ActivateWeapon(true);
+                        slot1Wep = "railAR";
                     }else if(secondWeapon == currentWeapon){
                         DropWeapon();
                         secondWeapon.ActivateWeapon(false);
                         secondWeapon = railAR;
                         currentWeapon = railAR;
                         secondWeapon.ActivateWeapon(true);
+                        slot2Wep = "railAR";
                     }
                     other.gameObject.SetActive(false);
                     pickUp.text = "";                            
