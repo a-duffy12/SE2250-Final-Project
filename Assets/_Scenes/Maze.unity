@@ -1654,6 +1654,7 @@ GameObject:
   - component: {fileID: 248974913}
   - component: {fileID: 248974915}
   - component: {fileID: 248974914}
+  - component: {fileID: 248974916}
   m_Layer: 0
   m_Name: Inventory
   m_TagString: Untagged
@@ -1796,6 +1797,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 1196080428}
   defaultPistol: {fileID: 513706092}
+  firstWeapon: {fileID: 0}
+  secondWeapon: {fileID: 0}
   ammoCount: {fileID: 1484680004}
   reloadWarning: {fileID: 1336178777}
   swapAudio: {fileID: 8300000, guid: b4408aaefc766be41a6c76c142b83cc6, type: 3}
@@ -1832,6 +1835,19 @@ MonoBehaviour:
   railSRP: {fileID: 8894746089791281691, guid: 7edf628d6b1afa74399154a755c1ad57, type: 3}
   healthKits: 0
   currentWeapon: {fileID: 0}
+--- !u!65 &248974916
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 248974912}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 0.5, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &272534148 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6660958578128752516, guid: 2d783adbabb8ce44f9852eb0b75fa1bd,
