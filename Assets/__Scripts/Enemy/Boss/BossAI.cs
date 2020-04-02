@@ -94,7 +94,7 @@ public class BossAI : MonoBehaviour, IEntity
 
         if (Time.time > _nextAttackTime) {
 
-            _nextAttackTime = Time.time + volleyDelay*volleySize + 8.0f; // next attack cycle is allowed after current attack cycle finishes
+            _nextAttackTime = Time.time + volleyDelay*volleySize + 3.5f; // next attack cycle is allowed after current attack cycle finishes
 
             if (_attackNum == 0) { // first attack
 
