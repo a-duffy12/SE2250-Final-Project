@@ -114,161 +114,163 @@ public class Inventory : MonoBehaviour
                 healthKit.text = healthKits.ToString(); // updates UI               
         }
         
-        if (Input.GetKeyDown(KeyCode.Q)){ // checks for when player clicks Q button                       
-            if(other.gameObject.CompareTag("empSR")){ // if the weapon tag is empSR 
-                if(firstWeapon == currentWeapon){ //checks if the active slot is slot1
-                    DropWeapon(); // drops current weapon                   
-                    firstWeapon.ActivateWeapon(false); // sets slot1 weapon to false
-                    firstWeapon = empSR; // sets slot1 weapon to empSR
-                    currentWeapon = empSR; // sets current weapon to empSR
-                    firstWeapon.ActivateWeapon(true); // activates slot1 weapon (now empSR)
-                }else if(secondWeapon == currentWeapon){ //checks if the active slot is slot2
-                    DropWeapon(); // drops current weapon 
-                    secondWeapon.ActivateWeapon(false); // sets slot2 weapon to false
-                    secondWeapon = empSR; //sets slot2 and current weapon to empSR
-                    currentWeapon = empSR;
-                    secondWeapon.ActivateWeapon(true); // activates slot2 weapon (now empSR)
+        if(currentWeapon != defaultPistol){ // check is current weapon is a pistol        
+            if (Input.GetKeyDown(KeyCode.Q)){ // checks for when player clicks Q button                       
+                if(other.gameObject.CompareTag("empSR")){ // if the weapon tag is empSR 
+                    if(firstWeapon == currentWeapon){ //checks if the active slot is slot1
+                        DropWeapon(); // drops current weapon                   
+                        firstWeapon.ActivateWeapon(false); // sets slot1 weapon to false
+                        firstWeapon = empSR; // sets slot1 weapon to empSR
+                        currentWeapon = empSR; // sets current weapon to empSR
+                        firstWeapon.ActivateWeapon(true); // activates slot1 weapon (now empSR)
+                    }else if(secondWeapon == currentWeapon){ //checks if the active slot is slot2
+                        DropWeapon(); // drops current weapon 
+                        secondWeapon.ActivateWeapon(false); // sets slot2 weapon to false
+                        secondWeapon = empSR; //sets slot2 and current weapon to empSR
+                        currentWeapon = empSR;
+                        secondWeapon.ActivateWeapon(true); // activates slot2 weapon (now empSR)
+                    }
+                    other.gameObject.SetActive(false); // destroys pickup 
+                    pickUp.text = ""; // sets pickup text to nothing                
                 }
-                other.gameObject.SetActive(false); // destroys pickup 
-                pickUp.text = ""; // sets pickup text to nothing                
+                // the following code has the same structure as above but works on each of the nice weapons
+                else if(other.gameObject.CompareTag("plasmaSR")){ 
+                    if(firstWeapon == currentWeapon){
+                        DropWeapon();
+                        firstWeapon.ActivateWeapon(false);
+                        firstWeapon = plasmaSR;
+                        currentWeapon = plasmaSR;
+                        firstWeapon.ActivateWeapon(true);
+                    }else if(secondWeapon == currentWeapon){
+                        DropWeapon();
+                        secondWeapon.ActivateWeapon(false);
+                        secondWeapon = plasmaSR;
+                        currentWeapon = plasmaSR;
+                        secondWeapon.ActivateWeapon(true);
+                    }
+                    other.gameObject.SetActive(false);
+                    pickUp.text = "";                
+                } 
+                else if(other.gameObject.CompareTag("railSR")){ 
+                    if(firstWeapon == currentWeapon){
+                        DropWeapon();
+                        firstWeapon.ActivateWeapon(false);
+                        firstWeapon = railSR;
+                        currentWeapon = railSR;
+                        firstWeapon.ActivateWeapon(true);
+                    }else if(secondWeapon == currentWeapon){
+                        DropWeapon();
+                        secondWeapon.ActivateWeapon(false);
+                        secondWeapon = railSR;
+                        currentWeapon = railSR;
+                        secondWeapon.ActivateWeapon(true);
+                    }
+                    other.gameObject.SetActive(false);
+                    pickUp.text = "";                            
+                }
+                else if(other.gameObject.CompareTag("empSMG")){ 
+                    if(firstWeapon == currentWeapon){
+                        DropWeapon();
+                        firstWeapon.ActivateWeapon(false);
+                        firstWeapon = empSMG;
+                        currentWeapon = empSMG;
+                        firstWeapon.ActivateWeapon(true);
+                    }else if(secondWeapon == currentWeapon){
+                        DropWeapon();
+                        secondWeapon.ActivateWeapon(false);
+                        secondWeapon = empSMG;
+                        currentWeapon = empSMG;
+                        secondWeapon.ActivateWeapon(true);
+                    }
+                    other.gameObject.SetActive(false);
+                    pickUp.text = "";                
+                }
+                else if(other.gameObject.CompareTag("plasmaSMG")){ 
+                    if(firstWeapon == currentWeapon){
+                        DropWeapon();
+                        firstWeapon.ActivateWeapon(false);
+                        firstWeapon = plasmaSMG;
+                        currentWeapon = plasmaSMG;
+                        firstWeapon.ActivateWeapon(true);
+                    }else if(secondWeapon == currentWeapon){
+                        DropWeapon();
+                        secondWeapon.ActivateWeapon(false);
+                        secondWeapon = plasmaSMG;
+                        currentWeapon = plasmaSMG;
+                        secondWeapon.ActivateWeapon(true);
+                    }
+                    other.gameObject.SetActive(false);
+                    pickUp.text = "";                
+                } 
+                else if(other.gameObject.CompareTag("railSMG")){ 
+                    if(firstWeapon == currentWeapon){
+                        DropWeapon();
+                        firstWeapon.ActivateWeapon(false);
+                        firstWeapon = railSMG;
+                        currentWeapon = railSMG;
+                        firstWeapon.ActivateWeapon(true);
+                    }else if(secondWeapon == currentWeapon){
+                        DropWeapon();
+                        secondWeapon.ActivateWeapon(false);
+                        secondWeapon = railSMG;
+                        currentWeapon = railSMG;
+                        secondWeapon.ActivateWeapon(true);
+                    }
+                    other.gameObject.SetActive(false);
+                    pickUp.text = "";                            
+                }
+                else if(other.gameObject.CompareTag("empAR")){ 
+                    if(firstWeapon == currentWeapon){
+                        DropWeapon();
+                        firstWeapon.ActivateWeapon(false);
+                        firstWeapon = empAR;
+                        currentWeapon = empAR;
+                        firstWeapon.ActivateWeapon(true);
+                    }else if(secondWeapon == currentWeapon){
+                        DropWeapon();
+                        secondWeapon.ActivateWeapon(false);
+                        secondWeapon = empAR;
+                        currentWeapon = empAR;
+                        secondWeapon.ActivateWeapon(true);
+                    }
+                    other.gameObject.SetActive(false);
+                    pickUp.text = "";                
+                }
+                else if(other.gameObject.CompareTag("plasmaAR")){ 
+                    if(firstWeapon == currentWeapon){
+                        DropWeapon();
+                        firstWeapon.ActivateWeapon(false);
+                        firstWeapon = plasmaAR;
+                        currentWeapon = plasmaAR;
+                        firstWeapon.ActivateWeapon(true);
+                    }else if(secondWeapon == currentWeapon){
+                        DropWeapon();
+                        secondWeapon.ActivateWeapon(false);
+                        secondWeapon = plasmaAR;
+                        currentWeapon = plasmaAR;
+                        secondWeapon.ActivateWeapon(true);
+                    }
+                    other.gameObject.SetActive(false);
+                    pickUp.text = "";                
+                } 
+                else if(other.gameObject.CompareTag("railAR")){ 
+                    if(firstWeapon == currentWeapon){
+                        DropWeapon();
+                        firstWeapon.ActivateWeapon(false);
+                        firstWeapon = railAR;
+                        currentWeapon = railAR;
+                        firstWeapon.ActivateWeapon(true);
+                    }else if(secondWeapon == currentWeapon){
+                        DropWeapon();
+                        secondWeapon.ActivateWeapon(false);
+                        secondWeapon = railAR;
+                        currentWeapon = railAR;
+                        secondWeapon.ActivateWeapon(true);
+                    }
+                    other.gameObject.SetActive(false);
+                    pickUp.text = "";                            
+                }               
             }
-            // the following code has the same structure as above but works on each of the nice weapons
-            else if(other.gameObject.CompareTag("plasmaSR")){ 
-                if(firstWeapon == currentWeapon){
-                    DropWeapon();
-                    firstWeapon.ActivateWeapon(false);
-                    firstWeapon = plasmaSR;
-                    currentWeapon = plasmaSR;
-                    firstWeapon.ActivateWeapon(true);
-                }else if(secondWeapon == currentWeapon){
-                    DropWeapon();
-                    secondWeapon.ActivateWeapon(false);
-                    secondWeapon = plasmaSR;
-                    currentWeapon = plasmaSR;
-                    secondWeapon.ActivateWeapon(true);
-                }
-                other.gameObject.SetActive(false);
-                pickUp.text = "";                
-            } 
-            else if(other.gameObject.CompareTag("railSR")){ 
-                if(firstWeapon == currentWeapon){
-                    DropWeapon();
-                    firstWeapon.ActivateWeapon(false);
-                    firstWeapon = railSR;
-                    currentWeapon = railSR;
-                    firstWeapon.ActivateWeapon(true);
-                }else if(secondWeapon == currentWeapon){
-                    DropWeapon();
-                    secondWeapon.ActivateWeapon(false);
-                    secondWeapon = railSR;
-                    currentWeapon = railSR;
-                    secondWeapon.ActivateWeapon(true);
-                }
-                other.gameObject.SetActive(false);
-                pickUp.text = "";                            
-            }
-            else if(other.gameObject.CompareTag("empSMG")){ 
-                if(firstWeapon == currentWeapon){
-                    DropWeapon();
-                    firstWeapon.ActivateWeapon(false);
-                    firstWeapon = empSMG;
-                    currentWeapon = empSMG;
-                    firstWeapon.ActivateWeapon(true);
-                }else if(secondWeapon == currentWeapon){
-                    DropWeapon();
-                    secondWeapon.ActivateWeapon(false);
-                    secondWeapon = empSMG;
-                    currentWeapon = empSMG;
-                    secondWeapon.ActivateWeapon(true);
-                }
-                other.gameObject.SetActive(false);
-                pickUp.text = "";                
-            }
-            else if(other.gameObject.CompareTag("plasmaSMG")){ 
-                if(firstWeapon == currentWeapon){
-                    DropWeapon();
-                    firstWeapon.ActivateWeapon(false);
-                    firstWeapon = plasmaSMG;
-                    currentWeapon = plasmaSMG;
-                    firstWeapon.ActivateWeapon(true);
-                }else if(secondWeapon == currentWeapon){
-                    DropWeapon();
-                    secondWeapon.ActivateWeapon(false);
-                    secondWeapon = plasmaSMG;
-                    currentWeapon = plasmaSMG;
-                    secondWeapon.ActivateWeapon(true);
-                }
-                other.gameObject.SetActive(false);
-                pickUp.text = "";                
-            } 
-            else if(other.gameObject.CompareTag("railSMG")){ 
-                if(firstWeapon == currentWeapon){
-                    DropWeapon();
-                    firstWeapon.ActivateWeapon(false);
-                    firstWeapon = railSMG;
-                    currentWeapon = railSMG;
-                    firstWeapon.ActivateWeapon(true);
-                }else if(secondWeapon == currentWeapon){
-                    DropWeapon();
-                    secondWeapon.ActivateWeapon(false);
-                    secondWeapon = railSMG;
-                    currentWeapon = railSMG;
-                    secondWeapon.ActivateWeapon(true);
-                }
-                other.gameObject.SetActive(false);
-                pickUp.text = "";                            
-            }
-            else if(other.gameObject.CompareTag("empAR")){ 
-                if(firstWeapon == currentWeapon){
-                    DropWeapon();
-                    firstWeapon.ActivateWeapon(false);
-                    firstWeapon = empAR;
-                    currentWeapon = empAR;
-                    firstWeapon.ActivateWeapon(true);
-                }else if(secondWeapon == currentWeapon){
-                    DropWeapon();
-                    secondWeapon.ActivateWeapon(false);
-                    secondWeapon = empAR;
-                    currentWeapon = empAR;
-                    secondWeapon.ActivateWeapon(true);
-                }
-                other.gameObject.SetActive(false);
-                pickUp.text = "";                
-            }
-            else if(other.gameObject.CompareTag("plasmaAR")){ 
-                if(firstWeapon == currentWeapon){
-                    DropWeapon();
-                    firstWeapon.ActivateWeapon(false);
-                    firstWeapon = plasmaAR;
-                    currentWeapon = plasmaAR;
-                    firstWeapon.ActivateWeapon(true);
-                }else if(secondWeapon == currentWeapon){
-                    DropWeapon();
-                    secondWeapon.ActivateWeapon(false);
-                    secondWeapon = plasmaAR;
-                    currentWeapon = plasmaAR;
-                    secondWeapon.ActivateWeapon(true);
-                }
-                other.gameObject.SetActive(false);
-                pickUp.text = "";                
-            } 
-            else if(other.gameObject.CompareTag("railAR")){ 
-                if(firstWeapon == currentWeapon){
-                    DropWeapon();
-                    firstWeapon.ActivateWeapon(false);
-                    firstWeapon = railAR;
-                    currentWeapon = railAR;
-                    firstWeapon.ActivateWeapon(true);
-                }else if(secondWeapon == currentWeapon){
-                    DropWeapon();
-                    secondWeapon.ActivateWeapon(false);
-                    secondWeapon = railAR;
-                    currentWeapon = railAR;
-                    secondWeapon.ActivateWeapon(true);
-                }
-                other.gameObject.SetActive(false);
-                pickUp.text = "";                            
-            }               
         }          
     }
 
