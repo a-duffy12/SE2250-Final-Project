@@ -3773,6 +3773,7 @@ GameObject:
   - component: {fileID: 235833686378322596}
   - component: {fileID: 3145576024530857581}
   - component: {fileID: 4194408069319110033}
+  - component: {fileID: 6472254234102983063}
   m_Layer: 0
   m_Name: 'Boss '
   m_TagString: Boss
@@ -3847,7 +3848,6 @@ MonoBehaviour:
   npcSpeed: 8
   volleySize: 3
   volleyDelay: 1.5
-  projectileSpeed: 10000
   experienceGain: 50
   giveXP: 1
   firePoint_R: {fileID: 6603204525335388016}
@@ -3855,6 +3855,8 @@ MonoBehaviour:
   bossProjectile: {fileID: 2124819928844478810, guid: 72ee129f167dcd544a12a9ffb204f806,
     type: 3}
   explosionParticle: {fileID: 8667249526204175986, guid: 36ba9e25454bc124f8c7bc56bb5cbbcc,
+    type: 3}
+  robotEnemy: {fileID: 4414978283662063978, guid: 53f958b93f3b6e9409e19d28111151f9,
     type: 3}
   damageBossAudio: {fileID: 8300000, guid: e3ce20900354653418e2ff021684cc3e, type: 3}
   killBossAudio: {fileID: 8300000, guid: aa28f226eedc4f04fb5d40f485715874, type: 3}
@@ -3957,6 +3959,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &6472254234102983063
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8412099189535508135}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d3081f5ccf1a67a40b93fd929e539fe9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8426879316903033266
 GameObject:
   m_ObjectHideFlags: 0

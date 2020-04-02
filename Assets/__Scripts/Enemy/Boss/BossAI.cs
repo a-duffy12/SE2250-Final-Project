@@ -21,6 +21,7 @@ public class BossAI : MonoBehaviour, IEntity
     public Transform firePoint_L;
     public GameObject bossProjectile; // projectile boss shoots
     public GameObject explosionParticle; // particle effect for explosion upon death
+    public GameObject robotEnemy; // robot enemy to be summoned
     public AudioClip damageBossAudio; // sound for taking damage
     public AudioClip killBossAudio; // sound upon death
     public AudioClip bossAlertAudio; // sound for enemy alerted to player
@@ -28,6 +29,8 @@ public class BossAI : MonoBehaviour, IEntity
 
     private AudioSource _source; // source for enemy audio
     private float _nextAttackTime = 8; // boss gives you 10 seconds before attacking
+    private float _attackNum = 0; // number of attacks completed
+    private Animator anim;
     [HideInInspector]
     public Transform playerTransform;
 
@@ -39,6 +42,9 @@ public class BossAI : MonoBehaviour, IEntity
         else{
             print("Error: Attempted to create more than one boss singleton");
         }
+
+        anim = GetComponent<Animator>(); // get the animator component
+        anim.enabled = false; // disable animator
     }
 
     // Start is called before the first frame update
@@ -88,15 +94,29 @@ public class BossAI : MonoBehaviour, IEntity
 
         if (Time.time > _nextAttackTime) {
 
-            _nextAttackTime = Time.time + volleyDelay*volleySize + 3.0f; // next attack cycle is allowed after current attack cycle finishes
+            _nextAttackTime = Time.time + volleyDelay*volleySize + 8.0f; // next attack cycle is allowed after current attack cycle finishes
 
-            if (nextAttack > 0.3f) {
+            if (_attackNum == 0) { // first attack
+
+                _attackNum = 1;
+                StartCoroutine(ProjectileVolley()); // shoot missiles
+
+            } else if (_attackNum == 1) { // second attack
+
+                _attackNum = 2;
+                StartCoroutine(Summon()); // summon enemies
+
+            } else { // all subsequent attacks
+
+                if (nextAttack > 0.3f) {
                 
-                StartCoroutine(ProjectileVolley()); // run attack cycle combo
-                Debug.Log("projectiles");
-            } else {
-                Debug.Log("summon");
-            } 
+                    StartCoroutine(ProjectileVolley()); // run attack cycle combo
+                
+                } else {
+                
+                    StartCoroutine(Summon()); // summon enemies
+                } 
+            }
         }
     }
 
@@ -113,8 +133,21 @@ public class BossAI : MonoBehaviour, IEntity
     }
 
     // function to summon robot enemies
-    void Summon() {
-        // TODO
+    IEnumerator Summon() {
+
+        anim.enabled = true; // animation starts
+        
+        yield return new WaitForSeconds(1.417f); // summoning occurs at the height of the animation
+
+        _source.clip = bossSummonAudio; // sets summon audio
+        _source.Play(); // plays summon audio
+
+        GameObject robo_L = Instantiate(robotEnemy, transform.position + new Vector3(3.0f, -3.0f, 3.0f), transform.rotation); // instantiate a robot enemy
+        GameObject robo_R = Instantiate(robotEnemy, transform.position + new Vector3(-3.0f, -3.0f, -3.0f), transform.rotation); // instantiate a robot enemy
+
+        yield return new WaitForSeconds(1.5f); // animation is turned off after finishing
+
+        anim.enabled = false; // animation ends
     }
 
     public void ApplyDamage(float points) {
