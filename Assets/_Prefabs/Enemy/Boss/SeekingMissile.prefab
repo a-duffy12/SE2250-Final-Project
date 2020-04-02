@@ -180,7 +180,7 @@ MonoBehaviour:
   damage: 50
   explosionParticle: {fileID: 151039516118699280, guid: 4085b5b27b6f09747bb0a4b42e3d7e70,
     type: 3}
-  fireAudio: {fileID: 8300000, guid: 63520879d242cd542a624a1954f6c930, type: 3}
+  fireAudio: {fileID: 8300000, guid: dfc7c79076a57884eb88c950c0180589, type: 3}
   playerTransform: {fileID: 0}
 --- !u!82 &6800331574684282154
 AudioSource:

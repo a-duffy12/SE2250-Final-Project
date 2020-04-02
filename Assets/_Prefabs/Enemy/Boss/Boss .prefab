@@ -3844,7 +3844,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minRange: 8
   maxRange: 18
-  npcHP: 1000
+  npcHP: 4000
   npcSpeed: 8
   volleySize: 3
   volleyDelay: 1.5
