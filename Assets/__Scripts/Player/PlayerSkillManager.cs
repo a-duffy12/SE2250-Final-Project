@@ -52,7 +52,7 @@ public class PlayerSkillManager : MonoBehaviour
     {
         if (availSkillPoints >= 1)
         {
-            grenadeDmgMult += 0.1f; // grenade damage multiplier increases by 10%
+            grenadeDmgMult += 0.15f; // grenade damage multiplier increases by 15%
             grenadeDmgUpgrades++;
             availSkillPoints--;
         }
