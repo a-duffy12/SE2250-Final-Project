@@ -1699,6 +1699,8 @@ MonoBehaviour:
   XP: {fileID: 921313668}
   abilityText: {fileID: 2078262927}
   abilityWarningText: {fileID: 487136082}
+  bossHP: {fileID: 1333013294}
+  boss: {fileID: 0}
   abilityAudio: {fileID: 8300000, guid: ea441a8650e1dcc49aa60e9c93de54a2, type: 3}
 --- !u!114 &403037224
 MonoBehaviour:
