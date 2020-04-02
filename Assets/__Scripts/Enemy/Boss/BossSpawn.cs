@@ -1,0 +1,16 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class BossSpawn : MonoBehaviour
+{
+    public Transform Spawnpoint;
+    public GameObject Boss;
+
+
+    void OnTriggerEnter()
+    {
+        Instantiate(Boss, Spawnpoint.position, Spawnpoint.rotation);
+    }
+
+}
