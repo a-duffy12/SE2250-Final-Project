@@ -106,10 +106,12 @@ public class Inventory : MonoBehaviour
                 if(firstWeapon == currentWeapon){
                     firstWeapon.ActivateWeapon(false);
                     firstWeapon = empSR;
+                    currentWeapon = empSR;
                     firstWeapon.ActivateWeapon(true);
                 }else if(secondWeapon == currentWeapon){
                     secondWeapon.ActivateWeapon(false);
                     secondWeapon = empSR;
+                    currentWeapon = empSR;
                     secondWeapon.ActivateWeapon(true);
                 }
                 other.gameObject.SetActive(false);
@@ -119,10 +121,12 @@ public class Inventory : MonoBehaviour
                 if(firstWeapon == currentWeapon){
                     firstWeapon.ActivateWeapon(false);
                     firstWeapon = plasmaSR;
+                    currentWeapon = plasmaSR;
                     firstWeapon.ActivateWeapon(true);
                 }else if(secondWeapon == currentWeapon){
                     secondWeapon.ActivateWeapon(false);
                     secondWeapon = plasmaSR;
+                    currentWeapon = plasmaSR;
                     secondWeapon.ActivateWeapon(true);
                 }
                 other.gameObject.SetActive(false);
@@ -132,10 +136,12 @@ public class Inventory : MonoBehaviour
                 if(firstWeapon == currentWeapon){
                     firstWeapon.ActivateWeapon(false);
                     firstWeapon = railSR;
+                    currentWeapon = railSR;
                     firstWeapon.ActivateWeapon(true);
                 }else if(secondWeapon == currentWeapon){
                     secondWeapon.ActivateWeapon(false);
                     secondWeapon = railSR;
+                    currentWeapon = railSR;
                     secondWeapon.ActivateWeapon(true);
                 }
                 other.gameObject.SetActive(false);
@@ -145,10 +151,12 @@ public class Inventory : MonoBehaviour
                 if(firstWeapon == currentWeapon){
                     firstWeapon.ActivateWeapon(false);
                     firstWeapon = empSMG;
+                    currentWeapon = empSMG;
                     firstWeapon.ActivateWeapon(true);
                 }else if(secondWeapon == currentWeapon){
                     secondWeapon.ActivateWeapon(false);
                     secondWeapon = empSMG;
+                    currentWeapon = empSMG;
                     secondWeapon.ActivateWeapon(true);
                 }
                 other.gameObject.SetActive(false);
@@ -158,10 +166,12 @@ public class Inventory : MonoBehaviour
                 if(firstWeapon == currentWeapon){
                     firstWeapon.ActivateWeapon(false);
                     firstWeapon = plasmaSMG;
+                    currentWeapon = plasmaSMG;
                     firstWeapon.ActivateWeapon(true);
                 }else if(secondWeapon == currentWeapon){
                     secondWeapon.ActivateWeapon(false);
                     secondWeapon = plasmaSMG;
+                    currentWeapon = plasmaSMG;
                     secondWeapon.ActivateWeapon(true);
                 }
                 other.gameObject.SetActive(false);
@@ -171,10 +181,12 @@ public class Inventory : MonoBehaviour
                 if(firstWeapon == currentWeapon){
                     firstWeapon.ActivateWeapon(false);
                     firstWeapon = railSMG;
+                    currentWeapon = railSMG;
                     firstWeapon.ActivateWeapon(true);
                 }else if(secondWeapon == currentWeapon){
                     secondWeapon.ActivateWeapon(false);
                     secondWeapon = railSMG;
+                    currentWeapon = railSMG;
                     secondWeapon.ActivateWeapon(true);
                 }
                 other.gameObject.SetActive(false);
@@ -184,10 +196,12 @@ public class Inventory : MonoBehaviour
                 if(firstWeapon == currentWeapon){
                     firstWeapon.ActivateWeapon(false);
                     firstWeapon = empAR;
+                    currentWeapon = empAR;
                     firstWeapon.ActivateWeapon(true);
                 }else if(secondWeapon == currentWeapon){
                     secondWeapon.ActivateWeapon(false);
                     secondWeapon = empAR;
+                    currentWeapon = empAR;
                     secondWeapon.ActivateWeapon(true);
                 }
                 other.gameObject.SetActive(false);
@@ -197,10 +211,12 @@ public class Inventory : MonoBehaviour
                 if(firstWeapon == currentWeapon){
                     firstWeapon.ActivateWeapon(false);
                     firstWeapon = plasmaAR;
+                    currentWeapon = plasmaAR;
                     firstWeapon.ActivateWeapon(true);
                 }else if(secondWeapon == currentWeapon){
                     secondWeapon.ActivateWeapon(false);
                     secondWeapon = plasmaAR;
+                    currentWeapon = plasmaAR;
                     secondWeapon.ActivateWeapon(true);
                 }
                 other.gameObject.SetActive(false);
@@ -210,10 +226,12 @@ public class Inventory : MonoBehaviour
                 if(firstWeapon == currentWeapon){
                     firstWeapon.ActivateWeapon(false);
                     firstWeapon = railAR;
+                    currentWeapon = railAR;
                     firstWeapon.ActivateWeapon(true);
                 }else if(secondWeapon == currentWeapon){
                     secondWeapon.ActivateWeapon(false);
                     secondWeapon = railAR;
+                    currentWeapon = railAR;
                     secondWeapon.ActivateWeapon(true);
                 }
                 other.gameObject.SetActive(false);
@@ -224,7 +242,7 @@ public class Inventory : MonoBehaviour
 
     void OnTriggerExit(Collider other){ // runs when the player collides 
         if(other.gameObject.CompareTag("empSR") || other.gameObject.CompareTag("plasmaSR") || other.gameObject.CompareTag("railSR") || other.gameObject.CompareTag("empSMG") || other.gameObject.CompareTag("plasmaSMG") || other.gameObject.CompareTag("railSMG") || other.gameObject.CompareTag("empAR") || other.gameObject.CompareTag("plasmaAR") || other.gameObject.CompareTag("railAR")){
-            pickUp.text = "";
+            pickUp.text = "";            
         }
     }
 
