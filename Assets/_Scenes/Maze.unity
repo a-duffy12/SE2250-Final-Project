@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1642,14 +1642,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 1196080428}
   defaultPistol: {fileID: 513706092}
-  firstWeapon: {fileID: 227490242}
-  secondWeapon: {fileID: 1023465756}
   ammoCount: {fileID: 1484680004}
   reloadWarning: {fileID: 1336178777}
   swapAudio: {fileID: 8300000, guid: b4408aaefc766be41a6c76c142b83cc6, type: 3}
   healthKitAudio: {fileID: 8300000, guid: 7c5253f6bf39b864d9872e5f5f547d73, type: 3}
-  pickUp: {fileID: 0}
-  healthKit: {fileID: 0}
+  pickUp: {fileID: 1624849335}
+  healthKit: {fileID: 950461783}
+  slot1Text: {fileID: 2135598046}
+  slot2Text: {fileID: 163572112}
   slot1: {fileID: 1877860380}
   slot2: {fileID: 1084384964}
   slot3: {fileID: 1275736107}
