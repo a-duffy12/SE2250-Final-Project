@@ -79,7 +79,7 @@ public class RobotEnemyAI : MonoBehaviour, IEntity
 
             if (entity != null) { // check if it is a valid entity
 
-                entity.ApplyDamage(suicideDamage*PlayerSkillManager.dmgReductionMult); // deals damage to the npc
+                entity.ApplyDamage(suicideDamage*PlayerSkillManager.dmgReductionMult); // deals damage,decreasing based depending on player's modifier, to the npc
             }
         }
     }
@@ -99,10 +99,10 @@ public class RobotEnemyAI : MonoBehaviour, IEntity
                 //code removed when playerXP was changed to static
                 //GameObject.Find("Player").GetComponent<PlayerExp>().playerXP += experienceGain;
                 PlayerExp.playerXP += experienceGain;
-                if(Math.Floor(PlayerExp.playerXP/PlayerSkillManager.expNeeded) >= 1)
+                if(Math.Floor(PlayerExp.playerXP/PlayerSkillManager.expNeeded) >= 1) // checks if the player reached interval for next skill point
                 {
                     PlayerSkillManager.availSkillPoints++;
-                    PlayerSkillManager.expNeeded+=PlayerSkillManager.expNeeded;
+                    PlayerSkillManager.expNeeded+=PlayerSkillManager.expNeeded; // increases experience needed to next interval
                 }
                 giveXP = false;
             }            

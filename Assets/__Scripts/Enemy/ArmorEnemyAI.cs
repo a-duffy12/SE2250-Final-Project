@@ -86,7 +86,7 @@ public class ArmorEnemyAI : MonoBehaviour, IEntity
                     Debug.DrawLine(firePoint.position, firePoint.position + firePoint.forward * attackDistance, Color.cyan);
 
                     IEntity player = hit.transform.GetComponent<IEntity>();
-                    player.ApplyDamage(npcDamage*PlayerSkillManager.dmgReductionMult);
+                    player.ApplyDamage(npcDamage*PlayerSkillManager.dmgReductionMult); // multiplies the damage by the player's modifier
                 }
             }
         }
@@ -117,10 +117,11 @@ public class ArmorEnemyAI : MonoBehaviour, IEntity
                 //code removed when playerXP was changed to static
                 //GameObject.Find("Player").GetComponent<PlayerExp>().playerXP += experienceGain;
                 PlayerExp.playerXP += experienceGain;
+                // Checks if the player has enough experience to obtain a skill point
                 if(Math.Floor(PlayerExp.playerXP/PlayerSkillManager.expNeeded) >= 1)
                 {
                     PlayerSkillManager.availSkillPoints++;
-                    PlayerSkillManager.expNeeded+=PlayerSkillManager.expNeeded;
+                    PlayerSkillManager.expNeeded+=PlayerSkillManager.expNeeded; // increases the amount of experience needed to next interval
                 }
                 giveXP = false;
             }            

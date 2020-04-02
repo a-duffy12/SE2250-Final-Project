@@ -5,14 +5,13 @@ using UnityEngine;
 public class PlayerSkillManager : MonoBehaviour
 {
     public static PlayerSkillManager instantiated = null; // used to create a singleton for this script
-    public static int expNeeded = 50;
+    public static int expNeeded = 50; // Amount of experience needed to obtain next skill point
     // variables to increase the stats of the character
     public static float gunDmgMult = 1f;
     public static float grenadeDmgMult = 1f;
-    public static float maxHealthIncrease = 100;
-    public static float tempHealth;
+    public static float maxHealthIncrease = 100; // default health is 100
     public static float dmgReductionMult = 1f;
-    public static float movementSpeedIncrease = 12;
+    public static float movementSpeedIncrease = 12; // default speed is 12
     public static float shieldTimerIncrease = 0;
     public static int availSkillPoints = 0;
 
@@ -31,11 +30,14 @@ public class PlayerSkillManager : MonoBehaviour
 
     }
 
+    // All upgrades modify the stats by roughly 10%
+    // Player can only upgrade if skill points are available, and each upgrade uses 1 point
+    // The stat is modified where they are called in other scripts
     public void UpgradeGunDmg()
     {
         if (availSkillPoints >= 1)
         {
-            gunDmgMult += 0.1f;
+            gunDmgMult += 0.1f; // gun damage multiplier increases by 10%
             availSkillPoints--;
         }
     }
@@ -43,7 +45,7 @@ public class PlayerSkillManager : MonoBehaviour
     {
         if (availSkillPoints >= 1)
         {
-            grenadeDmgMult += 01f;
+            grenadeDmgMult += 0.1f; // grenade damage multiplier increases by 10%
             availSkillPoints--;
         }
     }
@@ -51,8 +53,8 @@ public class PlayerSkillManager : MonoBehaviour
     {
         if (availSkillPoints >= 1)
         {
-            maxHealthIncrease += 10;
-            DamageReceiver.playerHP = maxHealthIncrease;
+            maxHealthIncrease += 10; // increases player max health by 10
+            DamageReceiver.playerHP = maxHealthIncrease; // resets the player's health
             availSkillPoints--;
 
         }
@@ -61,7 +63,7 @@ public class PlayerSkillManager : MonoBehaviour
     {
         if (availSkillPoints >= 1)
         {
-            dmgReductionMult -= 0.1f;
+            dmgReductionMult -= 0.1f; // decreases the amount of damage player takes by 10%
             availSkillPoints--;
         }
     }
@@ -69,8 +71,8 @@ public class PlayerSkillManager : MonoBehaviour
     {
         if (availSkillPoints >= 1)
         {
-            movementSpeedIncrease += 1;
-            PlayerMovement.speed = movementSpeedIncrease;
+            movementSpeedIncrease += 1; // increases movement speed by 1
+            PlayerMovement.speed = movementSpeedIncrease; // sets movement speed to new movement speed
             availSkillPoints--;
         }
     }
@@ -78,7 +80,7 @@ public class PlayerSkillManager : MonoBehaviour
     {
         if (availSkillPoints >= 1)
         {
-            shieldTimerIncrease += 0.5f;
+            shieldTimerIncrease += 0.5f;// increases shield timer by half a second
             availSkillPoints--;
         }
     }

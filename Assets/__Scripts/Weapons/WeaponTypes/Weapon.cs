@@ -87,12 +87,12 @@ public class Weapon : MonoBehaviour
 
                     firePoint.LookAt(firePointPosition); // moves actual firepoint to where the bullet should go
 
-                    // firing bullet projectile
+                    // firing bullet projectile 
                     if (ammoType == 0) {
 
                         GameObject bulletObject = Instantiate(bulletType, firePoint.position, firePoint.rotation);
                         Bullet bullet = bulletObject.GetComponent<Bullet>(); // gets an instance of the bullet object
-                        bullet.SetDamage(damage*PlayerSkillManager.gunDmgMult); // sets the damage based of the weapon
+                        bullet.SetDamage(damage*PlayerSkillManager.gunDmgMult); // sets the damage based of the weapon. Increases damage based off of player's modifier
                         _currentMagSize--; // removes a bullet from the magazine
                         _source.clip = bulletAudio; // sets firing audio
                         _source.Play(); // plays firing audio

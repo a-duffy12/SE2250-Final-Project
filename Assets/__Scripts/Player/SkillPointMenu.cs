@@ -12,35 +12,41 @@ public class SkillPointMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        availSkillPointsText.text = "Available Skill Points: " + PlayerSkillManager.availSkillPoints.ToString();
+        availSkillPointsText.text = "Available Skill Points: " + PlayerSkillManager.availSkillPoints.ToString(); // updates text to display the number of skill points
+        // Checks when the player wants to open up the skill points menu
         if (Input.GetKeyDown(KeyCode.Equals))
         {
             if (gameIsPaused)
             {
+                // if the game is paused then resume the game
                 Resume();
             }
             else
             {
+                // if the game is not paused then pause the game
                 Pause();
             }
         }
     }
 
+    
     void Resume()
     {
-        skillPointUI.SetActive(false);
-        Time.timeScale = 1f;
+        skillPointUI.SetActive(false); // when the game resumes, then disable the skill points menu
+        Time.timeScale = 1f; // Uses time scale to resume the game
+        // removes the cursor from screen
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        gameIsPaused = false;
+        gameIsPaused = false; // game is no longer paused
     }
     void Pause()
     {
-        skillPointUI.SetActive(true);
-        Time.timeScale = 0f;
-        Cursor.lockState = CursorLockMode.None;
+        skillPointUI.SetActive(true); // when the game is paused, enable the skill points menu
+        Time.timeScale = 0f; // Uses time scale to pause the game
+        // The cursor shows up so the player can upgrade their skills
+        Cursor.lockState = CursorLockMode.None; 
         Cursor.visible = true;
-        gameIsPaused = true;
+        gameIsPaused = true; // game is paused
         
     }
 }
