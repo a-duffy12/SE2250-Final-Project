@@ -11,8 +11,8 @@ public class Inventory : MonoBehaviour
 
     public Camera playerCamera; // player's camera
     public Weapon defaultPistol; // default weapon the player always has
-    public static Weapon firstWeapon; // first weapon slot
-    public static Weapon secondWeapon; // second weapon slot
+    public Weapon firstWeapon; // first weapon slot
+    public Weapon secondWeapon; // second weapon slot
     public Text ammoCount; // ammo remaining display value
     public Text reloadWarning; // warns player to reload their gun
     public AudioClip swapAudio; // sound of switching weapons
@@ -385,7 +385,7 @@ public class Inventory : MonoBehaviour
         }else if(secondWeapon == plasmaSR){
             slot2Text.text = "SR";
             slot2Text.color = plasma;
-        }else if(firstWeapon == railSR){
+        }else if(secondWeapon == railSR){
             slot2Text.text = "SR";
             slot2Text.color = rail;
         }
