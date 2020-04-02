@@ -506,6 +506,7 @@ RectTransform:
   - {fileID: 992422841}
   - {fileID: 1108245591}
   - {fileID: 229853348}
+  - {fileID: 1333013293}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4259,6 +4260,7 @@ MonoBehaviour:
   reloadWarning: {fileID: 1093504323}
   swapAudio: {fileID: 8300000, guid: b4408aaefc766be41a6c76c142b83cc6, type: 3}
   pickUp: {fileID: 0}
+  healthKit: {fileID: 0}
   slot1: {fileID: 1408840794}
   slot2: {fileID: 1768123215}
   slot3: {fileID: 992422842}
@@ -4900,7 +4902,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 175003172}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -6316,6 +6318,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3145576024530857581, guid: 623c213ff48e76e478bab05cd1bbe2d4,
+        type: 3}
+      propertyPath: bossHP
+      value: 
+      objectReference: {fileID: 1333013294}
     - target: {fileID: 5617851911338620536, guid: 623c213ff48e76e478bab05cd1bbe2d4,
         type: 3}
       propertyPath: m_LocalPosition.x

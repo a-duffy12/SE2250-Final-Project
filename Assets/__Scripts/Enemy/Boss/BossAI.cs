@@ -30,8 +30,10 @@ public class BossAI : MonoBehaviour, IEntity
     public AudioClip bossSummonAudio; // sound for summoning enemies in
 
     private AudioSource _source; // source for enemy audio
-    private float _nextAttackTime = 8; // boss gives you 10 seconds before attacking
+    private float _nextAttackTime = 8.0f; // boss gives you 10 seconds before attacking
+    private float _spawnTime; // time when boss spawns in
     private float _attackNum = 0; // number of attacks completed
+    private bool _vulnerable = false; // whether or not boss can be damaged
     private Animator anim;
     [HideInInspector]
     public Transform playerTransform;
@@ -57,6 +59,8 @@ public class BossAI : MonoBehaviour, IEntity
         _source.playOnAwake = false; // does not play on startup
         _source.spatialBlend = 1f; // makes the sound 3D
 
+        _spawnTime = Time.time; // set spawn time
+
         _source.clip = bossAlertAudio; // sets alert audio
         _source.Play(); // plays alert audio 
 
@@ -70,6 +74,11 @@ public class BossAI : MonoBehaviour, IEntity
         transform.LookAt(new Vector3(playerTransform.position.x, playerTransform.position.y + 3.8f, playerTransform.position.z));
 
         bossHP.text = npcHP.ToString(); // updates boss' remaining HP
+
+        if ((Time.time > (_spawnTime + 8.0f)) && !_vulnerable) { // boss cannot be damaged until it starts attacking
+
+            _vulnerable = true; // boss becomes vulnerable
+        }
 
         Move(); // move boss
         ChooseNextAttack(); // check for attacks
@@ -157,10 +166,14 @@ public class BossAI : MonoBehaviour, IEntity
     }
 
     public void ApplyDamage(float points) {
-        npcHP -= points;
-        _source.clip = damageBossAudio; // sets hurt audio
-        _source.Play(); // plays hurt audio 
+        
+        if (_vulnerable) { // boss only takes damage if vulnerable
 
+            npcHP -= points;
+            _source.clip = damageBossAudio; // sets hurt audio
+            _source.Play(); // plays hurt audio 
+        }
+        
         if (npcHP <= 0)
         {
             _source.clip = killBossAudio; // sets death audio
