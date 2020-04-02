@@ -70,7 +70,7 @@ public class ArmorEnemyAI : MonoBehaviour, IEntity
 
     void Attack() {
         // only shoots once the time allows it
-        if (Time.time > _nextAttackTime)
+        if ((Time.time > _nextAttackTime) && (npcHP > 0))
         {
             _nextAttackTime = Time.time + attackRate;
 
