@@ -1731,8 +1731,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   control: {fileID: 403037226}
-  grav: -9.81
-  jumpHt: 3
+  grav: -30.81
+  jumpHt: 2
   groundTest: {fileID: 1945956553}
   groundDist: 0.5
   groundMask:

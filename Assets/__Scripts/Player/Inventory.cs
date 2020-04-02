@@ -69,6 +69,8 @@ public class Inventory : MonoBehaviour
         {
             firstWeapon = plasmaSMG;
             secondWeapon = empAR;
+            slot1Wep = "plasmaSMG";
+            slot2Wep = "empAR";
         }else{
             if(slot1Wep == "empSMG"){firstWeapon = empSMG;} // checks static string ands sets weapon accordingly in slot 1
             else if(slot1Wep == "plasmaSMG"){firstWeapon = plasmaSMG;}
