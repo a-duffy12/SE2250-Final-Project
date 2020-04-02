@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(AudioSource))]
 
@@ -22,6 +23,7 @@ public class BossAI : MonoBehaviour, IEntity
     public GameObject bossProjectile; // projectile boss shoots
     public GameObject explosionParticle; // particle effect for explosion upon death
     public GameObject robotEnemy; // robot enemy to be summoned
+    public Text bossHP; // text to display boss hp
     public AudioClip damageBossAudio; // sound for taking damage
     public AudioClip killBossAudio; // sound upon death
     public AudioClip bossAlertAudio; // sound for enemy alerted to player
@@ -57,6 +59,8 @@ public class BossAI : MonoBehaviour, IEntity
 
         _source.clip = bossAlertAudio; // sets alert audio
         _source.Play(); // plays alert audio 
+
+        bossHP.text = npcHP.ToString(); // display boss' remaining HP
     }
 
     // Update is called once per frame
@@ -65,8 +69,10 @@ public class BossAI : MonoBehaviour, IEntity
         // boss always looks at player
         transform.LookAt(new Vector3(playerTransform.position.x, playerTransform.position.y + 3.8f, playerTransform.position.z));
 
-        Move();
-        ChooseNextAttack();
+        bossHP.text = npcHP.ToString(); // updates boss' remaining HP
+
+        Move(); // move boss
+        ChooseNextAttack(); // check for attacks
     }
 
     // function to adjust positioning of boss
@@ -94,7 +100,7 @@ public class BossAI : MonoBehaviour, IEntity
 
         if (Time.time > _nextAttackTime) {
 
-            _nextAttackTime = Time.time + volleyDelay*volleySize + 8.0f; // next attack cycle is allowed after current attack cycle finishes
+            _nextAttackTime = Time.time + volleyDelay*volleySize + 3.5f; // next attack cycle is allowed after current attack cycle finishes
 
             if (_attackNum == 0) { // first attack
 

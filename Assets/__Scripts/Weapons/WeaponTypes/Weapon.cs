@@ -92,7 +92,7 @@ public class Weapon : MonoBehaviour
 
                         GameObject bulletObject = Instantiate(bulletType, firePoint.position, firePoint.rotation);
                         Bullet bullet = bulletObject.GetComponent<Bullet>(); // gets an instance of the bullet object
-                        bullet.SetDamage(damage); // sets the damage based of the weapon
+                        bullet.SetDamage(damage*PlayerSkillManager.gunDmgMult); // sets the damage based of the weapon
                         _currentMagSize--; // removes a bullet from the magazine
                         _source.clip = bulletAudio; // sets firing audio
                         _source.Play(); // plays firing audio
@@ -101,7 +101,7 @@ public class Weapon : MonoBehaviour
 
                         GameObject bulletObject = Instantiate(bulletType, firePoint.position, firePoint.rotation);
                         Plasma plasmaBullet = bulletObject.GetComponent<Plasma>(); // gets an instance of the bullet object
-                        plasmaBullet.SetDamage(damage); // sets the damage based of the weapon
+                        plasmaBullet.SetDamage(damage*PlayerSkillManager.gunDmgMult); // sets the damage based of the weapon
                         _currentMagSize--; // removes a bullet from the magazine
                         _source.clip = plasmaAudio; // sets firing audio
                         _source.Play(); // plays firing audio
@@ -110,7 +110,7 @@ public class Weapon : MonoBehaviour
 
                         GameObject bulletObject = Instantiate(bulletType, firePoint.position, firePoint.rotation);
                         Rail railBullet = bulletObject.GetComponent<Rail>(); // gets an instance of the bullet object
-                        railBullet.SetDamage(damage); // sets the damage based of the weapon
+                        railBullet.SetDamage(damage*PlayerSkillManager.gunDmgMult); // sets the damage based of the weapon
                         _currentMagSize--; // removes a bullet from the magazine
                         _source.clip = railAudio; // sets firing audio
                         _source.Play(); // plays firing audio
@@ -119,7 +119,7 @@ public class Weapon : MonoBehaviour
 
                         GameObject bulletObject = Instantiate(bulletType, firePoint.position, firePoint.rotation);
                         Emp empBullet = bulletObject.GetComponent<Emp>(); // gets an instance of the bullet object
-                        empBullet.SetDamage(damage); // sets the damage based of the weapon
+                        empBullet.SetDamage(damage*PlayerSkillManager.gunDmgMult); // sets the damage based of the weapon
                         _currentMagSize--; // removes a bullet from the magazine
                         _source.clip = empAudio; // sets firing audio
                         _source.Play(); // plays firing audio

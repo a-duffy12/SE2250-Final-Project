@@ -79,7 +79,7 @@ public class RobotEnemyAI : MonoBehaviour, IEntity
 
             if (entity != null) { // check if it is a valid entity
 
-                entity.ApplyDamage(suicideDamage); // deals damage to the npc
+                entity.ApplyDamage(suicideDamage*PlayerSkillManager.dmgReductionMult); // deals damage to the npc
             }
         }
     }
@@ -101,7 +101,6 @@ public class RobotEnemyAI : MonoBehaviour, IEntity
                 PlayerExp.playerXP += experienceGain;
                 if(Math.Floor(PlayerExp.playerXP/PlayerSkillManager.expNeeded) >= 1)
                 {
-                    print("in");
                     PlayerSkillManager.availSkillPoints++;
                     PlayerSkillManager.expNeeded+=PlayerSkillManager.expNeeded;
                 }

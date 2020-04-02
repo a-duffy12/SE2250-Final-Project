@@ -9,7 +9,7 @@ public class PlayerExp : MonoBehaviour
 {
     static public float playerXP = 0;
     public float abilityXP; // XP threshold to unlock ability
-    public float abilityDuration = 5; // how long ability lasts for
+    public float abilityDuration = 5f; // how long ability lasts for
     public float abilityCooldown = 10; // how long between abilities
     
     public Text XP; // text for xp
@@ -89,7 +89,7 @@ public class PlayerExp : MonoBehaviour
 
         DamageReceiver.invulnerable = true; // player becomes invulnerable
         abilityText.text = "[E] 0/1"; // no ability left
-        yield return new WaitForSeconds(abilityDuration-0.1f); // wait until ability is done
+        yield return new WaitForSeconds(abilityDuration+PlayerSkillManager.shieldTimerIncrease-0.1f); // wait until ability is done
         _abilityActive = false; // ability is no longer active
         DamageReceiver.invulnerable = false; // player becomes vulnerable again
         yield return new WaitForSeconds(abilityCooldown-0.1f); // wait until cooldown is done

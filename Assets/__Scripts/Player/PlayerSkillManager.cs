@@ -7,12 +7,13 @@ public class PlayerSkillManager : MonoBehaviour
     public static PlayerSkillManager instantiated = null; // used to create a singleton for this script
     public static int expNeeded = 50;
     // variables to increase the stats of the character
-    public float gunDmgMult = 1f;
-    public float grenadeDmgMult = 1f;
-    public float maxHealthIncrease = 0;
-    public float dmgReductionMult = 1f;
-    public float movementSpeedIncrease = 0;
-    public float shieldTimerIncrease = 0;
+    public static float gunDmgMult = 1f;
+    public static float grenadeDmgMult = 1f;
+    public static float maxHealthIncrease = 100;
+    public static float tempHealth;
+    public static float dmgReductionMult = 1f;
+    public static float movementSpeedIncrease = 12;
+    public static float shieldTimerIncrease = 0;
     public static int availSkillPoints = 0;
 
     void Awake()
@@ -51,7 +52,9 @@ public class PlayerSkillManager : MonoBehaviour
         if (availSkillPoints >= 1)
         {
             maxHealthIncrease += 10;
+            DamageReceiver.playerHP = maxHealthIncrease;
             availSkillPoints--;
+
         }
     }
     public void UpgradeDmgReduction()
@@ -67,6 +70,7 @@ public class PlayerSkillManager : MonoBehaviour
         if (availSkillPoints >= 1)
         {
             movementSpeedIncrease += 1;
+            PlayerMovement.speed = movementSpeedIncrease;
             availSkillPoints--;
         }
     }
