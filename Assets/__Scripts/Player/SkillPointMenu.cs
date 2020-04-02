@@ -20,12 +20,12 @@ public class SkillPointMenu : MonoBehaviour
     {
         availSkillPointsText.text = "Available Skill Points: " + PlayerSkillManager.availSkillPoints.ToString(); // updates text to display the number of skill points
         //Updates number of times player has upgraded a skill
-        gunUpgrades.text = "Times Upgraded" + PlayerSkillManager.gunDmgUpgrades.ToString();
-        nadeUpgrades.text = "Times Upgraded" + PlayerSkillManager.grenadeDmgUpgrades.ToString();
-        healthUpgrades.text = "Times Upgraded" + PlayerSkillManager.healthUpgrades.ToString();
-        dmgRedUpgrades.text = "Times Upgraded" + PlayerSkillManager.dmgReductionUpgrades.ToString();
-        msUpgrades.text = "Times Upgraded" + PlayerSkillManager.movementSpeedUpgrades.ToString();
-        shieldUpgrades.text = "Times Upgraded" + PlayerSkillManager.shieldTimerUpgrades.ToString();
+        gunUpgrades.text = "Times Upgraded: " + PlayerSkillManager.gunDmgUpgrades.ToString();
+        nadeUpgrades.text = "Times Upgraded: " + PlayerSkillManager.grenadeDmgUpgrades.ToString();
+        healthUpgrades.text = "Times Upgraded: " + PlayerSkillManager.healthUpgrades.ToString();
+        dmgRedUpgrades.text = "Times Upgraded: " + PlayerSkillManager.dmgReductionUpgrades.ToString();
+        msUpgrades.text = "Times Upgraded: " + PlayerSkillManager.movementSpeedUpgrades.ToString();
+        shieldUpgrades.text = "Times Upgraded: " + PlayerSkillManager.shieldTimerUpgrades.ToString();
 
         // Checks when the player wants to open up the skill points menu
         if (Input.GetKeyDown(KeyCode.Equals))
