@@ -86,7 +86,7 @@ public class ArmorEnemyAI : MonoBehaviour, IEntity
                     Debug.DrawLine(firePoint.position, firePoint.position + firePoint.forward * attackDistance, Color.cyan);
 
                     IEntity player = hit.transform.GetComponent<IEntity>();
-                    player.ApplyDamage(npcDamage);
+                    player.ApplyDamage(npcDamage*PlayerSkillManager.dmgReductionMult);
                 }
             }
         }
@@ -119,7 +119,6 @@ public class ArmorEnemyAI : MonoBehaviour, IEntity
                 PlayerExp.playerXP += experienceGain;
                 if(Math.Floor(PlayerExp.playerXP/PlayerSkillManager.expNeeded) >= 1)
                 {
-                    print("in");
                     PlayerSkillManager.availSkillPoints++;
                     PlayerSkillManager.expNeeded+=PlayerSkillManager.expNeeded;
                 }

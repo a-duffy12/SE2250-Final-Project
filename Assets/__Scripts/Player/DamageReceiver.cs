@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class DamageReceiver : MonoBehaviour, IEntity
 {
-    public float playerHP = 12;
+    public static float playerHP = 100;
     public static bool invulnerable = false;  
     public Text DeathText;
     public Text HP; 

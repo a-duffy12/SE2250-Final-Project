@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
 
     static public PlayerMovement S; // singleton variable
 
-    public float speed = 12f; // movement speed
+    public static float speed = 12f; // movement speed
     public float grav = -9.81f; //gravity
     public float jumpHt = 3f; //jump height    
 

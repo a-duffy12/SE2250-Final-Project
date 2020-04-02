@@ -76,7 +76,7 @@ public class FleshEnemyAI : MonoBehaviour, IEntity
                     Debug.DrawLine(firePoint.position, firePoint.position + firePoint.forward * attackDistance, Color.cyan);
 
                     IEntity player = hit.transform.GetComponent<IEntity>();
-                    player.ApplyDamage(npcDamage);
+                    player.ApplyDamage(npcDamage*PlayerSkillManager.dmgReductionMult);
                 }
             }
         }
@@ -99,10 +99,8 @@ public class FleshEnemyAI : MonoBehaviour, IEntity
                 //code removed when playerXP was changed to static
                 //GameObject.Find("Player").GetComponent<PlayerExp>().playerXP += experienceGain;
                 PlayerExp.playerXP += experienceGain;
-                print("outputing " + PlayerExp.playerXP/PlayerSkillManager.expNeeded);
                 if(Math.Floor(PlayerExp.playerXP/PlayerSkillManager.expNeeded) >= 1)
                 {
-                    print("in");
                     PlayerSkillManager.availSkillPoints++;
                     PlayerSkillManager.expNeeded+=PlayerSkillManager.expNeeded;
                 }
