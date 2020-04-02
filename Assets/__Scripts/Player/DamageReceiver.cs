@@ -39,7 +39,7 @@ public class DamageReceiver : MonoBehaviour, IEntity
             _source.Play(); // plays death audio            
             DeathText.text = "You Died";
             StartCoroutine(ExecuteAfterTime(0.00003f)); // waits , then runs ExecuteAfterTime function
-            Time.timeScale = 0.00001f; //stops time so player cannot move
+            Time.timeScale = 0.00001f; //stops time so player cannot move            
         }
 
         if(playerHP > maxHP) // if health goes above max
@@ -65,6 +65,7 @@ public class DamageReceiver : MonoBehaviour, IEntity
     IEnumerator ExecuteAfterTime(float time){ 
         yield return new WaitForSeconds(time); // waits for time seconds
         PlayerExp.playerXP = _deathXP;
-        Application.LoadLevel(SceneManager.GetActiveScene().buildIndex); // reloads the level
+        playerHP = maxHP; // restarts player with max health
+        Application.LoadLevel(SceneManager.GetActiveScene().buildIndex); // reloads the level        
     }    
 }
