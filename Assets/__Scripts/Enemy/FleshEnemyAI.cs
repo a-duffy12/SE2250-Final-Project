@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -24,7 +25,7 @@ public class FleshEnemyAI : MonoBehaviour, IEntity
     private float _nextAttackTime = 0;
     [HideInInspector]
     public Transform playerTransform;
-    
+
     //private static float playerXP;
     // Start is called before the first frame update
     void Start()
@@ -47,16 +48,17 @@ public class FleshEnemyAI : MonoBehaviour, IEntity
 
             _source.clip = enemyAlertAudio; // sets alert audio
             _source.Play(); // plays alert audio
-            
+
             // if close enough then enemy actually attacks
             if (distance <= attackDistance)
-            {   
+            {
                 Attack();
             }
         }
     }
 
-    void Attack() {
+    void Attack()
+    {
         // only shoots once the time allows it
         if (Time.time > _nextAttackTime)
         {
@@ -80,7 +82,8 @@ public class FleshEnemyAI : MonoBehaviour, IEntity
         }
     }
 
-    public void ApplyDamage(float points) {
+    public void ApplyDamage(float points)
+    {
         npcHP -= points;
         _source.clip = damageEnemyAudio; // sets hurt audio
         _source.Play(); // plays hurt audio 
@@ -90,16 +93,24 @@ public class FleshEnemyAI : MonoBehaviour, IEntity
             _source.clip = killEnemyAudio; // sets death audio
             _source.Play(); // plays death audio 
 
-            if(giveXP){
+            if (giveXP)
+            {
                 //TODO
                 //code removed when playerXP was changed to static
                 //GameObject.Find("Player").GetComponent<PlayerExp>().playerXP += experienceGain;
                 PlayerExp.playerXP += experienceGain;
+                print("outputing " + PlayerExp.playerXP/PlayerSkillManager.expNeeded);
+                if(Math.Floor(PlayerExp.playerXP/PlayerSkillManager.expNeeded) >= 1)
+                {
+                    print("in");
+                    PlayerSkillManager.availSkillPoints++;
+                    PlayerSkillManager.expNeeded+=PlayerSkillManager.expNeeded;
+                }
                 giveXP = false;
-            }            
+            }
             //Slightly bounce the npc dead prefab up
             gameObject.GetComponent<Rigidbody>().velocity = (-(playerTransform.position - transform.position).normalized * 8) + new Vector3(0, 0.6f, 0);
-            Destroy(gameObject, 1);            
+            Destroy(gameObject, 1);
         }
     }
 }

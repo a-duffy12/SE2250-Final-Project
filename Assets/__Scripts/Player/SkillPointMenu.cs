@@ -1,15 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SkillPointMenu : MonoBehaviour
 {
     public static bool gameIsPaused = false;
     public GameObject skillPointUI;
+    public Text availSkillPointsText;
 
     // Update is called once per frame
     void Update()
     {
+        availSkillPointsText.text = "Available Skill Points: " + PlayerSkillManager.availSkillPoints.ToString();
         if (Input.GetKeyDown(KeyCode.Equals))
         {
             if (gameIsPaused)

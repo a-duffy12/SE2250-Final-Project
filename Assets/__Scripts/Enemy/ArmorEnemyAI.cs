@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -116,6 +117,12 @@ public class ArmorEnemyAI : MonoBehaviour, IEntity
                 //code removed when playerXP was changed to static
                 //GameObject.Find("Player").GetComponent<PlayerExp>().playerXP += experienceGain;
                 PlayerExp.playerXP += experienceGain;
+                if(Math.Floor(PlayerExp.playerXP/PlayerSkillManager.expNeeded) >= 1)
+                {
+                    print("in");
+                    PlayerSkillManager.availSkillPoints++;
+                    PlayerSkillManager.expNeeded+=PlayerSkillManager.expNeeded;
+                }
                 giveXP = false;
             }            
             //Slightly bounce the npc dead prefab up
