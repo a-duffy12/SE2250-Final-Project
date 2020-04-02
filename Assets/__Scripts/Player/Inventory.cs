@@ -260,6 +260,10 @@ public class Inventory : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.H)) { // runs when player presses H key
             healthKits -= 1; // subtracts health kit
             healthKit.text = healthKits.ToString(); // updates UI
+            /*GameObject thePlayer = GameObject.Find("Player");
+            DamageReceiver playerHP = thePlayer.GetComponent<DamageReceiver>();
+            playerHP.playerHP += 10.0f;*/
+            DamageReceiver.playerHP += 50;
 
         }
         

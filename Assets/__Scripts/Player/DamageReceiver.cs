@@ -9,6 +9,7 @@ using UnityEngine.SceneManagement;
 public class DamageReceiver : MonoBehaviour, IEntity
 {
     public static float playerHP = 100;
+    public static float maxHP = 100;
     public static bool invulnerable = false;  
     public Text DeathText;
     public Text HP; 
@@ -39,7 +40,14 @@ public class DamageReceiver : MonoBehaviour, IEntity
             DeathText.text = "You Died";
             StartCoroutine(ExecuteAfterTime(0.00003f)); // waits , then runs ExecuteAfterTime function
             Time.timeScale = 0.00001f; //stops time so player cannot move
-        }   
+        }
+
+        if(playerHP > maxHP) // if health goes above max
+        {
+            playerHP = maxHP; // set HP to max value            
+        }
+
+        HP.text = "HP: " + playerHP.ToString(); // display player HP   
     }
 
     public void ApplyDamage(float dmg)
