@@ -55,7 +55,7 @@ MonoBehaviour:
   magSize: 30
   reloadTime: 2.5
   damage: 30
-  range: 30
+  range: 40
   bulletAudio: {fileID: 8300000, guid: 563bb50fbce0918409b974624e139955, type: 3}
   plasmaAudio: {fileID: 8300000, guid: e79dee70c531e934583e0de7fd102dfe, type: 3}
   railAudio: {fileID: 8300000, guid: 63520879d242cd542a624a1954f6c930, type: 3}
