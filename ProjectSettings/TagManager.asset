@@ -29,6 +29,7 @@ TagManager:
   - empSMG
   - plasmaSMG
   - railSMG
+  - health
   layers:
   - Default
   - TransparentFX

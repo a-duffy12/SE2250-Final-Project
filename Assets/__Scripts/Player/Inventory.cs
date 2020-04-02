@@ -33,7 +33,8 @@ public class Inventory : MonoBehaviour
     public Weapon empSR;
     public Weapon plasmaSR;
     public Weapon railSR;
-    
+
+    public int healthKits = 0;    
 
     [HideInInspector]
     public Weapon currentWeapon; // weapon the player is currently holding
@@ -94,6 +95,12 @@ public class Inventory : MonoBehaviour
             pickUp.text = "Press Q to pickup weapon";
         }
 
+        if(other.gameObject.CompareTag("health")){ 
+                other.gameObject.SetActive(false);
+                pickUp.text = "";
+                healthKits += 1;                
+        }
+        
         if (Input.GetKeyDown(KeyCode.Q)){
             if(other.gameObject.CompareTag("empSR")){ 
                 if(firstWeapon == currentWeapon){
