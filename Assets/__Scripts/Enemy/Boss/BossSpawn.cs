@@ -7,10 +7,16 @@ public class BossSpawn : MonoBehaviour
     public Transform Spawnpoint;
     public GameObject Boss;
 
+    private bool _hasSpawned = false;
 
     void OnTriggerEnter()
     {
-        Instantiate(Boss, Spawnpoint.position, Spawnpoint.rotation);
+        if (!_hasSpawned) {
+            
+            _hasSpawned = true;
+            Instantiate(Boss, Spawnpoint.position, Spawnpoint.rotation);
+        }
+        
     }
 
 }

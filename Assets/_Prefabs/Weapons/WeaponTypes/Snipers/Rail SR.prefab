@@ -132,8 +132,8 @@ MonoBehaviour:
   singleFire: 1
   fireRate: 30
   magSize: 5
-  reloadTime: 3.606
-  damage: 195
+  reloadTime: 3.5
+  damage: 495
   range: 100
   bulletAudio: {fileID: 8300000, guid: 563bb50fbce0918409b974624e139955, type: 3}
   plasmaAudio: {fileID: 8300000, guid: e79dee70c531e934583e0de7fd102dfe, type: 3}

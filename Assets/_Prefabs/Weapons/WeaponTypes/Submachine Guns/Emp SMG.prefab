@@ -54,7 +54,7 @@ MonoBehaviour:
   fireRate: 1080
   magSize: 40
   reloadTime: 0.5
-  damage: 20
+  damage: 16
   range: 10
   bulletAudio: {fileID: 8300000, guid: 563bb50fbce0918409b974624e139955, type: 3}
   plasmaAudio: {fileID: 8300000, guid: e79dee70c531e934583e0de7fd102dfe, type: 3}
