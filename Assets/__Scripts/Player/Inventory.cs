@@ -15,6 +15,7 @@ public class Inventory : MonoBehaviour
     public Text ammoCount; // ammo remaining display value
     public Text reloadWarning; // warns player to reload their gun
     public AudioClip swapAudio; // sound of switching weapons
+    public AudioClip healthKitAudio; // sound for using health kit
     public Text pickUp;
     public Text healthKit;
     public static float healthKitAmount = 50; // sets health kit heal amount
@@ -289,6 +290,9 @@ public class Inventory : MonoBehaviour
     {   GameObject playerObj = GameObject.FindGameObjectWithTag("Player"); // gets player object
         Vector3 pos = new Vector3(playerObj.transform.position.x, playerObj.transform.position.y - 1, playerObj.transform.position.z); // gets player position 
 
+        _source.clip = swapAudio; // sets swap audio
+        _source.Play(); // plays swap audio
+
         if(currentWeapon == empSMG){ // checks for current weapon and drops it at player position (for all weapons)
             Instantiate(empSMGP, pos, Quaternion.identity);
         }else if(currentWeapon == plasmaSMG){
@@ -314,10 +318,14 @@ public class Inventory : MonoBehaviour
     void Update() {
     
         if (Input.GetKeyDown(KeyCode.H)) { // runs when player presses H key
+        
             healthKits -= 1; // subtracts health kit
+
+            _source.clip = healthKitAudio; // sets health kit audio
+            _source.Play(); // plays health kit audio
+
             healthKit.text = healthKits.ToString(); // updates UI            
             DamageReceiver.playerHP += healthKitAmount;
-
         }
         
         // brings up pistol when pressing 1

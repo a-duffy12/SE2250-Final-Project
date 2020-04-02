@@ -1782,7 +1782,7 @@ PrefabInstance:
     - target: {fileID: 6762732031593342766, guid: e59d230347e712549a78c1014e3f988c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6762732031593342766, guid: e59d230347e712549a78c1014e3f988c,
         type: 3}
@@ -7709,7 +7709,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1795344248}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -8355,6 +8355,7 @@ MonoBehaviour:
   ammoCount: {fileID: 1693654966}
   reloadWarning: {fileID: 1933103499}
   swapAudio: {fileID: 8300000, guid: b4408aaefc766be41a6c76c142b83cc6, type: 3}
+  healthKitAudio: {fileID: 8300000, guid: 7c5253f6bf39b864d9872e5f5f547d73, type: 3}
   pickUp: {fileID: 1933103499}
   healthKit: {fileID: 906062397}
   slot1: {fileID: 221302515}
@@ -11105,7 +11106,6 @@ RectTransform:
   - {fileID: 281845579}
   - {fileID: 515456608}
   - {fileID: 1138785804}
-  - {fileID: 241444480}
   - {fileID: 1240612293}
   - {fileID: 221302514}
   - {fileID: 1596852823}
