@@ -58,7 +58,7 @@ public class RobotEnemyAI : MonoBehaviour, IEntity
             // enemy moves towards player
             transform.position = Vector3.MoveTowards(transform.position, playerTransform.position, npcSpeed*Time.deltaTime);
 
-            if (distance <= (suicideRadius-0.5))
+            if ((distance <= (suicideRadius-0.5)) && (npcHP > 0))
             {
                 Suicide();
             }
