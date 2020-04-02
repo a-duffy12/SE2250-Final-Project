@@ -11,6 +11,7 @@ public class PlayerSkillManager : MonoBehaviour
     public static int gunDmgUpgrades = 0;
     public static float grenadeDmgMult = 1f;
     public static int grenadeDmgUpgrades = 0;
+    public static float maxHealthIncrease = 100; // default health is 100
     public static int healthUpgrades = 0;
     public static float dmgReductionMult = 1f;
     public static int dmgReductionUpgrades = 0;
@@ -60,8 +61,8 @@ public class PlayerSkillManager : MonoBehaviour
     {
         if (availSkillPoints >= 1)
         {
-            DamageReceiver.maxHP += 10; // increases player max health by 10
-            DamageReceiver.playerHP = DamageReceiver.maxHP; // resets the player's health
+            maxHealthIncrease += 10; // increases player max health by 10
+            DamageReceiver.playerHP = maxHealthIncrease; // resets the player's health
             healthUpgrades++;
             availSkillPoints--;
 
