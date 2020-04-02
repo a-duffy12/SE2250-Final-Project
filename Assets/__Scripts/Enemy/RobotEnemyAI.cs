@@ -95,9 +95,6 @@ public class RobotEnemyAI : MonoBehaviour, IEntity
             _source.Play(); // plays death audio 
 
             if(giveXP){
-                //TODO
-                //code removed when playerXP was changed to static
-                //GameObject.Find("Player").GetComponent<PlayerExp>().playerXP += experienceGain;
                 PlayerExp.playerXP += experienceGain;
                 if(Math.Floor(PlayerExp.playerXP/PlayerSkillManager.expNeeded) >= 1) // checks if the player reached interval for next skill point
                 {

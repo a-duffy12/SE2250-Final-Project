@@ -95,9 +95,6 @@ public class FleshEnemyAI : MonoBehaviour, IEntity
 
             if (giveXP)
             {
-                //TODO
-                //code removed when playerXP was changed to static
-                //GameObject.Find("Player").GetComponent<PlayerExp>().playerXP += experienceGain;
                 PlayerExp.playerXP += experienceGain;
                 if(Math.Floor(PlayerExp.playerXP/PlayerSkillManager.expNeeded) >= 1) // Checks if the player has enough experience to obtain a skill point
                 {

@@ -113,9 +113,6 @@ public class ArmorEnemyAI : MonoBehaviour, IEntity
             _source.Play(); // plays death audio 
 
             if(giveXP){
-                //TODO
-                //code removed when playerXP was changed to static
-                //GameObject.Find("Player").GetComponent<PlayerExp>().playerXP += experienceGain;
                 PlayerExp.playerXP += experienceGain;
                 // Checks if the player has enough experience to obtain a skill point
                 if(Math.Floor(PlayerExp.playerXP/PlayerSkillManager.expNeeded) >= 1)
