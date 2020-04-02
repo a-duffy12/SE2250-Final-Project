@@ -18,8 +18,6 @@ public class Inventory : MonoBehaviour
     public AudioClip healthKitAudio; // sound for using health kit
     public Text pickUp;
     public Text healthKit;
-    public Text slot1Text;
-    public Text slot2Text;
     public static float healthKitAmount = 50; // sets health kit heal amount
 
     public Image slot1;
@@ -60,9 +58,7 @@ public class Inventory : MonoBehaviour
     void Start() {
         //sets first weapons
         firstWeapon = empSMG;
-        secondWeapon = plasmaAR;
-
-        UpdateSlotText(); // updates UI weapon text on start up        
+        secondWeapon = plasmaAR;        
 
         // set all weapons to false
         empSMG.ActivateWeapon(false);
@@ -138,7 +134,7 @@ public class Inventory : MonoBehaviour
                     other.gameObject.SetActive(false); // destroys pickup 
                     pickUp.text = ""; // sets pickup text to nothing                
                 }
-                // the following code has the same structure as above but works on each of the nine weapons
+                // the following code has the same structure as above but works on each of the nice weapons
                 else if(other.gameObject.CompareTag("plasmaSR")){ 
                     if(firstWeapon == currentWeapon){
                         DropWeapon();
@@ -318,76 +314,8 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void UpdateSlotText(){ // method for updating inventory UI
-        Color emp = new Color(0.145f, 0.722f, 1f); // creates three new colors
-        Color plasma = new Color(0.780f, 0.0235f, 0.0274f);
-        Color rail = new Color(0.607f, 0.345f, 0.788f);
-
-        // checks for all possible weapons in the first slot and sets UI text accordingly 
-        if(firstWeapon == empSMG){ // checks for empSMG in first slot
-            slot1Text.text = "SMG"; // sets text to SMG
-            slot1Text.color = emp; // sets color to emp color (created above)
-        }else if(firstWeapon == plasmaSMG){
-            slot1Text.text = "SMG";
-            slot1Text.color = plasma;
-        }else if(firstWeapon == railSMG){
-            slot1Text.text = "SMG";
-            slot1Text.color = rail;
-        }else if(firstWeapon == empAR){
-            slot1Text.text = "AR";
-            slot1Text.color = emp;
-        }else if(firstWeapon == plasmaAR){
-            slot1Text.text = "AR";
-            slot1Text.color = plasma;
-        }else if(firstWeapon == railAR){
-            slot1Text.text = "AR";
-            slot1Text.color = rail;
-        }else if(firstWeapon == empSR){
-            slot1Text.text = "SR";
-            slot1Text.color = emp;
-        }else if(firstWeapon == plasmaSR){
-            slot1Text.text = "SR";
-            slot1Text.color = plasma;
-        }else if(firstWeapon == railSR){
-            slot1Text.text = "SR";
-            slot1Text.color = rail;
-        }
-
-        // same as above but for all possible weapons in the second slot
-        if(secondWeapon == empSMG){
-            slot2Text.text = "SMG";
-            slot2Text.color = emp;
-        }else if(secondWeapon == plasmaSMG){
-            slot2Text.text = "SMG";
-            slot2Text.color = plasma;
-        }else if(secondWeapon == railSMG){
-            slot2Text.text = "SMG";
-            slot2Text.color = rail;
-        }else if(secondWeapon == empAR){
-            slot2Text.text = "AR";
-            slot2Text.color = emp;
-        }else if(secondWeapon == plasmaAR){
-            slot2Text.text = "AR";
-            slot2Text.color = plasma;
-        }else if(secondWeapon == railAR){
-            slot2Text.text = "AR";
-            slot2Text.color = rail;
-        }else if(secondWeapon == empSR){
-            slot2Text.text = "SR";
-            slot2Text.color = emp;
-        }else if(secondWeapon == plasmaSR){
-            slot2Text.text = "SR";
-            slot2Text.color = plasma;
-        }else if(firstWeapon == railSR){
-            slot2Text.text = "SR";
-            slot2Text.color = rail;
-        }
-    }
-
     // Update is called once per frame
     void Update() {
-
-        UpdateSlotText(); // updates UI text
     
         if (Input.GetKeyDown(KeyCode.H)) { // runs when player presses H key
         
