@@ -48,6 +48,8 @@ public class PlayerExp : MonoBehaviour
     {
         XP.text = "XP: " + playerXP.ToString();
 
+        // check for boss and set its HP if it is present
+        boss = GameObject.FindGameObjectWithTag("Boss");
         if (boss != null) { // if boss is present
 
             bossHP.text = boss.GetComponent<BossAI>().npcHP.ToString(); // update HP in UI
