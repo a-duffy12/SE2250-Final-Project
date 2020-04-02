@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(AudioSource))]
 
@@ -10,8 +11,8 @@ public class Inventory : MonoBehaviour
 
     public Camera playerCamera; // player's camera
     public Weapon defaultPistol; // default weapon the player always has
-    public Weapon firstWeapon; // first weapon slot
-    public Weapon secondWeapon; // second weapon slot
+    public static Weapon firstWeapon; // first weapon slot
+    public static Weapon secondWeapon; // second weapon slot
     public Text ammoCount; // ammo remaining display value
     public Text reloadWarning; // warns player to reload their gun
     public AudioClip swapAudio; // sound of switching weapons
@@ -59,8 +60,14 @@ public class Inventory : MonoBehaviour
     // Start is called before the first frame update
     void Start() {
         //sets first weapons
-        firstWeapon = empSMG;
-        secondWeapon = plasmaAR;
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+
+        if (sceneName == "Parkour") 
+        {
+            firstWeapon = plasmaSMG;
+            secondWeapon = empAR;
+        }  
 
         UpdateSlotText(); // updates UI text        
 
