@@ -46,7 +46,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 100
   hitForce: 1
-  destroyAfter: 5
+  destroyAfter: 10
+  fleshMod: 0.5
+  armorMod: 1
+  robotMod: 2
 --- !u!96 &8127306299412079144
 TrailRenderer:
   serializedVersion: 2
