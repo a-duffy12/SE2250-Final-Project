@@ -50,9 +50,13 @@ public class PlayerExp : MonoBehaviour
 
         // check for boss and set its HP if it is present
         boss = GameObject.FindGameObjectWithTag("Boss");
-        if (boss != null) { // if boss is present
+        if ((boss != null) && (boss.GetComponent<BossAI>().npcHP > 0)) { // if boss is present and alive
 
             bossHP.text = boss.GetComponent<BossAI>().npcHP.ToString(); // update HP in UI
+
+        } else if ((boss != null) && (boss.GetComponent<BossAI>().npcHP <= 0)) { // if boss is preset and dead
+
+            bossHP.text = "0";            
         }
 
         if (Input.GetKeyDown(KeyCode.E) && playerXP >= abilityXP) { // if the player presses G and a grenade is available

@@ -35,7 +35,10 @@ public class BossProjectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // boss moves towards player
+        // missile faces the player
+        transform.LookAt(new Vector3(playerTransform.position.x, playerTransform.position.y + 3.8f, playerTransform.position.z));
+
+        // missile moves towards player
         transform.position = Vector3.MoveTowards(transform.position, playerTransform.position, projectileSpeed*Time.deltaTime);
 
         // distance between missile and player
