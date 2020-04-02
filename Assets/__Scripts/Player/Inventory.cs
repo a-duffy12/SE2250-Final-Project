@@ -16,6 +16,7 @@ public class Inventory : MonoBehaviour
     public Text reloadWarning; // warns player to reload their gun
     public AudioClip swapAudio; // sound of switching weapons
     public Text pickUp;
+    public Text healthKit;
 
     public Image slot1;
     public Image slot2;
@@ -24,7 +25,7 @@ public class Inventory : MonoBehaviour
     Color green = new Color(0f, 1f, 0f, 0.3f);
     Color def = new Color(0.5f, 0.5f, 0.5f, 0.3f);
 
-    public Weapon empSMG;
+    public Weapon empSMG; //set all weapons
     public Weapon plasmaSMG;
     public Weapon railSMG;    
     public Weapon empAR;
@@ -83,7 +84,7 @@ public class Inventory : MonoBehaviour
         _source.playOnAwake = false; // does not play on startup
         _source.spatialBlend = 1f; // makes the sound 3D
 
-        ChangeColor(slot1, green);
+        ChangeColor(slot1, green); //changes colors of slots so that active slot is visible
         ChangeColor(slot2, def);
         ChangeColor(slot3, def);
         ChangeColor(slotHealth, def);
@@ -92,31 +93,33 @@ public class Inventory : MonoBehaviour
     // runs when player is colliding with pickup
     void OnTriggerStay(Collider other){ // runs when the player collides 
         if(other.gameObject.CompareTag("empSR") || other.gameObject.CompareTag("plasmaSR") || other.gameObject.CompareTag("railSR") || other.gameObject.CompareTag("empSMG") || other.gameObject.CompareTag("plasmaSMG") || other.gameObject.CompareTag("railSMG") || other.gameObject.CompareTag("empAR") || other.gameObject.CompareTag("plasmaAR") || other.gameObject.CompareTag("railAR")){
-            pickUp.text = "Press Q to pickup weapon";
+            pickUp.text = "Press Q to pickup weapon"; // shows pickup message to player 
         }
 
-        if(other.gameObject.CompareTag("health")){ 
-                other.gameObject.SetActive(false);
+        if(other.gameObject.CompareTag("health")){ // checks if the pickup is a health kit 
+                other.gameObject.SetActive(false); //destroys health kit
                 pickUp.text = "";
-                healthKits += 1;                
+                healthKits += 1; // adds 1 to health kit value
+                healthKit.text = healthKits.ToString(); // updates UI               
         }
         
-        if (Input.GetKeyDown(KeyCode.Q)){
-            if(other.gameObject.CompareTag("empSR")){ 
-                if(firstWeapon == currentWeapon){
-                    firstWeapon.ActivateWeapon(false);
-                    firstWeapon = empSR;
+        if (Input.GetKeyDown(KeyCode.Q)){ // checks for when player clicks Q button
+            if(other.gameObject.CompareTag("empSR")){ // if the weapon tag is empSR 
+                if(firstWeapon == currentWeapon){ //checks if the active slot is slot1
+                    firstWeapon.ActivateWeapon(false); // sets slot1 weapon to false
+                    firstWeapon = empSR; // sets slot1 weapon to empSR
+                    currentWeapon = empSR; // sets current weapon to empSR
+                    firstWeapon.ActivateWeapon(true); // activates slot1 weapon (now empSR)
+                }else if(secondWeapon == currentWeapon){ //checks if the active slot is slot2
+                    secondWeapon.ActivateWeapon(false); // sets slot2 weapon to false
+                    secondWeapon = empSR; //sets slot2 and current weapon to empSR
                     currentWeapon = empSR;
-                    firstWeapon.ActivateWeapon(true);
-                }else if(secondWeapon == currentWeapon){
-                    secondWeapon.ActivateWeapon(false);
-                    secondWeapon = empSR;
-                    currentWeapon = empSR;
-                    secondWeapon.ActivateWeapon(true);
+                    secondWeapon.ActivateWeapon(true); // activates slot2 weapon (now empSR)
                 }
-                other.gameObject.SetActive(false);
-                pickUp.text = "";                
+                other.gameObject.SetActive(false); // destroys pickup 
+                pickUp.text = ""; // sets pickup text to nothing                
             }
+            // the following code has the same structure as above but works on each of the nice weapons
             else if(other.gameObject.CompareTag("plasmaSR")){ 
                 if(firstWeapon == currentWeapon){
                     firstWeapon.ActivateWeapon(false);
@@ -242,32 +245,36 @@ public class Inventory : MonoBehaviour
 
     void OnTriggerExit(Collider other){ // runs when the player collides 
         if(other.gameObject.CompareTag("empSR") || other.gameObject.CompareTag("plasmaSR") || other.gameObject.CompareTag("railSR") || other.gameObject.CompareTag("empSMG") || other.gameObject.CompareTag("plasmaSMG") || other.gameObject.CompareTag("railSMG") || other.gameObject.CompareTag("empAR") || other.gameObject.CompareTag("plasmaAR") || other.gameObject.CompareTag("railAR")){
-            pickUp.text = "";            
+            pickUp.text = ""; //sets pickup text to nothing when the player is not colliding            
         }
     }
 
-    public void ChangeColor (Image img, Color col)
+    public void ChangeColor (Image img, Color col) //color change method
     {
-        img.color = col;
+        img.color = col; // changes img color to col
     }
 
     // Update is called once per frame
     void Update() {
     
+        if (Input.GetKeyDown(KeyCode.H)) { // runs when player presses H key
+            healthKits -= 1; // subtracts health kit
+            healthKit.text = healthKits.ToString(); // updates UI
+
+        }
+        
         // brings up pistol when pressing 1
         if (Input.GetKeyDown(KeyCode.Alpha1)) {
 
             defaultPistol.ActivateWeapon(true); // switch to pistol
             firstWeapon.ActivateWeapon(false); // 1st slot disabled
             secondWeapon.ActivateWeapon(false); // 2nd slot disabled
-            currentWeapon = defaultPistol; // player now has pistol in hand
-
-            //bonusWeapon.ActivateWeapon(false);
+            currentWeapon = defaultPistol; // player now has pistol in hand            
 
             _source.clip = swapAudio; // sets swap audio
             _source.Play(); // plays swap audio
             
-            ChangeColor(slot1, green);
+            ChangeColor(slot1, green); //changes colors of slots so that active slot is visible
             ChangeColor(slot2, def);
             ChangeColor(slot3, def);
             ChangeColor(slotHealth, def);
@@ -279,14 +286,12 @@ public class Inventory : MonoBehaviour
             defaultPistol.ActivateWeapon(false); // pistol disabled
             firstWeapon.ActivateWeapon(true); // switch to 1st slot
             secondWeapon.ActivateWeapon(false); // 2nd slot disabled
-            currentWeapon = firstWeapon; // player now has weapon 1 in hand
-
-            //bonusWeapon.ActivateWeapon(false);
+            currentWeapon = firstWeapon; // player now has weapon 1 in hand            
             
             _source.clip = swapAudio; // sets swap audio
             _source.Play(); // plays swap audio
 
-            ChangeColor(slot1, def);
+            ChangeColor(slot1, def); //changes colors of slots so that active slot is visible
             ChangeColor(slot2, green);
             ChangeColor(slot3, def);
             ChangeColor(slotHealth, def);
@@ -298,14 +303,12 @@ public class Inventory : MonoBehaviour
             defaultPistol.ActivateWeapon(false); // pistol disabled
             firstWeapon.ActivateWeapon(false); // 1st slot disabled
             secondWeapon.ActivateWeapon(true); // switch to 2nd slot
-            currentWeapon = secondWeapon; // player now has weapon 2 in hand
-
-            //bonusWeapon.ActivateWeapon(false);
+            currentWeapon = secondWeapon; // player now has weapon 2 in hand            
             
             _source.clip = swapAudio; // sets swap audio
             _source.Play(); // plays swap audio
 
-            ChangeColor(slot1, def);
+            ChangeColor(slot1, def); //changes colors of slots so that active slot is visible
             ChangeColor(slot2, def);
             ChangeColor(slot3, green);
             ChangeColor(slotHealth, def);
