@@ -3858,10 +3858,10 @@ MonoBehaviour:
     type: 3}
   robotEnemy: {fileID: 4414978283662063978, guid: 53f958b93f3b6e9409e19d28111151f9,
     type: 3}
-  damageBossAudio: {fileID: 8300000, guid: e3ce20900354653418e2ff021684cc3e, type: 3}
-  killBossAudio: {fileID: 8300000, guid: aa28f226eedc4f04fb5d40f485715874, type: 3}
-  bossAlertAudio: {fileID: 8300000, guid: f0243b83c2d5faf458135d374a854d96, type: 3}
-  bossSummonAudio: {fileID: 8300000, guid: b48fa0bd56ba7d541af2ecdeb65b005b, type: 3}
+  damageBossAudio: {fileID: 8300000, guid: 673f80e58d58f374dad8dce781612f54, type: 3}
+  killBossAudio: {fileID: 8300000, guid: 07cdbee61fceba94091b0a40fdf02adc, type: 3}
+  bossAlertAudio: {fileID: 8300000, guid: d8ea2e49ed5166042bb181728ebe7ff4, type: 3}
+  bossSummonAudio: {fileID: 8300000, guid: 2c77440cc6a6b4c43bb8a87c95ce9e1f, type: 3}
   playerTransform: {fileID: 0}
 --- !u!82 &4194408069319110033
 AudioSource:

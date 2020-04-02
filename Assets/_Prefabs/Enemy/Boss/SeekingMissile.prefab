@@ -174,8 +174,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 230f6c8c995dab14887396820ba09518, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileSpeed: 10
-  fuseTime: 3
+  projectileSpeed: 12
+  fuseTime: 4
   blastRadius: 1
   damage: 50
   explosionParticle: {fileID: 151039516118699280, guid: 4085b5b27b6f09747bb0a4b42e3d7e70,
