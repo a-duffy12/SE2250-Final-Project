@@ -21,6 +21,15 @@ TagManager:
   - MazeComplete
   - Boss
   - railSR
+  - plasmaSR
+  - empSR
+  - empAR
+  - plasmaAR
+  - railAR
+  - empSMG
+  - plasmaSMG
+  - railSMG
+  - health
   layers:
   - Default
   - TransparentFX

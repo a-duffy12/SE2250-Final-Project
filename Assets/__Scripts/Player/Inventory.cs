@@ -15,6 +15,7 @@ public class Inventory : MonoBehaviour
     public Text ammoCount; // ammo remaining display value
     public Text reloadWarning; // warns player to reload their gun
     public AudioClip swapAudio; // sound of switching weapons
+    public Text pickUp;
 
     public Image slot1;
     public Image slot2;
@@ -32,7 +33,8 @@ public class Inventory : MonoBehaviour
     public Weapon empSR;
     public Weapon plasmaSR;
     public Weapon railSR;
-    
+
+    public int healthKits = 0;    
 
     [HideInInspector]
     public Weapon currentWeapon; // weapon the player is currently holding
@@ -88,18 +90,142 @@ public class Inventory : MonoBehaviour
     }
 
     // runs when player is colliding with pickup
-    void OnTriggerEnter(Collider other){ // runs when the player collides 
-        if(other.gameObject.CompareTag("railSR")){ 
-            if(firstWeapon == currentWeapon){
-                firstWeapon.ActivateWeapon(false);
-                firstWeapon = railSR;
-                firstWeapon.ActivateWeapon(true);
-            }else if(secondWeapon == currentWeapon){
-                secondWeapon.ActivateWeapon(false);
-                secondWeapon = railSR;
-                secondWeapon.ActivateWeapon(true);
-            }                
-        }   
+    void OnTriggerStay(Collider other){ // runs when the player collides 
+        if(other.gameObject.CompareTag("empSR") || other.gameObject.CompareTag("plasmaSR") || other.gameObject.CompareTag("railSR") || other.gameObject.CompareTag("empSMG") || other.gameObject.CompareTag("plasmaSMG") || other.gameObject.CompareTag("railSMG") || other.gameObject.CompareTag("empAR") || other.gameObject.CompareTag("plasmaAR") || other.gameObject.CompareTag("railAR")){
+            pickUp.text = "Press Q to pickup weapon";
+        }
+
+        if(other.gameObject.CompareTag("health")){ 
+                other.gameObject.SetActive(false);
+                pickUp.text = "";
+                healthKits += 1;                
+        }
+        
+        if (Input.GetKeyDown(KeyCode.Q)){
+            if(other.gameObject.CompareTag("empSR")){ 
+                if(firstWeapon == currentWeapon){
+                    firstWeapon.ActivateWeapon(false);
+                    firstWeapon = empSR;
+                    firstWeapon.ActivateWeapon(true);
+                }else if(secondWeapon == currentWeapon){
+                    secondWeapon.ActivateWeapon(false);
+                    secondWeapon = empSR;
+                    secondWeapon.ActivateWeapon(true);
+                }
+                other.gameObject.SetActive(false);
+                pickUp.text = "";                
+            }
+            else if(other.gameObject.CompareTag("plasmaSR")){ 
+                if(firstWeapon == currentWeapon){
+                    firstWeapon.ActivateWeapon(false);
+                    firstWeapon = plasmaSR;
+                    firstWeapon.ActivateWeapon(true);
+                }else if(secondWeapon == currentWeapon){
+                    secondWeapon.ActivateWeapon(false);
+                    secondWeapon = plasmaSR;
+                    secondWeapon.ActivateWeapon(true);
+                }
+                other.gameObject.SetActive(false);
+                pickUp.text = "";                
+            } 
+            else if(other.gameObject.CompareTag("railSR")){ 
+                if(firstWeapon == currentWeapon){
+                    firstWeapon.ActivateWeapon(false);
+                    firstWeapon = railSR;
+                    firstWeapon.ActivateWeapon(true);
+                }else if(secondWeapon == currentWeapon){
+                    secondWeapon.ActivateWeapon(false);
+                    secondWeapon = railSR;
+                    secondWeapon.ActivateWeapon(true);
+                }
+                other.gameObject.SetActive(false);
+                pickUp.text = "";                            
+            }
+            else if(other.gameObject.CompareTag("empSMG")){ 
+                if(firstWeapon == currentWeapon){
+                    firstWeapon.ActivateWeapon(false);
+                    firstWeapon = empSMG;
+                    firstWeapon.ActivateWeapon(true);
+                }else if(secondWeapon == currentWeapon){
+                    secondWeapon.ActivateWeapon(false);
+                    secondWeapon = empSMG;
+                    secondWeapon.ActivateWeapon(true);
+                }
+                other.gameObject.SetActive(false);
+                pickUp.text = "";                
+            }
+            else if(other.gameObject.CompareTag("plasmaSMG")){ 
+                if(firstWeapon == currentWeapon){
+                    firstWeapon.ActivateWeapon(false);
+                    firstWeapon = plasmaSMG;
+                    firstWeapon.ActivateWeapon(true);
+                }else if(secondWeapon == currentWeapon){
+                    secondWeapon.ActivateWeapon(false);
+                    secondWeapon = plasmaSMG;
+                    secondWeapon.ActivateWeapon(true);
+                }
+                other.gameObject.SetActive(false);
+                pickUp.text = "";                
+            } 
+            else if(other.gameObject.CompareTag("railSMG")){ 
+                if(firstWeapon == currentWeapon){
+                    firstWeapon.ActivateWeapon(false);
+                    firstWeapon = railSMG;
+                    firstWeapon.ActivateWeapon(true);
+                }else if(secondWeapon == currentWeapon){
+                    secondWeapon.ActivateWeapon(false);
+                    secondWeapon = railSMG;
+                    secondWeapon.ActivateWeapon(true);
+                }
+                other.gameObject.SetActive(false);
+                pickUp.text = "";                            
+            }
+            else if(other.gameObject.CompareTag("empAR")){ 
+                if(firstWeapon == currentWeapon){
+                    firstWeapon.ActivateWeapon(false);
+                    firstWeapon = empAR;
+                    firstWeapon.ActivateWeapon(true);
+                }else if(secondWeapon == currentWeapon){
+                    secondWeapon.ActivateWeapon(false);
+                    secondWeapon = empAR;
+                    secondWeapon.ActivateWeapon(true);
+                }
+                other.gameObject.SetActive(false);
+                pickUp.text = "";                
+            }
+            else if(other.gameObject.CompareTag("plasmaAR")){ 
+                if(firstWeapon == currentWeapon){
+                    firstWeapon.ActivateWeapon(false);
+                    firstWeapon = plasmaAR;
+                    firstWeapon.ActivateWeapon(true);
+                }else if(secondWeapon == currentWeapon){
+                    secondWeapon.ActivateWeapon(false);
+                    secondWeapon = plasmaAR;
+                    secondWeapon.ActivateWeapon(true);
+                }
+                other.gameObject.SetActive(false);
+                pickUp.text = "";                
+            } 
+            else if(other.gameObject.CompareTag("railAR")){ 
+                if(firstWeapon == currentWeapon){
+                    firstWeapon.ActivateWeapon(false);
+                    firstWeapon = railAR;
+                    firstWeapon.ActivateWeapon(true);
+                }else if(secondWeapon == currentWeapon){
+                    secondWeapon.ActivateWeapon(false);
+                    secondWeapon = railAR;
+                    secondWeapon.ActivateWeapon(true);
+                }
+                other.gameObject.SetActive(false);
+                pickUp.text = "";                            
+            }               
+        }          
+    }
+
+    void OnTriggerExit(Collider other){ // runs when the player collides 
+        if(other.gameObject.CompareTag("empSR") || other.gameObject.CompareTag("plasmaSR") || other.gameObject.CompareTag("railSR") || other.gameObject.CompareTag("empSMG") || other.gameObject.CompareTag("plasmaSMG") || other.gameObject.CompareTag("railSMG") || other.gameObject.CompareTag("empAR") || other.gameObject.CompareTag("plasmaAR") || other.gameObject.CompareTag("railAR")){
+            pickUp.text = "";
+        }
     }
 
     public void ChangeColor (Image img, Color col)
