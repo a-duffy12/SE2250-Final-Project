@@ -4338,14 +4338,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 882838239}
   defaultPistol: {fileID: 1621959249}
+  firstWeapon: {fileID: 1122492312}
+  secondWeapon: {fileID: 644744587}
   ammoCount: {fileID: 476905412}
   reloadWarning: {fileID: 1093504323}
   swapAudio: {fileID: 8300000, guid: b4408aaefc766be41a6c76c142b83cc6, type: 3}
   healthKitAudio: {fileID: 8300000, guid: 7c5253f6bf39b864d9872e5f5f547d73, type: 3}
-  pickUp: {fileID: 487136082}
-  healthKit: {fileID: 313176379}
-  slot1Text: {fileID: 1046536453}
-  slot2Text: {fileID: 1807334230}
+  pickUp: {fileID: 0}
+  healthKit: {fileID: 0}
   slot1: {fileID: 1408840794}
   slot2: {fileID: 1768123215}
   slot3: {fileID: 992422842}
