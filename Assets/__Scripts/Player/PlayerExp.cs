@@ -89,7 +89,7 @@ public class PlayerExp : MonoBehaviour
 
         DamageReceiver.invulnerable = true; // player becomes invulnerable
         abilityText.text = "[E] 0/1"; // no ability left
-        yield return new WaitForSeconds(abilityDuration+PlayerSkillManager.shieldTimerIncrease-0.1f); // wait until ability is done
+        yield return new WaitForSeconds(abilityDuration+PlayerSkillManager.shieldTimerIncrease-0.1f); // wait until ability is done, increases depending on player's modifiers
         _abilityActive = false; // ability is no longer active
         DamageReceiver.invulnerable = false; // player becomes vulnerable again
         yield return new WaitForSeconds(abilityCooldown-0.1f); // wait until cooldown is done
