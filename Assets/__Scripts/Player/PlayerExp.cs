@@ -15,9 +15,6 @@ public class PlayerExp : MonoBehaviour
     public Text XP; // text for xp
     public Text abilityText; // text for ability
     public Text abilityWarningText; // text for ability cooldown
-    public Text bossHP; // text to display boss HP if a boss is present
-    [HideInInspector]
-    public GameObject boss; // gameobject for boss instance if a boss is present
 
     public AudioClip abilityAudio; // sound for ability
 
@@ -34,26 +31,12 @@ public class PlayerExp : MonoBehaviour
         _source.spatialBlend = 1f; // makes the sound 3D
         abilityText.text = "";
         abilityWarningText.text = "";
-
-        // check for boss and set its HP if it is present
-        boss = GameObject.FindGameObjectWithTag("Boss");
-        if (boss != null) {
-
-            bossHP.text = boss.GetComponent<BossAI>().npcHP.ToString(); // set HP in UI
-        }
     }
 
     // Update is called once per frame
     void Update()
     {
         XP.text = "XP: " + playerXP.ToString();
-
-        // check for boss and set its HP if it is present
-        boss = GameObject.FindGameObjectWithTag("Boss");
-        if (boss != null) { // if boss is present
-
-            bossHP.text = boss.GetComponent<BossAI>().npcHP.ToString(); // update HP in UI
-        }
 
         if (Input.GetKeyDown(KeyCode.E) && playerXP >= abilityXP) { // if the player presses G and a grenade is available
 
