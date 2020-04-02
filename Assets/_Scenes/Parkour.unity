@@ -1581,6 +1581,191 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2134194035}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &241444479
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1795344248}
+    m_Modifications:
+    - target: {fileID: 6762732030954483282, guid: e59d230347e712549a78c1014e3f988c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 387212105}
+    - target: {fileID: 6762732030954483282, guid: e59d230347e712549a78c1014e3f988c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpgradeShieldTimer
+      objectReference: {fileID: 0}
+    - target: {fileID: 6762732031593342766, guid: e59d230347e712549a78c1014e3f988c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6762732031593342766, guid: e59d230347e712549a78c1014e3f988c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6762732031593342766, guid: e59d230347e712549a78c1014e3f988c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6762732031593342766, guid: e59d230347e712549a78c1014e3f988c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6762732031593342766, guid: e59d230347e712549a78c1014e3f988c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6762732031593342766, guid: e59d230347e712549a78c1014e3f988c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6762732031593342766, guid: e59d230347e712549a78c1014e3f988c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6762732031593342766, guid: e59d230347e712549a78c1014e3f988c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6762732031593342766, guid: e59d230347e712549a78c1014e3f988c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6762732031593342766, guid: e59d230347e712549a78c1014e3f988c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6762732031593342766, guid: e59d230347e712549a78c1014e3f988c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6762732031593342766, guid: e59d230347e712549a78c1014e3f988c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6762732031593342766, guid: e59d230347e712549a78c1014e3f988c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6762732031593342766, guid: e59d230347e712549a78c1014e3f988c,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6762732031593342766, guid: e59d230347e712549a78c1014e3f988c,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6762732031593342766, guid: e59d230347e712549a78c1014e3f988c,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6762732031593342766, guid: e59d230347e712549a78c1014e3f988c,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6762732031593342766, guid: e59d230347e712549a78c1014e3f988c,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6762732031593342766, guid: e59d230347e712549a78c1014e3f988c,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6762732031593342766, guid: e59d230347e712549a78c1014e3f988c,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6762732031593342766, guid: e59d230347e712549a78c1014e3f988c,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6762732031593342767, guid: e59d230347e712549a78c1014e3f988c,
+        type: 3}
+      propertyPath: m_Name
+      value: Skill Point UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 6762732031723575826, guid: e59d230347e712549a78c1014e3f988c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 387212105}
+    - target: {fileID: 6762732031723575826, guid: e59d230347e712549a78c1014e3f988c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpgradeMovementSpeed
+      objectReference: {fileID: 0}
+    - target: {fileID: 6762732032052045312, guid: e59d230347e712549a78c1014e3f988c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 387212105}
+    - target: {fileID: 6762732032052045312, guid: e59d230347e712549a78c1014e3f988c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpgradeMaxHealth
+      objectReference: {fileID: 0}
+    - target: {fileID: 6762732032059928558, guid: e59d230347e712549a78c1014e3f988c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 387212105}
+    - target: {fileID: 6762732032059928558, guid: e59d230347e712549a78c1014e3f988c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpgradeGunDmg
+      objectReference: {fileID: 0}
+    - target: {fileID: 6762732032116885723, guid: e59d230347e712549a78c1014e3f988c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 387212105}
+    - target: {fileID: 6762732032116885723, guid: e59d230347e712549a78c1014e3f988c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpgradeDmgReduction
+      objectReference: {fileID: 0}
+    - target: {fileID: 6762732032408974019, guid: e59d230347e712549a78c1014e3f988c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 387212105}
+    - target: {fileID: 6762732032408974019, guid: e59d230347e712549a78c1014e3f988c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpgradeNadeDmg
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e59d230347e712549a78c1014e3f988c, type: 3}
+--- !u!224 &241444480 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6762732031593342766, guid: e59d230347e712549a78c1014e3f988c,
+    type: 3}
+  m_PrefabInstance: {fileID: 241444479}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &243714314
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2275,6 +2460,7 @@ GameObject:
   - component: {fileID: 387212103}
   - component: {fileID: 387212099}
   - component: {fileID: 387212107}
+  - component: {fileID: 387212105}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2391,7 +2577,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   control: {fileID: 387212101}
-  speed: 12
   grav: -9.81
   jumpHt: 3
   groundTest: {fileID: 122985761}
@@ -2480,11 +2665,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 348f44da3f542394781e4808bf0a2554, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHP: 100
   DeathText: {fileID: 742519290}
   HP: {fileID: 281845580}
   damagePlayerAudio: {fileID: 8300000, guid: a18787cba103f5843b51117c0b10543c, type: 3}
   killPlayerAudio: {fileID: 8300000, guid: 0e697e565e281f04aadd1c5523882fc5, type: 3}
+--- !u!114 &387212105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387212098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f74d182a73511b1469590f849eac9202, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &387212107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7321,6 +7517,21 @@ MonoBehaviour:
   ammoCount: {fileID: 1693654966}
   reloadWarning: {fileID: 1933103499}
   swapAudio: {fileID: 8300000, guid: b4408aaefc766be41a6c76c142b83cc6, type: 3}
+  pickUp: {fileID: 0}
+  slot1: {fileID: 0}
+  slot2: {fileID: 0}
+  slot3: {fileID: 0}
+  slotHealth: {fileID: 0}
+  empSMG: {fileID: 0}
+  plasmaSMG: {fileID: 0}
+  railSMG: {fileID: 0}
+  empAR: {fileID: 0}
+  plasmaAR: {fileID: 0}
+  railAR: {fileID: 0}
+  empSR: {fileID: 0}
+  plasmaSR: {fileID: 0}
+  railSR: {fileID: 0}
+  healthKits: 0
   currentWeapon: {fileID: 0}
 --- !u!1 &1336658790
 GameObject:
@@ -9795,6 +10006,7 @@ GameObject:
   - component: {fileID: 1795344247}
   - component: {fileID: 1795344246}
   - component: {fileID: 1795344245}
+  - component: {fileID: 1795344249}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: UI
@@ -9881,6 +10093,7 @@ RectTransform:
   - {fileID: 281845579}
   - {fileID: 515456608}
   - {fileID: 1138785804}
+  - {fileID: 241444480}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9889,6 +10102,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1795344249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1795344244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e79d848389c97c4c95bd7329b772988, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillPointUI: {fileID: 0}
+  availSkillPointsText: {fileID: 0}
 --- !u!1001 &1797950344
 PrefabInstance:
   m_ObjectHideFlags: 0
