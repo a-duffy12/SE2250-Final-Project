@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class skillPointsHUD : MonoBehaviour
 {
+    public GameObject skillNotifier;
     // Update is called once per frame
     void Update()
     {
@@ -12,16 +13,16 @@ public class skillPointsHUD : MonoBehaviour
         {
             if (SkillPointMenu.gameIsPaused) // if game is paused then the HUD disappears
             {
-                gameObject.SetActive(false);
+                skillNotifier.SetActive(false);
             }
             else// if game is not paused, the HUD will notify player of available skill points
             {
-                gameObject.SetActive(true);
+                skillNotifier.SetActive(true);
             }
         }
         else
         {
-            gameObject.SetActive(false);
+            skillNotifier.SetActive(false);
         }
     }
 }
