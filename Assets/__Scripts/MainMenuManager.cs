@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
+    // method to change the scene
     public void ChangeScene(int nextScene){
-        SceneManager.LoadScene(nextScene);
+        SceneManager.LoadScene(nextScene);//changes scene to scene number sent in function
     }
 }

@@ -61,7 +61,7 @@ public class PlayerExp : MonoBehaviour
 
             bossHP.text = "0";  
             winText.text = "You Win!\nPress enter to continue"; // displays win text 
-            if(Input.GetKeyDown(KeyCode.Return)){ // loads StartMenu scene
+            if(Input.GetKeyDown(KeyCode.Return)){ // loads StartMenu scene when enter is clicked
                     Application.LoadLevel(7);
                 }
             // The cursor shows up so the player click start in start menu
