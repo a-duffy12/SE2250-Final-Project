@@ -175,6 +175,7 @@ public class BossAI : MonoBehaviour, IEntity
         {
             _source.clip = killBossAudio; // sets death audio
             _source.Play(); // plays death audio 
+            StartCoroutine(ExecuteAfterTime(0.00003f)); // waits , then runs ExecuteAfterTime function
 
             if(giveXP){
                 //TODO
@@ -188,6 +189,10 @@ public class BossAI : MonoBehaviour, IEntity
                     PlayerSkillManager.expNeeded+=PlayerSkillManager.expNeeded; // increases the amount of experience needed to next interval
                 }
                 giveXP = false;
+            }
+            IEnumerator ExecuteAfterTime(float time){
+                yield return new WaitForSeconds(time); // waits for time seconds
+                Time.timeScale = 0f; //stops time so player cannot move
             }            
             // play explosion upon death
             GameObject effect = Instantiate(explosionParticle, transform.position, transform.rotation); // create explosion particles

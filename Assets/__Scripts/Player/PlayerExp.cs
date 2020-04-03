@@ -16,6 +16,7 @@ public class PlayerExp : MonoBehaviour
     public Text abilityText; // text for ability
     public Text abilityWarningText; // text for ability cooldown
     public Text bossHP; // text to display boss HP if a boss is present
+    public Text winText; // text for when game is won
     [HideInInspector]
     public GameObject boss; // gameobject for boss instance if a boss is present
 
@@ -56,7 +57,14 @@ public class PlayerExp : MonoBehaviour
 
         } else if ((boss != null) && (boss.GetComponent<BossAI>().npcHP <= 0)) { // if boss is preset and dead
 
-            bossHP.text = "0";            
+            bossHP.text = "0";  
+            winText.text = "You Win!\nPress enter to return to start menu"; // displays win text 
+            if(Input.GetKeyDown(KeyCode.Return)){ // loads StartMenu scene
+                    Application.LoadLevel(0);
+                }
+            // The cursor shows up so the player click start in start menu
+            Cursor.lockState = CursorLockMode.None; 
+            Cursor.visible = true;         
         }
 
         if (Input.GetKeyDown(KeyCode.E) && playerXP >= abilityXP) { // if the player presses G and a grenade is available
