@@ -100,7 +100,7 @@ public class FleshEnemyAI : MonoBehaviour, IEntity
                 if(Math.Floor(PlayerExp.playerXP/PlayerSkillManager.expNeeded) >= 1) // Checks if the player has enough experience to obtain a skill point
                 {
                     PlayerSkillManager.availSkillPoints++;
-                    PlayerSkillManager.expNeeded+=PlayerSkillManager.expNeeded; // increases the amount of experience needed to next interval
+                    PlayerSkillManager.expNeeded+=PlayerSkillManager.expInterval; // increases the amount of experience needed to next interval
                 }
                 giveXP = false;
             }

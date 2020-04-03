@@ -186,7 +186,7 @@ public class BossAI : MonoBehaviour, IEntity
                 if(PlayerExp.playerXP/PlayerSkillManager.expNeeded >= 1)
                 {
                     PlayerSkillManager.availSkillPoints++;
-                    PlayerSkillManager.expNeeded+=PlayerSkillManager.expNeeded; // increases the amount of experience needed to next interval
+                    PlayerSkillManager.expNeeded+=PlayerSkillManager.expInterval; // increases the amount of experience needed to next interval
                 }
                 giveXP = false;
             }

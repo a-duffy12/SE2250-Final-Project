@@ -31,7 +31,6 @@ public class Grenade : MonoBehaviour
             if (entity != null) { // check if it is a valid entity
 
                entity.ApplyDamage(damage*PlayerSkillManager.grenadeDmgMult); // deals damage to the npc
-               print(damage*PlayerSkillManager.grenadeDmgMult);
                 
             }
         }

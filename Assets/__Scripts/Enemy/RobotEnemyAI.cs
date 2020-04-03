@@ -100,7 +100,7 @@ public class RobotEnemyAI : MonoBehaviour, IEntity
                 if(Math.Floor(PlayerExp.playerXP/PlayerSkillManager.expNeeded) >= 1) // checks if the player reached interval for next skill point
                 {
                     PlayerSkillManager.availSkillPoints++;
-                    PlayerSkillManager.expNeeded+=PlayerSkillManager.expNeeded; // increases experience needed to next interval
+                    PlayerSkillManager.expNeeded+=PlayerSkillManager.expInterval; // increases experience needed to next interval
                 }
                 giveXP = false;
             }            
