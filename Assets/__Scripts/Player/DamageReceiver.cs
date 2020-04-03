@@ -10,7 +10,8 @@ public class DamageReceiver : MonoBehaviour, IEntity
 {
     public static float playerHP = 100;
     public static float maxHP = 100;
-    public static bool invulnerable = false;  
+    public static bool invulnerable = false; 
+    public static bool dead = false; 
     public Text DeathText;
     public Text HP; 
     public AudioClip damagePlayerAudio; // sound for taking damage
@@ -28,6 +29,7 @@ public class DamageReceiver : MonoBehaviour, IEntity
         _deathXP = PlayerExp.playerXP;
         Time.timeScale = 1;
         HP.text = "HP: " + playerHP.ToString();
+        dead = false;
     }
 
     public void Update()
@@ -35,6 +37,7 @@ public class DamageReceiver : MonoBehaviour, IEntity
         if(playerHP <= 0)
         {
             playerHP = 0;
+            dead = true;
             _source.clip = killPlayerAudio; // sets death audio
             _source.Play(); // plays death audio            
             DeathText.text = "You Died";
