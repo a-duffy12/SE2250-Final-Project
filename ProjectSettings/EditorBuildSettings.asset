@@ -9,12 +9,24 @@ EditorBuildSettings:
     path: Assets/_Scenes/StartMenu.unity
     guid: 00e38065515b03f4780255b15690e08f
   - enabled: 1
+    path: Assets/_Scenes/StoryMenu1.unity
+    guid: 206f3f996a536c24c86b00928a6ddbdf
+  - enabled: 1
     path: Assets/_Scenes/Parkour.unity
     guid: d9868528c11e5414a95b8ab3fae3fb7d
+  - enabled: 1
+    path: Assets/_Scenes/StoryMenu2.unity
+    guid: c7c357598d8496340973626f5e4ad641
   - enabled: 1
     path: Assets/_Scenes/Maze.unity
     guid: 1a75493cba22b714c9564affcd92a1e7
   - enabled: 1
+    path: Assets/_Scenes/StoryMenu3.unity
+    guid: 2d4b3e547ea28de409dacc167e391078
+  - enabled: 1
     path: Assets/_Scenes/FinalLevel.unity
     guid: 9a5c919aa5df11f4e8351b1d2b9e4725
+  - enabled: 1
+    path: Assets/_Scenes/StoryMenu4.unity
+    guid: 72c695e8b6841b849b5f8f5c6977bdf4
   m_configObjects: {}

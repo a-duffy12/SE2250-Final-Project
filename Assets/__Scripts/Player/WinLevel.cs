@@ -19,6 +19,9 @@ public class WinLevel : MonoBehaviour
             Time.timeScale = 0f; //stops time so player cannot move
             if(Input.GetKeyDown(KeyCode.Return)){
                 PlayerExp.playerXP += 20;
+                // The cursor shows up so the player click start in start menu
+                Cursor.lockState = CursorLockMode.None; 
+                Cursor.visible = true;
                 Application.LoadLevel((SceneManager.GetActiveScene().buildIndex)+1);
             }
         }

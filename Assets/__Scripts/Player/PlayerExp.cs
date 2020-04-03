@@ -58,9 +58,9 @@ public class PlayerExp : MonoBehaviour
         } else if ((boss != null) && (boss.GetComponent<BossAI>().npcHP <= 0)) { // if boss is preset and dead
 
             bossHP.text = "0";  
-            winText.text = "You Win!\nPress enter to return to start menu"; // displays win text 
+            winText.text = "You Win!\nPress enter to continue"; // displays win text 
             if(Input.GetKeyDown(KeyCode.Return)){ // loads StartMenu scene
-                    Application.LoadLevel(0);
+                    Application.LoadLevel(7);
                 }
             // The cursor shows up so the player click start in start menu
             Cursor.lockState = CursorLockMode.None; 
