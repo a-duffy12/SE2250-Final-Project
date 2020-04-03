@@ -18,6 +18,7 @@ public class WinLevel : MonoBehaviour
             winText.text = "Level Complete!\nPress Enter to continue to the next level";          
             Time.timeScale = 0f; //stops time so player cannot move
             if(Input.GetKeyDown(KeyCode.Return)){
+                PlayerExp.playerXP += 20;
                 Application.LoadLevel((SceneManager.GetActiveScene().buildIndex)+1);
             }
         }
