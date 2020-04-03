@@ -91,11 +91,11 @@ public class PlayerExp : MonoBehaviour
 
         if (Time.time > _nextAbilityTime) {
 
-            _nextAbilityTime = Time.time + abilityDuration + abilityCooldown; // set time for next ability to be available
+            _nextAbilityTime = Time.time + (abilityDuration + PlayerSkillManager.shieldTimerIncrease) + abilityCooldown; // set time for next ability to be available
             _abilityActive = true;
             StartCoroutine(AbilityCooldown()); // update ability count, activate invulnerability
         
-        } else if (((_nextAbilityTime - abilityCooldown) > Time.time) && (Time.time > (_nextAbilityTime - abilityCooldown - abilityDuration))) { // if ability is active
+        } else if (((_nextAbilityTime - abilityCooldown) > Time.time) && (Time.time > (_nextAbilityTime - abilityCooldown - (abilityDuration + PlayerSkillManager.shieldTimerIncrease)))) { // if ability is active
 
             StartCoroutine(ShowWarning("Ability is already active", 1.0f)); // display warning for 1s
 
@@ -118,7 +118,7 @@ public class PlayerExp : MonoBehaviour
 
         DamageReceiver.invulnerable = true; // player becomes invulnerable
         abilityText.text = "[E] 0/1"; // no ability left
-        yield return new WaitForSeconds(abilityDuration+PlayerSkillManager.shieldTimerIncrease-0.1f); // wait until ability is done, increases depending on player's modifiers
+        yield return new WaitForSeconds(abilityDuration + PlayerSkillManager.shieldTimerIncrease-0.1f); // wait until ability is done, increases depending on player's modifiers
         _abilityActive = false; // ability is no longer active
         DamageReceiver.invulnerable = false; // player becomes vulnerable again
         yield return new WaitForSeconds(abilityCooldown-0.1f); // wait until cooldown is done
