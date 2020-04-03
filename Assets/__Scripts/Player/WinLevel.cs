@@ -15,7 +15,8 @@ public class WinLevel : MonoBehaviour
     void Update()
     {
         if(Physics.CheckSphere(groundTest.position, groundDist, winMask)){
-            winText.text = "Level Complete!\nPress Enter to continue to the next level";          
+            winText.text = "Level Complete!\nPress Enter to continue to the next level";
+            DamageReceiver.invulnerable = false;          
             Time.timeScale = 0f; //stops time so player cannot move
             if(Input.GetKeyDown(KeyCode.Return)){
                 PlayerExp.playerXP += 20;

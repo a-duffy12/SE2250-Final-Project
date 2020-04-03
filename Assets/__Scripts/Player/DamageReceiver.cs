@@ -28,7 +28,8 @@ public class DamageReceiver : MonoBehaviour, IEntity
         _source.spatialBlend = 1f; // makes the sound 3D
         _deathXP = PlayerExp.playerXP;
         Time.timeScale = 1;
-        HP.text = "HP: " + playerHP.ToString();
+        int temp = (int)playerHP;
+        HP.text = "HP: " + temp.ToString();
         dead = false;
     }
 
@@ -50,7 +51,8 @@ public class DamageReceiver : MonoBehaviour, IEntity
             playerHP = maxHP; // set HP to max value            
         }
 
-        HP.text = "HP: " + playerHP.ToString(); // display player HP   
+        int temp = (int)playerHP;
+        HP.text = "HP: " + temp.ToString(); // display player HP   
     }
 
     public void ApplyDamage(float dmg)
