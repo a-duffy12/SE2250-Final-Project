@@ -2000,7 +2000,6 @@ MonoBehaviour:
   plasmaSRP: {fileID: 8731894069351854794, guid: 8d69dfaa4d7dfe44e9443bfd73a3062a,
     type: 3}
   railSRP: {fileID: 8894746089791281691, guid: 7edf628d6b1afa74399154a755c1ad57, type: 3}
-  healthKits: 0
   currentWeapon: {fileID: 0}
 --- !u!65 &248974916
 BoxCollider:
@@ -5704,7 +5703,7 @@ PrefabInstance:
     - target: {fileID: 991177580227502890, guid: 4eb3e95093192b145a6ae2cad5f342ac,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 991177580227502890, guid: 4eb3e95093192b145a6ae2cad5f342ac,
         type: 3}
@@ -5759,7 +5758,7 @@ PrefabInstance:
     - target: {fileID: 991177580227502890, guid: 4eb3e95093192b145a6ae2cad5f342ac,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 44.375
+      value: 51
       objectReference: {fileID: 0}
     - target: {fileID: 991177580227502890, guid: 4eb3e95093192b145a6ae2cad5f342ac,
         type: 3}
