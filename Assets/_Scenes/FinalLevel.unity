@@ -629,7 +629,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6971298c242d26b4f890bc75e4dc82d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillNotifier: {fileID: 1866311315}
+  skillNotifier: {fileID: 0}
 --- !u!1 &217906184
 GameObject:
   m_ObjectHideFlags: 0
@@ -6832,10 +6832,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'You have Skill Points available!
-
-    Press [=] to open Player Upgrade
-    Menu'
+  m_Text: Skill Point Available! Press [=] to Apply
 --- !u!222 &1866311319
 CanvasRenderer:
   m_ObjectHideFlags: 0

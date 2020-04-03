@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SkillPointsHUD : MonoBehaviour
 {
-    public GameObject skillNotifier;
+    public Text skillNotifier;
     // Update is called once per frame
     void Update()
     {
@@ -13,16 +14,16 @@ public class SkillPointsHUD : MonoBehaviour
         {
             if (SkillPointMenu.gameIsPaused) // if game is paused then the HUD disappears
             {
-                skillNotifier.SetActive(false);
+                skillNotifier.text = "";
             }
             else// if game is not paused, the HUD will notify player of available skill points
             {
-                skillNotifier.SetActive(true);
+                skillNotifier.text = "Skill Point Available! Press [=] to Apply";
             }
         }
         else
         {
-            skillNotifier.SetActive(false);
+            skillNotifier.text = "";
         }
     }
 }
