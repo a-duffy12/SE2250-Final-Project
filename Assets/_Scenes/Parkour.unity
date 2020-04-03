@@ -2825,7 +2825,8 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 8
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1051860564615561719, guid: e0ad58c065167e545b3178dd098b4967, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e0ad58c065167e545b3178dd098b4967, type: 3}
 --- !u!4 &332164318 stripped
 Transform:
@@ -3537,6 +3538,26 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &410382335 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 298625557729619885, guid: e0ad58c065167e545b3178dd098b4967,
+    type: 3}
+  m_PrefabInstance: {fileID: 392448725554353432}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &410382336
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410382335}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &410386943
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7540,6 +7561,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1020139907}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1023743335 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 298625557729619885, guid: e0ad58c065167e545b3178dd098b4967,
+    type: 3}
+  m_PrefabInstance: {fileID: 332164317}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1023743336
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1023743335}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &1076328576
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16466,7 +16507,8 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 15.2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1051860564615561719, guid: e0ad58c065167e545b3178dd098b4967, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e0ad58c065167e545b3178dd098b4967, type: 3}
 --- !u!1001 &2071382131675846084
 PrefabInstance:
