@@ -67,7 +67,7 @@ public class PlayerExp : MonoBehaviour
             Cursor.visible = true;         
         }
 
-        if (Input.GetKeyDown(KeyCode.E) && playerXP >= abilityXP) { // if the player presses G and a grenade is available
+        if (Input.GetKeyDown(KeyCode.E) && playerXP >= abilityXP && DamageReceiver.dead == false) { // if the player presses G and a grenade is available
 
             UseAbility(); // throws grenade
         }
