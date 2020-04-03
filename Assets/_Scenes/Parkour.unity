@@ -9052,7 +9052,7 @@ GameObject:
   - component: {fileID: 1240612295}
   - component: {fileID: 1240612294}
   m_Layer: 5
-  m_Name: skillMenuInstruction
+  m_Name: SkillMenuInstruction
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
