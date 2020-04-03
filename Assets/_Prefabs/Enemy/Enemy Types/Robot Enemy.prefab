@@ -676,8 +676,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lookDistance: 15
   npcHP: 200
-  npcSpeed: 7
-  suicideDamage: 70
+  npcSpeed: 8
+  suicideDamage: 40
   suicideRadius: 3.5
   experienceGain: 15
   giveXP: 1
