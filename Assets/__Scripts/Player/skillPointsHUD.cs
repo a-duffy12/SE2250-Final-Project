@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class skillPointsHUD : MonoBehaviour
+public class SkillPointsHUD : MonoBehaviour
 {
     public GameObject skillNotifier;
     // Update is called once per frame
