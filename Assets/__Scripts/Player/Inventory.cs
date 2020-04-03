@@ -52,7 +52,7 @@ public class Inventory : MonoBehaviour
     public GameObject plasmaSRP;
     public GameObject railSRP;
 
-    public int healthKits = 0;    
+    public static int healthKits;    
 
     [HideInInspector]
     public Weapon currentWeapon; // weapon the player is currently holding
@@ -71,6 +71,7 @@ public class Inventory : MonoBehaviour
             secondWeapon = empAR;
             slot1Wep = "plasmaSMG";
             slot2Wep = "empAR";
+            healthKits = 0;
         }else{
             if(slot1Wep == "empSMG"){firstWeapon = empSMG;} // checks static string ands sets weapon accordingly in slot 1
             else if(slot1Wep == "plasmaSMG"){firstWeapon = plasmaSMG;}
@@ -92,6 +93,8 @@ public class Inventory : MonoBehaviour
             else if(slot2Wep == "plasmaSR"){secondWeapon = plasmaSR;}
             else if(slot2Wep == "railSR"){secondWeapon = railSR;}
         }   
+
+        healthKit.text = healthKits.ToString(); // updates UI 
 
         UpdateSlotText(); // updates UI text        
 
@@ -438,7 +441,7 @@ public class Inventory : MonoBehaviour
 
         UpdateSlotText();
     
-        if (Input.GetKeyDown(KeyCode.H)) { // runs when player presses H key
+        if (Input.GetKeyDown(KeyCode.H) && healthKits > 0) { // runs when player presses H key
         
             healthKits -= 1; // subtracts health kit
 
