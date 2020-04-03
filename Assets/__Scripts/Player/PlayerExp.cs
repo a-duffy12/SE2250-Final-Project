@@ -40,7 +40,8 @@ public class PlayerExp : MonoBehaviour
         boss = GameObject.FindGameObjectWithTag("Boss");
         if (boss != null) {
 
-            bossHP.text = boss.GetComponent<BossAI>().npcHP.ToString(); // set HP in UI
+            int bHP = (int)boss.GetComponent<BossAI>().npcHP;
+            bossHP.text = bHP.ToString(); // set HP in UI
         }
     }
 
@@ -53,7 +54,8 @@ public class PlayerExp : MonoBehaviour
         boss = GameObject.FindGameObjectWithTag("Boss");
         if ((boss != null) && (boss.GetComponent<BossAI>().npcHP > 0)) { // if boss is present and alive
 
-            bossHP.text = boss.GetComponent<BossAI>().npcHP.ToString(); // update HP in UI
+            int bHP = (int)boss.GetComponent<BossAI>().npcHP;
+            bossHP.text = bHP.ToString(); // update HP in UI
 
         } else if ((boss != null) && (boss.GetComponent<BossAI>().npcHP <= 0)) { // if boss is preset and dead
 
