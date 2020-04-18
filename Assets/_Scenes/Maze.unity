@@ -1964,8 +1964,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 1196080428}
   defaultPistol: {fileID: 513706092}
-  firstWeapon: {fileID: 0}
-  secondWeapon: {fileID: 0}
+  firstWeapon: {fileID: 13627116}
+  secondWeapon: {fileID: 227490242}
   ammoCount: {fileID: 1484680004}
   reloadWarning: {fileID: 1336178777}
   swapAudio: {fileID: 8300000, guid: b4408aaefc766be41a6c76c142b83cc6, type: 3}
@@ -2598,8 +2598,8 @@ MonoBehaviour:
   XP: {fileID: 1202390462}
   abilityText: {fileID: 1224940859}
   abilityWarningText: {fileID: 1624849335}
-  bossHP: {fileID: 1703673247}
-  winText: {fileID: 0}
+  bossHPText: {fileID: 1703673247}
+  winText: {fileID: 177939297}
   boss: {fileID: 0}
   abilityAudio: {fileID: 8300000, guid: ea441a8650e1dcc49aa60e9c93de54a2, type: 3}
 --- !u!114 &328775585

@@ -15,7 +15,7 @@ public class PlayerExp : MonoBehaviour
     public Text XP; // text for xp
     public Text abilityText; // text for ability
     public Text abilityWarningText; // text for ability cooldown
-    public Text bossHP; // text to display boss HP if a boss is present
+    public Text bossHPText; // text to display boss HP if a boss is present
     public Text winText; // text for when game is won
     [HideInInspector]
     public GameObject boss; // gameobject for boss instance if a boss is present
@@ -40,8 +40,8 @@ public class PlayerExp : MonoBehaviour
         boss = GameObject.FindGameObjectWithTag("Boss");
         if (boss != null) {
 
-            int bHP = (int)boss.GetComponent<BossAI>().npcHP;
-            bossHP.text = bHP.ToString(); // set HP in UI
+            int bHP = (int)BossAI.bossHP;
+            bossHPText.text = bHP.ToString(); // set HP in UI
         }
     }
 
@@ -52,16 +52,16 @@ public class PlayerExp : MonoBehaviour
 
         // check for boss and set its HP if it is present
         boss = GameObject.FindGameObjectWithTag("Boss");
-        if ((boss != null) && (boss.GetComponent<BossAI>().npcHP > 0)) { // if boss is present and alive
+        if ((boss != null) && (BossAI.bossHP > 0)) { // if boss is present and alive
 
-            int bHP = (int)boss.GetComponent<BossAI>().npcHP;
-            bossHP.text = bHP.ToString(); // update HP in UI
+            int bHP = (int)BossAI.bossHP;
+            bossHPText.text = bHP.ToString(); // update HP in UI
 
-        } else if ((boss != null) && (boss.GetComponent<BossAI>().npcHP <= 0)) { // if boss is preset and dead
+        } else if ((boss != null) && (BossAI.bossHP <= 0)) { // if boss is preset and dead
 
-            bossHP.text = "0";  
+            bossHPText.text = "0";  
             winText.text = "You Win!\nPress enter to continue"; // displays win text 
-            if(Input.GetKeyDown(KeyCode.Return)){ // loads StartMenu scene when enter is clicked
+            if(Input.GetKeyDown(KeyCode.Return)){ // loads final story scene when enter is clicked
                     Application.LoadLevel(7);
                 }
             // The cursor shows up so the player click start in start menu

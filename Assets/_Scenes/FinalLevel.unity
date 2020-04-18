@@ -1821,7 +1821,7 @@ MonoBehaviour:
   XP: {fileID: 921313668}
   abilityText: {fileID: 2078262927}
   abilityWarningText: {fileID: 487136082}
-  bossHP: {fileID: 1333013294}
+  bossHPText: {fileID: 1333013294}
   winText: {fileID: 644471437}
   boss: {fileID: 0}
   abilityAudio: {fileID: 8300000, guid: ea441a8650e1dcc49aa60e9c93de54a2, type: 3}
@@ -4806,8 +4806,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 882838239}
   defaultPistol: {fileID: 1621959249}
-  firstWeapon: {fileID: 0}
-  secondWeapon: {fileID: 0}
+  firstWeapon: {fileID: 1043900300}
+  secondWeapon: {fileID: 1122492312}
   ammoCount: {fileID: 476905412}
   reloadWarning: {fileID: 1093504323}
   swapAudio: {fileID: 8300000, guid: b4408aaefc766be41a6c76c142b83cc6, type: 3}
@@ -5697,7 +5697,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 4000
+  m_Text: 
 --- !u!222 &1333013295
 CanvasRenderer:
   m_ObjectHideFlags: 0

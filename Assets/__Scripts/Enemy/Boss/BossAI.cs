@@ -10,10 +10,10 @@ using UnityEngine.UI;
 public class BossAI : MonoBehaviour, IEntity
 {
     static public BossAI S; // singleton variable
+    static public float bossHP; // static hp variable
 
     public float minRange; // minimum distance boss keeps between itself and player
     public float maxRange; // maximum distance boss keeps between itself and player
-    public float npcHP; 
     public float npcSpeed;
     public float volleySize; // how many projectiles per volley
     public float volleyDelay; // how long between projectiles in a volley
@@ -46,6 +46,8 @@ public class BossAI : MonoBehaviour, IEntity
         else{
             print("Error: Attempted to create more than one boss singleton");
         }
+
+        bossHP = 4000; // sets boss HP 
 
         anim = GetComponent<Animator>(); // get the animator component
         anim.enabled = false; // disable animator
@@ -166,12 +168,12 @@ public class BossAI : MonoBehaviour, IEntity
         
         if (_vulnerable) { // boss only takes damage if vulnerable
 
-            npcHP -= points;
+            bossHP -= points;
             _source.clip = damageBossAudio; // sets hurt audio
             _source.Play(); // plays hurt audio 
         }
         
-        if (npcHP <= 0)
+        if (bossHP <= 0)
         {
             _source.clip = killBossAudio; // sets death audio
             _source.Play(); // plays death audio 
