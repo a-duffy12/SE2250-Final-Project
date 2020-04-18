@@ -2102,6 +2102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6971298c242d26b4f890bc75e4dc82d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skillNotifier: {fileID: 0}
 --- !u!114 &847177295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2848,7 +2849,8 @@ MonoBehaviour:
   XP: {fileID: 560404905}
   abilityText: {fileID: 1563481949}
   abilityWarningText: {fileID: 1392010715}
-  bossHP: {fileID: 1688243944}
+  bossHPText: {fileID: 1688243944}
+  winText: {fileID: 215022532}
   boss: {fileID: 0}
   abilityAudio: {fileID: 8300000, guid: ea441a8650e1dcc49aa60e9c93de54a2, type: 3}
 --- !u!114 &1306497696
@@ -3276,7 +3278,6 @@ MonoBehaviour:
   plasmaSRP: {fileID: 8731894069351854794, guid: 8d69dfaa4d7dfe44e9443bfd73a3062a,
     type: 3}
   railSRP: {fileID: 8894746089791281691, guid: 7edf628d6b1afa74399154a755c1ad57, type: 3}
-  healthKits: 0
   currentWeapon: {fileID: 0}
 --- !u!82 &1488243426
 AudioSource:
