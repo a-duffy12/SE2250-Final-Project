@@ -72,26 +72,26 @@ public class Inventory : MonoBehaviour
             slot1Wep = "plasmaSMG";
             slot2Wep = "empAR";
             healthKits = 0;
-        }else{
+        } else {
             if(slot1Wep == "empSMG"){firstWeapon = empSMG;} // checks static string ands sets weapon accordingly in slot 1
-            else if(slot1Wep == "plasmaSMG"){firstWeapon = plasmaSMG;}
-            else if(slot1Wep == "railSMG"){firstWeapon = railSMG;}
-            else if(slot1Wep == "empAR"){firstWeapon = empAR;}
-            else if(slot1Wep == "plasmaAR"){firstWeapon = plasmaAR;}
-            else if(slot1Wep == "railAR"){firstWeapon = railAR;}
-            else if(slot1Wep == "empSR"){firstWeapon = empSR;}
-            else if(slot1Wep == "plasmaSR"){firstWeapon = plasmaSR;}
-            else if(slot1Wep == "railSR"){firstWeapon = railSR;}
+            else if (slot1Wep == "plasmaSMG"){firstWeapon = plasmaSMG;}
+            else if (slot1Wep == "railSMG"){firstWeapon = railSMG;}
+            else if (slot1Wep == "empAR"){firstWeapon = empAR;}
+            else if (slot1Wep == "plasmaAR"){firstWeapon = plasmaAR;}
+            else if (slot1Wep == "railAR"){firstWeapon = railAR;}
+            else if (slot1Wep == "empSR"){firstWeapon = empSR;}
+            else if (slot1Wep == "plasmaSR"){firstWeapon = plasmaSR;}
+            else if (slot1Wep == "railSR"){firstWeapon = railSR;}
 
-            if(slot2Wep == "empSMG"){secondWeapon = empSMG;} // checks static string ands sets weapon accordingly in slot 2
-            else if(slot2Wep == "plasmaSMG"){secondWeapon = plasmaSMG;}
-            else if(slot2Wep == "railSMG"){secondWeapon = railSMG;}
-            else if(slot2Wep == "empAR"){secondWeapon = empAR;}
-            else if(slot2Wep == "plasmaAR"){secondWeapon = plasmaAR;}
-            else if(slot2Wep == "railAR"){secondWeapon = railAR;}
-            else if(slot2Wep == "empSR"){secondWeapon = empSR;}
-            else if(slot2Wep == "plasmaSR"){secondWeapon = plasmaSR;}
-            else if(slot2Wep == "railSR"){secondWeapon = railSR;}
+            if (slot2Wep == "empSMG"){secondWeapon = empSMG;} // checks static string ands sets weapon accordingly in slot 2
+            else if (slot2Wep == "plasmaSMG"){secondWeapon = plasmaSMG;}
+            else if (slot2Wep == "railSMG"){secondWeapon = railSMG;}
+            else if (slot2Wep == "empAR"){secondWeapon = empAR;}
+            else if (slot2Wep == "plasmaAR"){secondWeapon = plasmaAR;}
+            else if (slot2Wep == "railAR"){secondWeapon = railAR;}
+            else if (slot2Wep == "empSR"){secondWeapon = empSR;}
+            else if (slot2Wep == "plasmaSR"){secondWeapon = plasmaSR;}
+            else if (slot2Wep == "railSR"){secondWeapon = railSR;}
         }   
 
         healthKit.text = healthKits.ToString(); // updates UI 

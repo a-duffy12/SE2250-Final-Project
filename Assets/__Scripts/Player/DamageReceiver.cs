@@ -18,7 +18,8 @@ public class DamageReceiver : MonoBehaviour, IEntity
     public AudioClip killPlayerAudio; // sound upon death
 
     private AudioSource _source; // source for player audio
-    private float _deathXP = 0;
+    private float _deathXP = 0; // xp at death
+    private int _deathHealthKits = 0; // healthkits at death
 
     // Start is called before the first frame update
     void Start() {
@@ -26,7 +27,8 @@ public class DamageReceiver : MonoBehaviour, IEntity
         _source = GetComponent<AudioSource>(); // gets audio source
         _source.playOnAwake = false; // does not play on startup
         _source.spatialBlend = 1f; // makes the sound 3D
-        _deathXP = PlayerExp.playerXP;
+        _deathXP = PlayerExp.playerXP; // set amount of xp
+        _deathHealthKits = Inventory.healthKits; // set amount of healthkits
         Time.timeScale = 1;
         int temp = (int)playerHP;
         HP.text = "HP: " + temp.ToString();
@@ -69,8 +71,9 @@ public class DamageReceiver : MonoBehaviour, IEntity
 
     IEnumerator ExecuteAfterTime(float time){ 
         yield return new WaitForSeconds(time); // waits for time seconds
-        PlayerExp.playerXP = _deathXP; // sets xp to what it was at the start of the level if the level
+        PlayerExp.playerXP = _deathXP; // sets xp to what it was at the start of the level
         playerHP = maxHP; // restarts player with max health
+        Inventory.healthKits = _deathHealthKits; // sets healht kit count to what it was at the start of the level
         Application.LoadLevel(SceneManager.GetActiveScene().buildIndex); // reloads the level        
     }    
 }
